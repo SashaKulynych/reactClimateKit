@@ -1,0 +1,258 @@
+ul{
+    list-style-type: none;
+    padding:0;
+}
+.main{
+    width: 1366px;
+}
+.slider{
+    width: 100%;
+    padding:100px 70px 70px 70px;
+    background-image: url("../images/background.png");
+    background-repeat: no-repeat no-repeat;
+}
+.textInSlider{
+    color: white;
+    width: 520px;
+    font-size: 22px;
+    text-align: justify;
+    cursor: default;
+}
+.logo{
+    position: relative;
+    height:114px;
+}
+.logoTextStyle{
+    color: #828282;
+    font-size: 20px;
+    font-family: Arial;
+    font-weight: bold;
+    cursor: default;
+}
+.logoTextRight{
+    position: absolute;
+    bottom: 0px;
+    margin-left: 140px;
+}
+.logoTextLeft{
+    position: absolute;
+    bottom: 0px;
+    margin-left: -125px;
+}
+.logoImage{
+    position: absolute;
+    z-index: 1;
+    width: 175px;
+    left: 0px;
+    right: 0px;
+    top:20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.achievement{
+    padding:50px 0px 50px 0px;
+    font-size: 40px;
+    font-family: Arial;
+    cursor: default;
+}
+.achievementBlock{
+    width: 200px;
+    margin:0px 25px;
+    text-align: center;
+}
+.achievementBlockTitle{
+    cursor: default;
+}
+.achievementBlockImage{
+    height: 200px;
+}
+.aboutUs{
+    margin-top: 25px;
+    background-color: #f1f1f1;
+}
+.about{
+    cursor: default;
+    padding:10px 0px 10px 0px;
+    font-size: 40px;
+    font-family: Arial;
+}
+.aboutUsText{
+    cursor: default;
+    padding:10px 0px 10px 0px;
+    text-align: center;
+    font-size: 24px;
+    font-family: Arial;
+}
+.aboutButton{
+    cursor: pointer;
+    margin-top: 15px;
+    padding: 10px 80px;
+    background-color: #fddb1d;
+    font-size: 30px;
+    font-family: Arial;
+    margin-bottom: 50px;
+}
+.aboutButton:hover{
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    transition: box-shadow 0.5s ease-in-out;
+}
+.news{
+    padding:50px 0px 50px 0px;
+    font-size: 40px;
+    font-family: Arial;
+}
+.newsPicture{
+    height:150px;
+    background-repeat:no-repeat;
+    background-position: center center;
+}
+.pictureTitle{
+    font-size: 35px;
+    font-family: Arial;
+    color: white;
+}
+.newsTitle{
+    font-size: 20px;
+    font-family: Arial;
+    color: #3b3b3b;
+}
+.newsDescription{
+    text-align: center;
+    font-size: 15px;
+    font-family: Arial;
+    color: #808080;
+}
+.allNews{
+    margin-bottom:25px;
+    padding:2px 120px;
+    background-color: #fddb1d;
+    font-size: 25px;
+    font-family: Arial;
+    color: #282828;
+    cursor: pointer;
+}
+.allNews:hover{
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    transition: box-shadow 0.5s ease-in-out;
+}
+.newsBlock{
+    cursor: pointer;
+}
+.advantageSection{
+    background-color: #f1f1f1;
+}
+.advantage{
+    padding:50px 0px 50px 25px;
+    color:#2d2d2d;
+    font-size: 30px;
+    font-family: Arial;
+}
+.sectionTitles{
+    padding:50px 0px 50px 0px;
+    font-size: 40px;
+    font-family: Arial;
+}
+.whatYouGetText{
+    text-align: center;
+    color:#3b3b3b;
+    font-size: 30px;
+    margin-bottom:50px;
+    max-width:850px;
+}
+.whatYouGetBlock{
+    min-height:475px;
+    width:250px;
+    text-align: center;
+    border-radius: 150px;
+    background-color: #fddb1d;
+    padding:10px;
+    margin:0px 10px 10px 0px;
+}
+.whatYouGetBlockImage{
+    width: 100%;
+}
+.whatYouGetBlockText{
+    margin:25px 0px 55px 0px;
+}
+.footer{
+    padding:50px 0px;
+    background-color: #3a3a3a;
+}
+.footerBlockLeft{
+
+}
+.footerList>li{
+    cursor: pointer;
+    padding:5px 0px 5px 0px;
+    color:#fff;
+}
+.footerCenter{
+    padding: 0px 25px;
+    border-left: 1px solid #7c7c7c;
+    border-right: 1px solid #7c7c7c;
+}
+.footerLogoTextLeft{
+    color: #fff;
+    font-size: 20px;
+    font-family: Arial;
+    font-weight: bold;
+    cursor: default;
+    padding-right: 5px;
+}
+.footerLogoTextRight{
+    color: #fff;
+    font-size: 20px;
+    font-family: Arial;
+    font-weight: bold;
+    cursor: default;
+    padding-left: 5px;
+}
+.delivery{
+    text-align: center;
+}
+.deliveryText{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+.contactIcons{
+    color:#fff;
+    font-size: 20px;
+    padding:10px 10px 10px 0px;
+}
+.contacts>li{
+    cursor: pointer;
+    color:#fff;
+    padding:10px 0px 0px 10px;
+}
+.slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: 0;
+    background: 0 0;
+    margin-top:20px;
+}
+.slick-dots li button:before {
+    font-size: 20px;
+    line-height: 20px;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: '•';
+    text-align: center;
+    opacity: .25;
+    color: #fff;
+}
+.slick-dots li.slick-active button:before {
+    opacity: .75;
+    color: #fff;
+}
