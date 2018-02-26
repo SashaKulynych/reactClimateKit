@@ -11,6 +11,7 @@ import reducers from './reducers';
 import logger from 'redux-logger';
 
 import MainPage from './components/MainPage'
+import Categories from './components/Categories'
 
 export const history = createHistory()
 const middleware = routerMiddleware(history)
@@ -21,7 +22,7 @@ ReactDOM.render(
     <Provider store={store}>
         <ConnectedRouter history={history}>
             <div id="container">
-                <MainPage/>
+                <Categories/>
             </div>
         </ConnectedRouter>
     </Provider>
