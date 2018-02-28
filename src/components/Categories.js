@@ -44,14 +44,15 @@ export default class Categories extends Component {
         this.state = {
             tab:0
         };
+        this.changeTab = this.changeTab.bind(this);
     }
     changeTab(index){
         this.setState({tab:index})
     }
     render() {
-        let items=itemsArray.map((item)=>{
+        let items=itemsArray.map((item,index)=>{
             return(
-                <div>
+                <div key={index}>
                     <div className="item">
                         <img className="itemPicture" src={item.image} alt=""/>
                     </div>
@@ -60,7 +61,7 @@ export default class Categories extends Component {
                     </div>
                 </div>
             )
-        })
+        });
         return (
             <div>
                 <Header/>

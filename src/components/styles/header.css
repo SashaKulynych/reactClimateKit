@@ -6,9 +6,15 @@ ul{
     width: 1366px;
 }
 .header{
+    display: flex;
+    align-items: center;
     height:55px;
     background-color: #323232;
     padding: 0px 55px;
+}
+.headerRightPart{
+    position: absolute;
+    right: 40px;
 }
 .circle{
     cursor: pointer;
@@ -40,6 +46,7 @@ ul{
 }
 /*dropdown menu left part*/
 .menu-left-part{
+    z-index: 1000;
     padding-left: 40px;
 }
 .menu-left-part ul
@@ -98,7 +105,7 @@ ul{
 .menu-left-part ul ul a
 {
     line-height:120%;
-    padding:10px 15px
+    padding:10px 15px;
 }
 .menu-left-part ul ul a:hover{
     color:#fff;
@@ -116,6 +123,7 @@ ul{
 }
 /*dropdown menu right part*/
 .menu-right-part{
+    z-index: 1000;
     padding-right: 40px;
 }
 .menu-right-part ul
@@ -249,4 +257,38 @@ ul{
 }
 .registrationView,.forgerPassword{
     cursor: pointer;
+}
+.logoBlock{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+.logo{
+    position: relative;
+    height:114px;
+}
+.logoTextStyle{
+    color: #828282;
+    font-size: 20px;
+    font-family: Arial;
+    font-weight: bold;
+    cursor: default;
+}
+.logoTextRight{
+    position: absolute;
+    bottom: 0px;
+    margin-left: 140px;
+}
+.logoTextLeft{
+    position: absolute;
+    bottom: 0px;
+    margin-left: -125px;
+}
+.logoImage{
+    position: absolute;
+    z-index: 1;
+    width: 175px;
+    top:20px;
 }

@@ -2,34 +2,41 @@ import React, { Component } from 'react';
 import './styles/header.css';
 import Modal from "react-responsive-modal";
 export default class Header extends Component {
-    state = {
-        openAuth: false,
-        openReg:false,
-        personType:0
-    };
+    constructor(){
+        super();
+        this.state = {
+            openAuth: false,
+            openReg:false,
+            personType:0
+        };
+        this.personType=this.personType.bind(this);
+        this.openRegonOpenModal=this.openRegonOpenModal.bind(this);
+        this.openRegonCloseModal=this.openRegonCloseModal.bind(this);
+        this.openAuthonOpenModal=this.openAuthonOpenModal.bind(this);
+        this.openAuthonCloseModal=this.openAuthonCloseModal.bind(this);
+    }
     personType(index){
        this.setState({personType:index})
     }
-    openRegonOpenModal = () => {
+    openRegonOpenModal(){
         this.setState({ openReg: true });
     };
 
-    openRegonCloseModal = () => {
+    openRegonCloseModal(){
         this.setState({ openReg: false });
     };
 
-    openAuthonOpenModal = () => {
+    openAuthonOpenModal(){
         this.setState({ openAuth: true });
     };
 
-    openAuthonCloseModal = () => {
+    openAuthonCloseModal(){
         this.setState({ openAuth: false });
     };
     render() {
-        const { openAuth,openReg } = this.state;
         return (
             <div className="container main">
-                <Modal showCloseIcon={false} open={openReg} onClose={this.openRegonCloseModal} little>
+                <Modal showCloseIcon={false} open={this.state.openReg} onClose={this.openRegonCloseModal} little>
                     <div className="authorizationHeader d-flex align-items-center justify-content-center">
                         <span>РЕЄСТРАЦІЯ</span>
                     </div>
@@ -37,7 +44,7 @@ export default class Header extends Component {
                         <div className="authGroup">
                             <div className="authInputGroup row d-flex align-items-center justify-content-center">
                                 <div className="authInputIcon d-flex align-items-center justify-content-center">
-                                    <i class="fas fa-user"></i>
+                                    <i className="fas fa-user"/>
                                 </div>
                                 <input type="text" placeholder="ПІБ"/>
                             </div>
@@ -53,13 +60,13 @@ export default class Header extends Component {
                             </div>
                             <div className="authInputGroup row d-flex align-items-center justify-content-center">
                                 <div className="authInputIcon d-flex align-items-center justify-content-center">
-                                    <i class="fas fa-at"></i>
+                                    <i className="fas fa-at"/>
                                 </div>
                                 <input type="email" placeholder="email"/>
                             </div>
                             <div className="authInputGroup row d-flex align-items-center justify-content-center">
                                 <div className="authInputIcon d-flex align-items-center justify-content-center">
-                                    <i class="fas fa-phone"></i>
+                                    <i className="fas fa-phone"/>
                                 </div>
                                 <input id="phone" type="text" placeholder="номер телефону"/>
                             </div>
@@ -81,7 +88,7 @@ export default class Header extends Component {
                         </div>
                     </div>
                 </Modal>
-                <Modal showCloseIcon={false} open={openAuth} onClose={this.openAuthonCloseModal} little>
+                <Modal showCloseIcon={false} open={this.state.openAuth} onClose={this.openAuthonCloseModal} little>
                     <div className="authorizationHeader d-flex align-items-center justify-content-center">
                         <span>ВХІД</span>
                     </div>
@@ -89,13 +96,13 @@ export default class Header extends Component {
                         <div className="authGroup">
                             <div className="authInputGroup row d-flex align-items-center justify-content-center">
                                 <div className="authInputIcon d-flex align-items-center justify-content-center">
-                                    <i class="fas fa-user"></i>
+                                    <i className="fas fa-user"/>
                                 </div>
                                 <input type="text" placeholder="username"/>
                             </div>
                             <div className="authInputGroup row d-flex align-items-center justify-content-center">
                                 <div className="authInputIcon d-flex align-items-center justify-content-center">
-                                    <i class="fas fa-unlock-alt"></i>
+                                    <i className="fas fa-unlock-alt"/>
                                 </div>
                                 <input type="password" placeholder="password"/>
                             </div>
@@ -128,29 +135,25 @@ export default class Header extends Component {
                         </div>
                     </div>
                 </Modal>
-                <div className="row header d-flex align-items-center">
-                    <div className="col">
-                        <div className="row">
-                            <div className="circle">
-                                <i class="fab fa-facebook-f"></i>
-                            </div>
-                            <div className="circle">
-                                <i class="fab fa-twitter"></i>
-                            </div>
-                            <div className="circle">
-                                <i class="fab fa-instagram"></i>
-                            </div>
+                <div className="row header">
+                    <div className="row">
+                        <div className="circle">
+                            <i className="fab fa-facebook-f"/>
+                        </div>
+                        <div className="circle">
+                            <i className="fab fa-twitter"/>
+                        </div>
+                        <div className="circle">
+                            <i className="fab fa-instagram"/>
                         </div>
                     </div>
-                    <div className="col">
-                        <div className="row d-flex align-items-center">
-                            <div className="text phone">+38 099 001 01 01</div>
-                            <div className="text email">email_adress@gmail.com</div>
-                            <div className="circle" onClick={this.openAuthonOpenModal}>
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <div className="text enter" onClick={this.openAuthonOpenModal}>Вхід</div>
+                    <div className="row headerRightPart">
+                        <div className="text phone">+38 099 001 01 01</div>
+                        <div className="text email">email_adress@gmail.com</div>
+                        <div className="circle" onClick={this.openAuthonOpenModal}>
+                            <i className="fas fa-user"/>
                         </div>
+                        <div className="text enter" onClick={this.openAuthonOpenModal}>Вхід</div>
                     </div>
                 </div>
                 <div className="row menu d-flex align-items-center">
@@ -182,7 +185,7 @@ export default class Header extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="col">
+                    <div className="logoBlock">
                         <div className="logo d-flex justify-content-center ">
                             <div className="logoTextLeft logoTextStyle">Клімат</div>
                             <img className="logoImage" src={require('./images/logo.png')} alt="Logo"/>
@@ -216,4 +219,5 @@ export default class Header extends Component {
                 </div>
             </div>
         )
-}}
+    }
+}

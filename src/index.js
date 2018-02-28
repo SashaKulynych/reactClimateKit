@@ -22,7 +22,7 @@ ReactDOM.render(
     <Provider store={store}>
         <ConnectedRouter history={history}>
             <div id="container">
-                <Categories/>
+                <MainPage/>
             </div>
         </ConnectedRouter>
     </Provider>

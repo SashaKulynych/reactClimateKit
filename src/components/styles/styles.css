@@ -18,37 +18,6 @@ ul{
     text-align: justify;
     cursor: default;
 }
-.logo{
-    position: relative;
-    height:114px;
-}
-.logoTextStyle{
-    color: #828282;
-    font-size: 20px;
-    font-family: Arial;
-    font-weight: bold;
-    cursor: default;
-}
-.logoTextRight{
-    position: absolute;
-    bottom: 0px;
-    margin-left: 140px;
-}
-.logoTextLeft{
-    position: absolute;
-    bottom: 0px;
-    margin-left: -125px;
-}
-.logoImage{
-    position: absolute;
-    z-index: 1;
-    width: 175px;
-    left: 0px;
-    right: 0px;
-    top:20px;
-    margin-left: auto;
-    margin-right: auto;
-}
 .achievement{
     padding:50px 0px 50px 0px;
     font-size: 40px;
