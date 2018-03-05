@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import './styles/footer.css';
 
-export default class Footer extends Component {
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router'
+
+class Footer extends Component {
     render() {
         return (
             <div className="footer">
@@ -40,3 +43,4 @@ export default class Footer extends Component {
             </div>
         )
     }}
+export default connect(state => ({state:state}))(withRouter(Footer))

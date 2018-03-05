@@ -4,7 +4,10 @@ import Footer from './Footer'
 import './styles/item.css'
 import { css, StyleSheet } from 'aphrodite'
 
-export default class Item extends Component {
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router'
+
+class Item extends Component {
     constructor(props){
         super(props)
 
@@ -55,3 +58,4 @@ export default class Item extends Component {
             </div>
         )
     }}
+export default connect(state => ({state:state}))(withRouter(Item))

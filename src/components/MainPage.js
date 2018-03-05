@@ -4,7 +4,13 @@ import Slider from 'react-slick';
 import Header from './Header'
 import Footer from './Footer'
 
-export default class MainPage extends Component {
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router'
+
+class MainPage extends Component {
+    componentWillMount(){
+        document.title = "Головна сторінка";
+    }
     render() {
         let settings = {
             dots: true,
@@ -303,3 +309,4 @@ export default class MainPage extends Component {
         );
     }
 }
+export default connect(state => ({state:state}))(withRouter(MainPage))

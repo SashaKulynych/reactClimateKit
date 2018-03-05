@@ -2,47 +2,13 @@ import React, { Component } from 'react';
 import Header from './Header'
 import Footer from './Footer'
 import { css, StyleSheet } from 'aphrodite'
-import './styles/category.css'
+import './styles/dealer.css'
 import {styles} from './styles/styles'
 
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 
-const itemsArray=[
-    {
-        image:require('./images/cooler.png'),
-        title:''
-    },
-    {
-        image:require('./images/cooler.png'),
-        title:''
-    },
-    {
-        image:require('./images/cooler.png'),
-        title:''
-    },
-    {
-        image:require('./images/cooler.png'),
-        title:''
-    },
-    {
-        image:require('./images/cooler.png'),
-        title:''
-    },
-    {
-        image:require('./images/cooler.png'),
-        title:''
-    },
-    {
-        image:require('./images/cooler.png'),
-        title:''
-    },
-    {
-        image:require('./images/cooler.png'),
-        title:''
-    }
-]
-class Categories extends Component {
+class Dealer extends Component {
     constructor(props){
         super(props)
         this.state = {
@@ -54,24 +20,12 @@ class Categories extends Component {
         this.setState({tab:index})
     }
     render() {
-        let items=itemsArray.map((item,index)=>{
-            return(
-                <li key={index}>
-                    <div className="item">
-                        <img className="itemPicture" src={item.image} alt=""/>
-                    </div>
-                    <div className="itemBottom">
-                        {item.name}
-                    </div>
-                </li>
-            )
-        });
         return (
             <div>
                 <Header/>
-                <div className="categories">
+                <div className="dealer">
                     <div className="afterHeader">
-                        <img className="afterHeaderPicture" src={require('./images/pictureCategory.png')} alt=""/>
+                        <img className="afterHeaderPicture" src={require('./images/dealer.png')} alt=""/>
                     </div>
                     <div className="d-flex">
                         <div className="col-3 categoryMenu">
@@ -94,15 +48,33 @@ class Categories extends Component {
                             </ul>
                         </div>
                         <div className="col categoryView">
-                            <ul>
-                                {items}
-                            </ul>
+                            <table style={{width:'100%'}}>
+                                <tr>
+                                    <th>№</th>
+                                    <th>Дата замовлення</th>
+                                    <th>Обладняння</th>
+                                    <th>Кількість</th>
+                                    <th>Вартість</th>
+                                    <th>Баланс у.о.</th>
+                                    <th>Статус</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>18.09.2018</td>
+                                    <td>Название товара</td>
+                                    <td>4</td>
+                                    <td>000 000</td>
+                                    <td>000 000</td>
+                                    <td style={{color:'#4ebc45'}}>Готовий до видачі</td>
+                                </tr>
+                            </table>
+
                         </div>
                     </div>
                 </div>
                 <Footer/>
             </div>
         )
-}}
+    }}
 
-export default connect(state => ({state:state}))(withRouter(Categories))
+export default connect(state => ({state:state}))(withRouter(Dealer))

@@ -7,12 +7,14 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import createHistory from 'history/createBrowserHistory';
 import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
+import { Switch, Route } from 'react-router'
 import reducers from './reducers';
 import logger from 'redux-logger';
 
 import MainPage from './components/MainPage'
 import Categories from './components/Categories'
 import Item from './components/Item'
+import Dealer from './components/Dealer'
 
 export const history = createHistory()
 const middleware = routerMiddleware(history)
@@ -22,9 +24,12 @@ export const store = createStore(reducers, applyMiddleware(middleware))
 ReactDOM.render(
     <Provider store={store}>
         <ConnectedRouter history={history}>
-            <div id="container">
-                <MainPage/>
-            </div>
+            <Switch>
+                <Route exact path="/" component={MainPage} />
+                <Route exact path="/categories" component={Categories} />
+                <Route exact path="/item" component={Item} />
+                <Route exact path="/dealer" component={Dealer} />
+            </Switch>
         </ConnectedRouter>
     </Provider>
     , document.getElementById('root')

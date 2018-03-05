@@ -1,0 +1,70 @@
+.dealer a:hover{
+    text-decoration: none;
+}
+
+.dealer .categoryMenu>ul{
+    margin: 0;
+    width: 100%;
+}
+.dealer .categoryMenu{
+    display: flex;
+    width: 300px;
+    background-color: #4f4f4f;
+    padding: 25px 0px 0px 0px;
+    height:auto;
+}
+.dealer .afterHeaderPicture{
+    width: 100%;
+    height: auto;
+}
+.dealer .categoryMenu ul>li{
+    width: auto;
+    padding: 10px 0px 10px 20px;
+}
+
+.dealer .categoryMenu ul>li>span{
+    color: #ffffff;
+    padding:5px 10px;
+    font-size: 24px;
+}
+.dealer .categoryMenu ul>li:hover{
+    cursor: pointer;
+    background-color: #454545;
+}
+.dealer .categoryView{
+    padding-top:40px;
+    display: flex;
+    justify-content: center;
+}
+.dealer .categoryView ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    Width: 90%;
+}
+.dealer .item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:200px;
+    height: 220px;
+    border: 1px solid #acacac;
+    margin-right: 20px;
+}
+.dealer .itemBottom{
+    height: 50px;
+    width: 200px;
+    margin-bottom: 20px;
+    background-color: #ffea00;
+}
+.dealer .itemPicture{
+    width: 200px;
+    height: auto;
+}
+.dealer table, th, td {
+    border: 3px solid #d0d0d0;
+    padding:15px;
+}
