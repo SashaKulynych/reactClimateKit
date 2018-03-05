@@ -1,21 +1,21 @@
-.footer{
+.footer .footerContainer{
     padding:50px 0px;
     background-color: #3a3a3a;
 }
-.footerBlockLeft{
+.footer .footerBlockLeft{
 
 }
-.footerList>li{
+.footer .footerList>li{
     cursor: pointer;
     padding:5px 0px 5px 0px;
     color:#fff;
 }
-.footerCenter{
+.footer .footerCenter{
     padding: 0px 25px;
     border-left: 1px solid #7c7c7c;
     border-right: 1px solid #7c7c7c;
 }
-.footerLogoTextLeft{
+.footer .footerLogoTextLeft{
     color: #fff;
     font-size: 20px;
     font-family: Arial;
@@ -23,7 +23,7 @@
     cursor: default;
     padding-right: 5px;
 }
-.footerLogoTextRight{
+.footer .footerLogoTextRight{
     color: #fff;
     font-size: 20px;
     font-family: Arial;
@@ -31,20 +31,20 @@
     cursor: default;
     padding-left: 5px;
 }
-.delivery{
+.footer .delivery{
     text-align: center;
 }
-.deliveryText{
+.footer .deliveryText{
     color: #fff;
     font-size: 20px;
     font-weight: bold;
 }
-.contactIcons{
+.footer .contactIcons{
     color:#fff;
     font-size: 20px;
     padding:10px 10px 10px 0px;
 }
-.contacts>li{
+.footer .contacts>li{
     cursor: pointer;
     color:#fff;
     padding:10px 0px 0px 10px;

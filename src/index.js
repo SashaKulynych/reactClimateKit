@@ -12,6 +12,7 @@ import logger from 'redux-logger';
 
 import MainPage from './components/MainPage'
 import Categories from './components/Categories'
+import Item from './components/Item'
 
 export const history = createHistory()
 const middleware = routerMiddleware(history)

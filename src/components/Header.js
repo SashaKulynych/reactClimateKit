@@ -33,10 +33,10 @@ export default class Header extends Component {
     openAuthonCloseModal(){
         this.setState({ openAuth: false });
     };
-    render() {
-        return (
-            <div className="container main">
-                <Modal showCloseIcon={false} open={this.state.openReg} onClose={this.openRegonCloseModal} little>
+    registrationView(){
+        return(
+            <Modal showCloseIcon={false} open={this.state.openReg} onClose={this.openRegonCloseModal} little>
+                <div className="header">
                     <div className="authorizationHeader d-flex align-items-center justify-content-center">
                         <span>РЕЄСТРАЦІЯ</span>
                     </div>
@@ -87,8 +87,14 @@ export default class Header extends Component {
                             </div>
                         </div>
                     </div>
-                </Modal>
-                <Modal showCloseIcon={false} open={this.state.openAuth} onClose={this.openAuthonCloseModal} little>
+                </div>
+            </Modal>
+        )
+    }
+    authorizationView(){
+        return(
+            <Modal showCloseIcon={false} open={this.state.openAuth} onClose={this.openAuthonCloseModal} little>
+                <div className="header">
                     <div className="authorizationHeader d-flex align-items-center justify-content-center">
                         <span>ВХІД</span>
                     </div>
@@ -134,87 +140,97 @@ export default class Header extends Component {
                             </div>
                         </div>
                     </div>
-                </Modal>
-                <div className="row header">
-                    <div className="row">
-                        <div className="circle">
-                            <i className="fab fa-facebook-f"/>
-                        </div>
-                        <div className="circle">
-                            <i className="fab fa-twitter"/>
-                        </div>
-                        <div className="circle">
-                            <i className="fab fa-instagram"/>
-                        </div>
-                    </div>
-                    <div className="row headerRightPart">
-                        <div className="text phone">+38 099 001 01 01</div>
-                        <div className="text email">email_adress@gmail.com</div>
-                        <div className="circle" onClick={this.openAuthonOpenModal}>
-                            <i className="fas fa-user"/>
-                        </div>
-                        <div className="text enter" onClick={this.openAuthonOpenModal}>Вхід</div>
-                    </div>
                 </div>
-                <div className="row menu d-flex align-items-center">
-                    <div className="col d-flex justify-content-start">
+            </Modal>
+        )
+    }
+    render() {
+        return (
+            <div className="header">
+                <div className="container main">
+                    {this.registrationView()}
+                    {this.authorizationView()}
+                    <div className="row headerCircles">
                         <div className="row">
-                            <div className="menu-left-part">
-                                <ul>
-                                    <li>
-                                        <a href="#">ПРО НАС</a>
-                                        <ul>
-                                            <li><a href="#">ІСТОРІЯ</a></li>
-                                            <li><a href="#">РЕВЕРЕНС</a></li>
-                                            <li><a href="#">СЕРВІС</a></li>
-                                            <li><a href="#">НОВИНИ</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                                <ul>
-                                    <li>
-                                        <a href="#">ОБЛАДНАННЯ</a>
-                                        <ul>
-                                            <li><a href="#">ІСТОРІЯ</a></li>
-                                            <li><a href="#">РЕВЕРЕНС</a></li>
-                                            <li><a href="#">СЕРВІС</a></li>
-                                            <li><a href="#">НОВИНИ</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                            <div className="circle">
+                                <i className="fab fa-facebook-f"/>
+                            </div>
+                            <div className="circle">
+                                <i className="fab fa-twitter"/>
+                            </div>
+                            <div className="circle">
+                                <i className="fab fa-instagram"/>
                             </div>
                         </div>
-                    </div>
-                    <div className="logoBlock">
-                        <div className="logo d-flex justify-content-center ">
-                            <div className="logoTextLeft logoTextStyle">Клімат</div>
-                            <img className="logoImage" src={require('./images/logo.png')} alt="Logo"/>
-                            <div className="logoTextRight logoTextStyle">Комплект</div>
+                        <div className="row headerRightPart">
+                            <div className="text phone">+38 099 001 01 01</div>
+                            <div className="text email">email_adress@gmail.com</div>
+                            <div className="circle" onClick={this.openAuthonOpenModal}>
+                                <i className="fas fa-user"/>
+                            </div>
+                            <div className="text enter" onClick={this.openAuthonOpenModal}>Вхід</div>
                         </div>
                     </div>
-                    <div className="col menu-right-part d-flex justify-content-end">
-                        <ul>
-                            <li>
-                                <a href="#">РЕФЕРЕНС</a>
-                                <ul>
-                                    <li><a href="#">ІСТОРІЯ</a></li>
-                                    <li><a href="#">РЕВЕРЕНС</a></li>
-                                    <li><a href="#">СЕРВІС</a></li>
-                                    <li><a href="#">НОВИНИ</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                <a href="#">КОНТАКТИ</a>
-                                <ul>
-                                    <li><a href="#">ІСТОРІЯ</a></li>
-                                    <li><a href="#">РЕВЕРЕНС</a></li>
-                                    <li><a href="#">СЕРВІС</a></li>
-                                    <li><a href="#">НОВИНИ</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+                    <div className="row menu d-flex align-items-center">
+                        <div className="col d-flex justify-content-start">
+                            <div className="row">
+                                <div className="menu-left-part">
+                                    <ul>
+                                        <li>
+                                            <a href="#">ПРО НАС</a>
+                                            <ul>
+                                                <li><a href="#">ІСТОРІЯ</a></li>
+                                                <li><a href="#">РЕВЕРЕНС</a></li>
+                                                <li><a href="#">СЕРВІС</a></li>
+                                                <li><a href="#">НОВИНИ</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <a href="#">ОБЛАДНАННЯ</a>
+                                            <ul>
+                                                <li><a href="#">ІСТОРІЯ</a></li>
+                                                <li><a href="#">РЕВЕРЕНС</a></li>
+                                                <li><a href="#">СЕРВІС</a></li>
+                                                <li><a href="#">НОВИНИ</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="logoBlock">
+                            <div className="logo d-flex justify-content-center ">
+                                <div className="logoTextLeft logoTextStyle">Клімат</div>
+                                <img className="logoImage" src={require('./images/logo.png')} alt="Logo"/>
+                                <div className="logoTextRight logoTextStyle">Комплект</div>
+                            </div>
+                        </div>
+                        <div className="col menu-right-part d-flex justify-content-end">
+                            <ul>
+                                <li>
+                                    <a href="#">РЕФЕРЕНС</a>
+                                    <ul>
+                                        <li><a href="#">ІСТОРІЯ</a></li>
+                                        <li><a href="#">РЕВЕРЕНС</a></li>
+                                        <li><a href="#">СЕРВІС</a></li>
+                                        <li><a href="#">НОВИНИ</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <a href="#">КОНТАКТИ</a>
+                                    <ul>
+                                        <li><a href="#">ІСТОРІЯ</a></li>
+                                        <li><a href="#">РЕВЕРЕНС</a></li>
+                                        <li><a href="#">СЕРВІС</a></li>
+                                        <li><a href="#">НОВИНИ</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

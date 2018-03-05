@@ -1,59 +1,66 @@
-a:hover{
+.categories a:hover{
     text-decoration: none;
 }
 
-.categoryMenu>ul{
+.categories .categoryMenu>ul{
     margin: 0;
     width: 100%;
 }
-.categoryMenu{
+.categories .categoryMenu{
     display: flex;
     width: 300px;
     background-color: #4f4f4f;
     padding: 25px 0px 0px 0px;
     height:auto;
 }
-.afterHeaderPicture{
+.categories .afterHeaderPicture{
     width: 100%;
     height: auto;
 }
-.categoryMenu ul>li{
+.categories .categoryMenu ul>li{
     width: auto;
     padding: 10px 0px 10px 20px;
 }
 
-.categoryMenu ul>li>span{
+.categories .categoryMenu ul>li>span{
     color: #ffffff;
     padding:5px 10px;
     font-size: 24px;
 }
-.categoryMenu ul>li:hover{
+.categories .categoryMenu ul>li:hover{
     cursor: pointer;
     background-color: #454545;
 }
-.categoryView{
-    padding:40px;
+.categories .categoryView{
+    padding-top:40px;
+    display: flex;
+    justify-content: center;
+}
+.categories .categoryView ul{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    text-align: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    Width: 90%;
 }
-.item{
+.categories .item{
     display: flex;
     justify-content: center;
     align-items: center;
     width:200px;
     height: 220px;
     border: 1px solid #acacac;
-    margin-right: 32px;
+    margin-right: 20px;
 }
-.itemBottom{
+.categories .itemBottom{
     height: 50px;
     width: 200px;
     margin-bottom: 20px;
     background-color: #ffea00;
 }
-.itemPicture{
+.categories .itemPicture{
     width: 200px;
     height: auto;
 }

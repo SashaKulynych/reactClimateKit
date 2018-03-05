@@ -1,22 +1,22 @@
-ul{
+.header ul{
     list-style-type: none;
     padding:0;
 }
-.main{
+.header .main{
     width: 1366px;
 }
-.header{
+.header .headerCircles{
     display: flex;
     align-items: center;
     height:55px;
     background-color: #323232;
     padding: 0px 55px;
 }
-.headerRightPart{
+.header .headerRightPart{
     position: absolute;
     right: 40px;
 }
-.circle{
+.header .circle{
     cursor: pointer;
     border-radius: 50px;
     background-color: white;
@@ -28,28 +28,28 @@ ul{
     justify-content: center;
     font-size: 20px;
 }
-.text{
+.header .text{
     color:white;
     font-size: 21px;
     font-family: Arial;
 }
-.phone{
+.header .phone{
     cursor: pointer;
     margin-right: 15px;
 }
-.email{
+.header .email{
     cursor: pointer;
     margin:0px 10px;
 }
-.enter{
+.header .enter{
     cursor: pointer;
 }
 /*dropdown menu left part*/
-.menu-left-part{
+.header .menu-left-part{
     z-index: 1000;
     padding-left: 40px;
 }
-.menu-left-part ul
+.header .menu-left-part ul
 {
     list-style:none;
     position:relative;
@@ -58,7 +58,7 @@ ul{
     padding:0;
 }
 
-.menu-left-part ul a
+.header .menu-left-part ul a
 {
     display:block;
     color:#323232;
@@ -68,7 +68,7 @@ ul{
     font-family:Arial
 }
 
-.menu-left-part ul li
+.header .menu-left-part ul li
 {
     position:relative;
     float:left;
@@ -76,12 +76,12 @@ ul{
     padding:0;
 }
 
-.menu-left-part ul li a:hover
+.header .menu-left-part ul li a:hover
 {
     color:#dfa46a
 }
 
-.menu-left-part ul ul
+.header .menu-left-part ul ul
 {
     display:none;
     position:absolute;
@@ -93,40 +93,40 @@ ul{
 
 }
 
-.menu-left-part ul ul li
+.header .menu-left-part ul ul li
 {
     margin:0px 10px;
     float:none;
     width:200px
 }
-.menu-left-part ul ul li:hover{
+.header .menu-left-part ul ul li:hover{
     background-color: #fe9228;
 }
-.menu-left-part ul ul a
+.header .menu-left-part ul ul a
 {
     line-height:120%;
     padding:10px 15px;
 }
-.menu-left-part ul ul a:hover{
+.header .menu-left-part ul ul a:hover{
     color:#fff;
 }
 
-.menu-left-part ul ul ul
+.header .menu-left-part ul ul ul
 {
     top:0;
     left:100%
 }
 
-.menu-left-part ul li:hover > ul
+.header .menu-left-part ul li:hover > ul
 {
     display:block
 }
 /*dropdown menu right part*/
-.menu-right-part{
+.header .menu-right-part{
     z-index: 1000;
     padding-right: 40px;
 }
-.menu-right-part ul
+.header .menu-right-part ul
 {
     list-style:none;
     position:relative;
@@ -135,7 +135,7 @@ ul{
     padding:0
 }
 
-.menu-right-part ul a
+.header .menu-right-part ul a
 {
     display:block;
     color:#323232;
@@ -145,7 +145,7 @@ ul{
     font-family:Arial
 }
 
-.menu-right-part ul li
+.header .menu-right-part ul li
 {
     position:relative;
     float:left;
@@ -153,11 +153,11 @@ ul{
     padding:0
 }
 
-.menu-right-part ul>li>a:hover
+.header .menu-right-part ul>li>a:hover
 {
     color:#dfa56a;
 }
-.menu-right-part ul ul
+.header .menu-right-part ul ul
 {
     display:none;
     position:absolute;
@@ -168,81 +168,81 @@ ul{
     padding:0
 }
 
-.menu-right-part ul ul li
+.header .menu-right-part ul ul li
 {
     float:none;
     width:200px;
     margin:0px 10px;
 }
-.menu-right-part ul ul li:hover
+.header .menu-right-part ul ul li:hover
 {
     color:#dfa56a;
     background-color: #fe9228;
 }
 
-.menu-right-part ul ul a
+.header .menu-right-part ul ul a
 {
     line-height:120%;
     padding:10px 15px
 }
-.menu-right-part ul ul a:hover{
+.header .menu-right-part ul ul a:hover{
     color:#fff;
 }
-.menu-right-part ul ul ul
+.header .menu-right-part ul ul ul
 {
     top:0;
     right:100%
 }
 
-.menu-right-part ul li:hover > ul
+.header .menu-right-part ul li:hover > ul
 {
     display:block
 }
-.authorization{
+.header .authorization{
     background-color: #5f5f5f;
     padding: 35px 35px 35px 35px;
 }
-.authorizationHeader{
+.header .authorizationHeader{
     width:100%;
     height:50px;
     background-color: #fed328;
 }
-.authGroup{
+.header .authGroup{
 
 }
-.authInputGroup{
+.header .authInputGroup{
     margin-bottom: 20px;
     height:50px;
 }
-.authInputIcon{
+.header .authInputIcon{
     background-color: #fed328;
     width: 50px;
     height: 50px;
     font-size: 30px;
     color: white;
 }
-.authGroup input{
+.header .authGroup input{
     height: 50px;
     font-size: 20px;
     padding-left: 15px;
     width: 300px;
 }
-.buttonEnter{
+.header .buttonEnter{
     cursor: pointer;
     padding:5px 20px;
     background-color: #fed328;
     width:fit-content;
 }
-.reg_forgetPassword{
+.header .reg_forgetPassword{
     margin-top: 20px;
     color: white;
 }
-.rememberMe{
+.header .rememberMe{
     margin-left: 10px;
     color: white;
     cursor: pointer;
 }
-.typeButtons{
+.header .typeButtons{
     cursor: pointer;
     height:50px;
     background-color: white;
@@ -252,41 +252,41 @@ ul{
     justify-content: center;
     align-items: center;
 }
-.paddingHorizontal15{
+.header .paddingHorizontal15{
     padding:0px 15px;
 }
-.registrationView,.forgerPassword{
+.header .registrationView,.forgerPassword{
     cursor: pointer;
 }
-.logoBlock{
+.header .logoBlock{
     position: absolute;
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
 }
-.logo{
+.header .logo{
     position: relative;
     height:114px;
 }
-.logoTextStyle{
+.header .logoTextStyle{
     color: #828282;
     font-size: 20px;
     font-family: Arial;
     font-weight: bold;
     cursor: default;
 }
-.logoTextRight{
+.header .logoTextRight{
     position: absolute;
     bottom: 0px;
     margin-left: 140px;
 }
-.logoTextLeft{
+.header .logoTextLeft{
     position: absolute;
     bottom: 0px;
     margin-left: -125px;
 }
-.logoImage{
+.header .logoImage{
     position: absolute;
     z-index: 1;
     width: 175px;

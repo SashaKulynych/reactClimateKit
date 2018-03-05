@@ -1,0 +1,45 @@
+.item .itemContainer{
+    padding:100px 20px 20px 20px;
+    margin: 0;
+}
+.item .itemImage{
+    width:100%;
+    height: auto;
+}
+.item .subTitle{
+    color:#4c4c4c;
+    font-family: Arial;
+    font-size: 20px;
+}
+.item .title{
+    color:#4e4e4e;
+    font-family: Arial;
+    font-size: 60px;
+}
+.item .description{
+    color:#4c4c4c;
+    font-family: Arial;
+    text-align: justify;
+    font-size: 20px;
+}
+.item .rightButtonStyle{
+    margin-top: 30px;
+}
+.item .rightButtonStyle span{
+    font-weight:bold;
+    color: #6ac0f3;
+    cursor: pointer;
+    padding:10px 20px 10px 20px;
+    margin:0px 10px 0px 0px;
+    border: 2px solid #6ac0f3;
+    border-radius: 50px;
+}
+.item .leftPartCircle{
+    width: 80px;
+    height:80px;
+    border-radius: 50px;
+    background-color: #dcdcdc;
+}
+.item .rightPart{
+    padding-top: 50px;
+}

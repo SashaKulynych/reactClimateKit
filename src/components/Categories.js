@@ -52,44 +52,48 @@ export default class Categories extends Component {
     render() {
         let items=itemsArray.map((item,index)=>{
             return(
-                <div key={index}>
+                <li key={index}>
                     <div className="item">
                         <img className="itemPicture" src={item.image} alt=""/>
                     </div>
                     <div className="itemBottom">
                         {item.name}
                     </div>
-                </div>
+                </li>
             )
         });
         return (
             <div>
                 <Header/>
-                <div className="afterHeader">
-                    <img className="afterHeaderPicture" src={require('./images/pictureCategory.png')} alt=""/>
-                </div>
-                <div className="d-flex">
-                    <div className="col-3 categoryMenu">
-                        <ul>
-                            <li onClick={()=>this.changeTab(0)}>
-                                <span className={this.state.tab===0?css(styles.borderYellow):null}>Меню 1</span>
-                            </li>
-                            <li onClick={()=>this.changeTab(1)}>
-                                <span className={this.state.tab===1?css(styles.borderYellow):null}>Меню 2</span>
-                            </li>
-                            <li onClick={()=>this.changeTab(2)}>
-                                <span className={this.state.tab===2?css(styles.borderYellow):null}>Меню 3</span>
-                            </li>
-                            <li onClick={()=>this.changeTab(3)}>
-                                <span className={this.state.tab===3?css(styles.borderYellow):null}>Меню 4</span>
-                            </li>
-                            <li onClick={()=>this.changeTab(4)}>
-                                <span className={this.state.tab===4?css(styles.borderYellow):null} >Меню 5</span>
-                            </li>
-                        </ul>
+                <div className="categories">
+                    <div className="afterHeader">
+                        <img className="afterHeaderPicture" src={require('./images/pictureCategory.png')} alt=""/>
                     </div>
-                    <div className="col categoryView">
-                        {items}
+                    <div className="d-flex">
+                        <div className="col-3 categoryMenu">
+                            <ul>
+                                <li onClick={()=>this.changeTab(0)}>
+                                    <span className={this.state.tab===0?css(styles.borderYellow):null}>Меню 1</span>
+                                </li>
+                                <li onClick={()=>this.changeTab(1)}>
+                                    <span className={this.state.tab===1?css(styles.borderYellow):null}>Меню 2</span>
+                                </li>
+                                <li onClick={()=>this.changeTab(2)}>
+                                    <span className={this.state.tab===2?css(styles.borderYellow):null}>Меню 3</span>
+                                </li>
+                                <li onClick={()=>this.changeTab(3)}>
+                                    <span className={this.state.tab===3?css(styles.borderYellow):null}>Меню 4</span>
+                                </li>
+                                <li onClick={()=>this.changeTab(4)}>
+                                    <span className={this.state.tab===4?css(styles.borderYellow):null} >Меню 5</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="col categoryView">
+                            <ul>
+                                {items}
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <Footer/>
