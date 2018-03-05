@@ -247,7 +247,7 @@ class Header extends Component {
                                         <li>
                                             <a href="#">ПРО НАС</a>
                                             <ul>
-                                                <li><a href="#">ІСТОРІЯ</a></li>
+                                                <li onClick={()=>this.props.history.push('/categories')}><a href="#">Категорії</a></li>
                                                 <li><a href="#">РЕВЕРЕНС</a></li>
                                                 <li><a href="#">СЕРВІС</a></li>
                                                 <li><a href="#">НОВИНИ</a></li>
