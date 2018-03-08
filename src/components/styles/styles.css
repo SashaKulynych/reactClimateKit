@@ -5,6 +5,9 @@ ul{
 .main{
     width: 1366px;
 }
+.mainPageSlider{
+
+}
 .slider{
     width: 100%;
     padding:100px 70px 70px 70px;
@@ -13,7 +16,6 @@ ul{
 }
 .textInSlider{
     color: white;
-    width: 520px;
     font-size: 22px;
     text-align: justify;
     cursor: default;

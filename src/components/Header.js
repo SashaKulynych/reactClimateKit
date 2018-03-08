@@ -6,6 +6,8 @@ import Notifications, {notify} from 'react-notify-toast';
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 
+import * as API from '../actions/api'
+
 class Header extends Component {
     constructor(){
         super();
@@ -14,11 +16,12 @@ class Header extends Component {
             openReg:false,
             personType:0,
             registration:{
-                orgName:'',
+                org_name:'',
                 name:'',
                 email:'',
                 password:'',
-                confirmPassword:'',
+                c_password:'',
+                org_address:'',
                 phone:''
             }
         };
@@ -45,7 +48,7 @@ class Header extends Component {
         })
     }
 
-    registration(){
+    async registration(){
         let toast = { background: '#fed328', text: "#5f5f5f" };
         for(let i in this.state.registration){
             if(this.state.registration[i]==='')
@@ -54,9 +57,11 @@ class Header extends Component {
         let re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if(!re.test(this.state.registration.email))
             return notify.show("Емейл некоректний!", "custom", 3000, toast);;
-        if(this.state.registration.password!==this.state.registration.confirmPassword){
+        if(this.state.registration.password!==this.state.registration.c_password){
             return notify.show("Паролі не співпадають!", "custom", 3000,toast);
         }
+
+        await API.register(this.state.registration)
 
     }
 
@@ -73,8 +78,8 @@ class Header extends Component {
                                 <div className="authInputIcon d-flex align-items-center justify-content-center">
                                     <i className="fas fa-users"/>
                                 </div>
-                                <input value={this.state.registration.orgName}
-                                       onChange={(e)=>this.onChangeRegistration('orgName',e.target.value)}
+                                <input value={this.state.registration.org_name}
+                                       onChange={(e)=>this.onChangeRegistration('org_name',e.target.value)}
                                        type="text" placeholder="Назва організації"/>
                             </div>
                             <div className="authInputGroup row d-flex align-items-center justify-content-center">
@@ -119,8 +124,18 @@ class Header extends Component {
                                     <i className="fas fa-unlock"/>
                                 </div>
                                 <input type="password" placeholder="Повторити пароль"
-                                       value={this.state.registration.confirmPassword}
-                                       onChange={(e)=>this.onChangeRegistration('confirmPassword',e.target.value)}
+                                       value={this.state.registration.c_password}
+                                       onChange={(e)=>this.onChangeRegistration('c_password',e.target.value)}
+                                />
+                            </div>
+                            <div className="authInputGroup row d-flex align-items-center justify-content-center">
+                                <div className="authInputIcon d-flex align-items-center justify-content-center">
+                                    <i className="fas fa-map-marker"/>
+                                </div>
+
+                                <input type="text" placeholder="Адреса організіції"
+                                       value={this.state.registration.org_address}
+                                       onChange={(e)=>this.onChangeRegistration('org_address',e.target.value)}
                                 />
                             </div>
                             <div className="authInputGroup row d-flex align-items-center justify-content-center">
@@ -239,67 +254,117 @@ class Header extends Component {
                             <div className="text enter" onClick={this.openAuthonOpenModal}>Вхід</div>
                         </div>
                     </div>
-                    <div className="row menu d-flex align-items-center">
-                        <div className="col d-flex justify-content-start">
-                            <div className="row">
-                                <div className="menu-left-part">
-                                    <ul>
-                                        <li>
-                                            <a href="#">ПРО НАС</a>
-                                            <ul>
-                                                <li onClick={()=>this.props.history.push('/categories')}><a href="#">Категорії</a></li>
-                                                <li><a href="#">РЕВЕРЕНС</a></li>
-                                                <li><a href="#">СЕРВІС</a></li>
-                                                <li><a href="#">НОВИНИ</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                    <ul>
-                                        <li>
-                                            <a href="#">ОБЛАДНАННЯ</a>
-                                            <ul>
-                                                <li><a href="#">ІСТОРІЯ</a></li>
-                                                <li><a href="#">РЕВЕРЕНС</a></li>
-                                                <li><a href="#">СЕРВІС</a></li>
-                                                <li><a href="#">НОВИНИ</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                    <nav className="navbar navbar-toggleable-md navbar-light bg-faded hideMainMenu">
+                        <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+                        <a className="navbar-brand" href="#">Клімат комплект</a>
+                        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div className="navbar-nav">
+                                <span data-toggle="collapse" data-target="#1">Всі сторінки</span>
+                                <ul id="1" className="collapse">
+                                    <li onClick={()=>this.props.history.push('/')}><span>Головна</span></li>
+                                    <li onClick={()=>this.props.history.push('/categories')}><span>Категорії</span></li>
+                                    <li onClick={()=>this.props.history.push('/item')}><span>Товар</span></li>
+                                    <li onClick={()=>this.props.history.push('/dealer')}><span>Диллер</span></li>
+                                </ul>
+                                <span data-toggle="collapse" data-target="#2">ОБЛАДНАННЯ </span>
+                                <ul id="2" className="collapse">
+                                    <li><span>ІСТОРІЯ</span></li>
+                                    <li><span>РЕВЕРЕНС</span></li>
+                                    <li><span>СЕРВІС</span></li>
+                                    <li><span>НОВИНИ</span></li>
+                                </ul>
+                                <span data-toggle="collapse" data-target="#3">РЕФЕРЕНС</span>
+                                <ul id="3" className="collapse">
+                                    <li>
+                                        <span>РЕФЕРЕНС</span>
+                                        <ul>
+                                            <li><span>ІСТОРІЯ</span></li>
+                                            <li><span>РЕВЕРЕНС</span></li>
+                                            <li><span>СЕРВІС</span></li>
+                                            <li><span>НОВИНИ</span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <span data-toggle="collapse" data-target="#4">КОНТАКТИ</span>
+                                <ul  id="4" className="collapse">
+                                    <li>
+                                        <span>КОНТАКТИ</span>
+                                        <ul>
+                                            <li><span>ІСТОРІЯ</span></li>
+                                            <li><span>РЕВЕРЕНС</span></li>
+                                            <li><span>СЕРВІС</span></li>
+                                            <li><span>НОВИНИ</span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div className="mainMenu">
+                        <div className="row menu d-flex align-items-center">
+                            <div className="col d-flex justify-content-start">
+                                <div className="row">
+                                    <div className="menu-left-part">
+                                        <ul>
+                                            <li>
+                                                <span>Всі сторінки</span>
+                                                <ul>
+                                                    <li onClick={()=>this.props.history.push('/')}><span>Головна</span></li>
+                                                    <li onClick={()=>this.props.history.push('/categories')}><span>Категорії</span></li>
+                                                    <li onClick={()=>this.props.history.push('/item')}><span>Товар</span></li>
+                                                    <li onClick={()=>this.props.history.push('/dealer')}><span>Диллер</span></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <span>ОБЛАДНАННЯ</span>
+                                                <ul>
+                                                    <li><span>ІСТОРІЯ</span></li>
+                                                    <li><span>РЕВЕРЕНС</span></li>
+                                                    <li><span>СЕРВІС</span></li>
+                                                    <li><span>НОВИНИ</span></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="logoBlock">
-                            <div className="logo d-flex justify-content-center ">
-                                <div className="logoTextLeft logoTextStyle">Клімат</div>
-                                <img className="logoImage"
-                                     onClick={()=>this.props.history.push('/')}
-                                     src={require('./images/logo.png')} alt="Logo"/>
-                                <div className="logoTextRight logoTextStyle">Комплект</div>
+                            <div className="logoBlock">
+                                <div className="logo d-flex justify-content-center ">
+                                    <div className="logoTextLeft logoTextStyle">Клімат</div>
+                                    <img className="logoImage"
+                                         onClick={()=>this.props.history.push('/')}
+                                         src={require('./images/logo.png')} alt="Logo"/>
+                                    <div className="logoTextRight logoTextStyle">Комплект</div>
+                                </div>
                             </div>
-                        </div>
-                        <div className="col menu-right-part d-flex justify-content-end">
-                            <ul>
-                                <li>
-                                    <a href="#">РЕФЕРЕНС</a>
-                                    <ul>
-                                        <li><a href="#">ІСТОРІЯ</a></li>
-                                        <li><a href="#">РЕВЕРЕНС</a></li>
-                                        <li><a href="#">СЕРВІС</a></li>
-                                        <li><a href="#">НОВИНИ</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <ul>
-                                <li>
-                                    <a href="#">КОНТАКТИ</a>
-                                    <ul>
-                                        <li><a href="#">ІСТОРІЯ</a></li>
-                                        <li><a href="#">РЕВЕРЕНС</a></li>
-                                        <li><a href="#">СЕРВІС</a></li>
-                                        <li><a href="#">НОВИНИ</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                            <div className="col menu-right-part d-flex justify-content-end">
+                                <ul>
+                                    <li>
+                                        <span>РЕФЕРЕНС</span>
+                                        <ul>
+                                            <li><span>ІСТОРІЯ</span></li>
+                                            <li><span>РЕВЕРЕНС</span></li>
+                                            <li><span>СЕРВІС</span></li>
+                                            <li><span>НОВИНИ</span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <span>КОНТАКТИ</span>
+                                        <ul>
+                                            <li><span>ІСТОРІЯ</span></li>
+                                            <li><span>РЕВЕРЕНС</span></li>
+                                            <li><span>СЕРВІС</span></li>
+                                            <li><span>НОВИНИ</span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
