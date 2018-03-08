@@ -254,54 +254,50 @@ class Header extends Component {
                             <div className="text enter" onClick={this.openAuthonOpenModal}>Вхід</div>
                         </div>
                     </div>
-                    <nav className="navbar navbar-toggleable-md navbar-light bg-faded hideMainMenu">
-                        <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
-                        </button>
-                        <a className="navbar-brand" href="#">Клімат комплект</a>
-                        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                            <div className="navbar-nav">
-                                <span data-toggle="collapse" data-target="#1">Всі сторінки</span>
-                                <ul id="1" className="collapse">
-                                    <li onClick={()=>this.props.history.push('/')}><span>Головна</span></li>
-                                    <li onClick={()=>this.props.history.push('/categories')}><span>Категорії</span></li>
-                                    <li onClick={()=>this.props.history.push('/item')}><span>Товар</span></li>
-                                    <li onClick={()=>this.props.history.push('/dealer')}><span>Диллер</span></li>
-                                </ul>
-                                <span data-toggle="collapse" data-target="#2">ОБЛАДНАННЯ </span>
-                                <ul id="2" className="collapse">
-                                    <li><span>ІСТОРІЯ</span></li>
-                                    <li><span>РЕВЕРЕНС</span></li>
-                                    <li><span>СЕРВІС</span></li>
-                                    <li><span>НОВИНИ</span></li>
-                                </ul>
-                                <span data-toggle="collapse" data-target="#3">РЕФЕРЕНС</span>
-                                <ul id="3" className="collapse">
-                                    <li>
-                                        <span>РЕФЕРЕНС</span>
-                                        <ul>
-                                            <li><span>ІСТОРІЯ</span></li>
-                                            <li><span>РЕВЕРЕНС</span></li>
-                                            <li><span>СЕРВІС</span></li>
-                                            <li><span>НОВИНИ</span></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                                <span data-toggle="collapse" data-target="#4">КОНТАКТИ</span>
-                                <ul  id="4" className="collapse">
-                                    <li>
-                                        <span>КОНТАКТИ</span>
-                                        <ul>
-                                            <li><span>ІСТОРІЯ</span></li>
-                                            <li><span>РЕВЕРЕНС</span></li>
-                                            <li><span>СЕРВІС</span></li>
-                                            <li><span>НОВИНИ</span></li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                    <div className="hideMenu">
+                        <nav className="navbar navbar-toggleable-md navbar-light bg-faded hideMainMenu">
+                            <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                                <span className="navbar-toggler-icon"></span>
+                            </button>
+                            <div className="row" data-toggle="collapse" data-target="#navbarNavAltMarkup">
+                                <img className="hideMenuLogo"
+                                     src={require('./images/logo.png')} alt="Logo"/>
+                                <span className="navbar-brand " >Клімат комплект</span>
                             </div>
-                        </div>
-                    </nav>
+                            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                                <div className="navbar-nav">
+                                    <span data-toggle="collapse" data-target="#1">Всі сторінки</span>
+                                    <ul id="1" className="collapse">
+                                        <li onClick={()=>this.props.history.push('/')}><span>Головна</span></li>
+                                        <li onClick={()=>this.props.history.push('/categories')}><span>Категорії</span></li>
+                                        <li onClick={()=>this.props.history.push('/item')}><span>Товар</span></li>
+                                        <li onClick={()=>this.props.history.push('/dealer')}><span>Диллер</span></li>
+                                    </ul>
+                                    <span data-toggle="collapse" data-target="#2">ОБЛАДНАННЯ   </span>
+                                    <ul id="2" className="collapse">
+                                        <li><span>ІСТОРІЯ</span></li>
+                                        <li><span>РЕВЕРЕНС</span></li>
+                                        <li><span>СЕРВІС</span></li>
+                                        <li><span>НОВИНИ</span></li>
+                                    </ul>
+                                    <span data-toggle="collapse" data-target="#3">РЕФЕРЕНС</span>
+                                    <ul id="3" className="collapse">
+                                        <li><span>ІСТОРІЯ</span></li>
+                                        <li><span>РЕВЕРЕНС</span></li>
+                                        <li><span>СЕРВІС</span></li>
+                                        <li><span>НОВИНИ</span></li>
+                                    </ul>
+                                    <span data-toggle="collapse" data-target="#4">КОНТАКТИ</span>
+                                    <ul  id="4" className="collapse">
+                                        <li><span>ІСТОРІЯ</span></li>
+                                        <li><span>РЕВЕРЕНС</span></li>
+                                        <li><span>СЕРВІС</span></li>
+                                        <li><span>НОВИНИ</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
                     <div className="mainMenu">
                         <div className="row menu d-flex align-items-center">
                             <div className="col d-flex justify-content-start">

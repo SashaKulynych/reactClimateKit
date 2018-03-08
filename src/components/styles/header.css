@@ -314,6 +314,31 @@
     color: #9f9f9f;
     cursor: pointer;
 }
+.header .hideMenuLogo{
+    height: 40px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.header .navbar-brand{
+    cursor: pointer;
+}
+.header .navbar-nav>span{
+    margin-top: 5px;
+      padding: 10px 0px 10px 0px;
+      color: black;
+      cursor: pointer;
+  }
+.header .navbar-nav>span:hover{
+    color: #fe9228;
+}
+.header .navbar-nav>ul>li>span{
+    padding: 5px 0px 5px 10px;
+    cursor: pointer;
+}
+.header .navbar-nav>ul>li:hover{
+    background-color: #fe9228;
+    color: #fff;
+}
 @media (max-width: 992px) {
     .header .mainMenu{
         display: none;

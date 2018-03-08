@@ -14,6 +14,14 @@ ul{
     background-image: url("../images/background.png");
     background-repeat: no-repeat no-repeat;
 }
+@media (max-width: 992px) {
+    .slider{
+        padding:20px 70px 70px 70px;
+    }
+    .phone{
+        display: none;
+    }
+}
 .textInSlider{
     color: white;
     font-size: 22px;

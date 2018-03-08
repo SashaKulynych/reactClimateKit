@@ -26,6 +26,7 @@ class MainPage extends Component {
                 <div className="container main">
                     <div className="row">
                         <div className="slider">
+
                             <Slider className="mainPageSlider" {...settings}>
                                 <div className="d-flex flex-row  ">
                                     <div className="row d-flex flex-row">
