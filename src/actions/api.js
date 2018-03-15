@@ -1,10 +1,16 @@
 import {host} from './const'
 
-export async function login() {
+export async function login(login) {
+    let formData = new FormData();
+    for(let i in login){
+        console.log(i,login[i])
+        formData.append(i, login[i]);
+    }
     let response = await fetch(host+'api/login', {
         method: 'POST',
-        body: JSON.stringify({})
+        body: formData
     })
+    return response
 }
 
 export async function register(registration) {
@@ -15,17 +21,8 @@ export async function register(registration) {
     }
     console.log(formData)
     let response = await fetch(host+'api/register', {
-        headers: {
-            'Content-Type': 'application/json'
-        },
         method: 'POST',
-        mode:'no-cors',
         body:formData
     })
-
-
-    console.log(response)
-    if(response.status !== 200) throw new Error('Проблема з реєстрацією');
-
-
+    return response
 }

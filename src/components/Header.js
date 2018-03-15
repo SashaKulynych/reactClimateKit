@@ -7,14 +7,19 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 
 import * as API from '../actions/api'
-
+let toast = { background: '#fed328', text: "#5f5f5f" };
 class Header extends Component {
     constructor(){
         super();
         this.state = {
+            userInfo:null,
             openAuth: false,
             openReg:false,
             personType:0,
+            login:{
+                name:'',
+                password:''
+            },
             registration:{
                 org_name:'',
                 name:'',
@@ -31,7 +36,17 @@ class Header extends Component {
         this.openAuthonOpenModal=this.openAuthonOpenModal.bind(this);
         this.openAuthonCloseModal=this.openAuthonCloseModal.bind(this);
         this.onChangeRegistration = this.onChangeRegistration.bind(this);
+        this.onChangeAuth = this.onChangeAuth.bind(this);
+        this.login = this.login.bind(this);
     }
+
+    async componentDidMount(){
+        let userInfo = await localStorage.getItem('userInfo');
+        if(userInfo!==null){
+            this.setState({userInfo:userInfo})
+        }
+    }
+
     personType(index){this.setState({personType:index})}
 
     openRegonOpenModal(){this.setState({ openReg: true });};
@@ -47,9 +62,22 @@ class Header extends Component {
             registration:{...this.state.registration,[field]:value}
         })
     }
+    onChangeAuth(field,value){
+        this.setState({
+            login:{...this.state.login,[field]:value}
+        })
+    }
+    async login(){
+        await API.login(this.state.login).then((response)=>{
+            if(response.status !== 200) throw new Error('Проблема з ');
+            return response.json()
+        }).then((res)=>{
+            localStorage.setItem('userInfo', res);
+            this.setState({userInfo:res})
+        });
+    }
 
     async registration(){
-        let toast = { background: '#fed328', text: "#5f5f5f" };
         for(let i in this.state.registration){
             if(this.state.registration[i]==='')
                 return notify.show("Не всі поля заповнені!", "custom", 3000, toast);
@@ -61,7 +89,13 @@ class Header extends Component {
             return notify.show("Паролі не співпадають!", "custom", 3000,toast);
         }
 
-        await API.register(this.state.registration)
+        await API.register(this.state.registration).then((response)=>{
+            if(response.status !== 200) throw new Error('Проблема з реєстрацією');
+            return response.json()
+        }).then((res)=>{
+            localStorage.setItem('userInfo', res);
+            this.setState({userInfo:res})
+        });
 
     }
 
@@ -186,18 +220,23 @@ class Header extends Component {
                                 <div className="authInputIcon d-flex align-items-center justify-content-center">
                                     <i className="fas fa-user"/>
                                 </div>
-                                <input type="text" placeholder="username"/>
+                                <input type="text" value={this.state.login.name} placeholder="username"
+                                    onChange={(e)=>this.onChangeAuth('name',e.target.value)}
+                                />
                             </div>
                             <div className="authInputGroup row d-flex align-items-center justify-content-center">
                                 <div className="authInputIcon d-flex align-items-center justify-content-center">
                                     <i className="fas fa-unlock-alt"/>
                                 </div>
-                                <input type="password" placeholder="password"/>
+                                <input type="password" placeholder="password"
+                                       value={this.state.login.password}
+                                       onChange={(e)=>this.onChangeAuth('password',e.target.value)}
+                                />
                             </div>
                         </div>
                         <div className="row">
                             <div className="col">
-                                <div className="buttonEnter">Увійти</div>
+                                <div className="buttonEnter" onClick={()=>this.login()}>Увійти</div>
                             </div>
                             <div className="col">
                                 <div className="d-flex align-items-center justify-content-end">
@@ -248,10 +287,19 @@ class Header extends Component {
                         <div className="row headerRightPart">
                             <div className="text phone">+38 099 001 01 01</div>
                             <div className="text email">email_adress@gmail.com</div>
-                            <div className="circle" onClick={this.openAuthonOpenModal}>
-                                <i className="fas fa-user"/>
-                            </div>
-                            <div className="text enter" onClick={this.openAuthonOpenModal}>Вхід</div>
+                            {this.state.userInfo===null?
+                                <div className="row">
+                                    <div className="circle" onClick={this.openAuthonOpenModal}>
+                                        <i className="fas fa-user"/>
+                                    </div>
+                                    <div className="text enter" onClick={this.openAuthonOpenModal}>Вхід</div>
+                                </div>:
+                                <div className="row">
+                                    <div className="circle" style={{backgroundColor:"#fe9228"}}>
+                                        <i className="fas fa-user"/>
+                                    </div>
+                                    <div className="text enter" >{this.state.userInfo.name}</div>
+                                </div>}
                         </div>
                     </div>
                     <div className="hideMenu">

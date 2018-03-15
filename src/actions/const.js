@@ -1,1 +1,1 @@
-export const host = 'http://open.patprofi.com/';
+export const host = 'http://admin.klimatkomplect.com.ua/public/';
