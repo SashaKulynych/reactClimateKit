@@ -19,7 +19,7 @@ import Dealer from './components/Dealer'
 export const history = createHistory()
 const middleware = routerMiddleware(history)
 
-export const store = createStore(reducers, applyMiddleware(middleware))
+export const store = createStore(reducers, applyMiddleware(middleware),applyMiddleware(logger))
 
 ReactDOM.render(
     <Provider store={store}>

@@ -7,6 +7,8 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 
 import * as API from '../actions/api'
+import * as user from '../actions/user'
+
 let toast = { background: '#fed328', text: "#5f5f5f" };
 class Header extends Component {
     constructor(){
@@ -43,7 +45,7 @@ class Header extends Component {
     async componentDidMount(){
         let userInfo = await localStorage.getItem('userInfo');
         if(userInfo!==null){
-            this.setState({userInfo:userInfo})
+            await user.userInfo(JSON.parse(userInfo))
         }
     }
 
@@ -69,15 +71,16 @@ class Header extends Component {
     }
     async login(){
         await API.login(this.state.login).then((response)=>{
-            if(response.status !== 200) throw new Error('Проблема з ');
-            return response.json()
-        }).then((res)=>{
-            localStorage.setItem('userInfo', res);
-            this.setState({userInfo:res})
-        });
+            console.log(response)
+            if(response.status !== 200) throw new Error('Проблема з авторизацією');
+            let res = response.json();
+            localStorage.setItem('userInfo', JSON.stringify(res.success));
+            user.userInfo(res.success)
+        })
     }
 
     async registration(){
+
         for(let i in this.state.registration){
             if(this.state.registration[i]==='')
                 return notify.show("Не всі поля заповнені!", "custom", 3000, toast);
@@ -88,13 +91,13 @@ class Header extends Component {
         if(this.state.registration.password!==this.state.registration.c_password){
             return notify.show("Паролі не співпадають!", "custom", 3000,toast);
         }
-
         await API.register(this.state.registration).then((response)=>{
             if(response.status !== 200) throw new Error('Проблема з реєстрацією');
             return response.json()
         }).then((res)=>{
-            localStorage.setItem('userInfo', res);
-            this.setState({userInfo:res})
+            localStorage.setItem('userInfo', JSON.stringify(res.success));
+            user.userInfo(res.success)
+            this.openRegonCloseModal()
         });
 
     }
@@ -265,6 +268,13 @@ class Header extends Component {
             </Modal>
         )
     }
+    logOut(){
+        let r = window.confirm("Вийти з акаунта?");
+        if (r == true) {
+            localStorage.removeItem("userInfo");
+            user.userInfo(null)
+        }
+    }
     render() {
         return (
             <div className="header">
@@ -287,18 +297,18 @@ class Header extends Component {
                         <div className="row headerRightPart">
                             <div className="text phone">+38 099 001 01 01</div>
                             <div className="text email">email_adress@gmail.com</div>
-                            {this.state.userInfo===null?
+                            {this.props.userInfo===null?
                                 <div className="row">
                                     <div className="circle" onClick={this.openAuthonOpenModal}>
                                         <i className="fas fa-user"/>
                                     </div>
                                     <div className="text enter" onClick={this.openAuthonOpenModal}>Вхід</div>
                                 </div>:
-                                <div className="row">
+                                <div className="row" onClick={()=>this.logOut()}>
                                     <div className="circle" style={{backgroundColor:"#fe9228"}}>
                                         <i className="fas fa-user"/>
                                     </div>
-                                    <div className="text enter" >{this.state.userInfo.name}</div>
+                                    <div className="text enter" >{this.props.userInfo.name}</div>
                                 </div>}
                         </div>
                     </div>
@@ -416,4 +426,4 @@ class Header extends Component {
         )
     }
 }
-export default connect(state => ({state:state}))(withRouter(Header))
+export default connect(state => ({userInfo:state.user}))(withRouter(Header))

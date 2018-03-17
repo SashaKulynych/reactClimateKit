@@ -1,10 +1,15 @@
-
-
-export const defaultState = {
-    name:'',
-    token:''
+export const actionTypes={
+    USER_INFO:'USER_INFO'
 }
 
+export const defaultState = null;
+
 export default function user(state = defaultState, action) {
-    return state;
+    switch (action.type){
+        case 'USER_INFO':{
+            return action.payload;
+        }
+        default:
+            return state;
+    }
 }
