@@ -8,6 +8,8 @@ import {styles} from './styles/styles'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 
+import * as API from '../actions/api'
+
 const itemsArray=[
     {
         image:require('./images/cooler.png'),
@@ -46,12 +48,22 @@ class Categories extends Component {
     constructor(props){
         super(props)
         this.state = {
-            tab:0
+            tab:0,
+            categories:[]
         };
         this.changeTab = this.changeTab.bind(this);
     }
     changeTab(index){
         this.setState({tab:index})
+    }
+    async componentDidMount()
+    {
+        await API.getCategories(1).then((value)=>{
+            console.log(value)
+            this.setState({categories:value})
+        });
+        API.getSubCategories(1);
+
     }
     render() {
         let items=itemsArray.map((item,index)=>{
@@ -66,6 +78,13 @@ class Categories extends Component {
                 </li>
             )
         });
+        let categories=this.state.categories.map((value,index)=>{
+            return(
+                <li key={index} onClick={()=>this.changeTab(index)}>
+                    <span className={this.state.tab===index?css(styles.borderYellow):null}>{value.name}</span>
+                </li>
+            )
+        });
         return (
             <div>
                 <Header/>
@@ -76,21 +95,7 @@ class Categories extends Component {
                     <div className="d-flex">
                         <div className="col-3 categoryMenu">
                             <ul>
-                                <li onClick={()=>this.changeTab(0)}>
-                                    <span className={this.state.tab===0?css(styles.borderYellow):null}>Меню 1</span>
-                                </li>
-                                <li onClick={()=>this.changeTab(1)}>
-                                    <span className={this.state.tab===1?css(styles.borderYellow):null}>Меню 2</span>
-                                </li>
-                                <li onClick={()=>this.changeTab(2)}>
-                                    <span className={this.state.tab===2?css(styles.borderYellow):null}>Меню 3</span>
-                                </li>
-                                <li onClick={()=>this.changeTab(3)}>
-                                    <span className={this.state.tab===3?css(styles.borderYellow):null}>Меню 4</span>
-                                </li>
-                                <li onClick={()=>this.changeTab(4)}>
-                                    <span className={this.state.tab===4?css(styles.borderYellow):null} >Меню 5</span>
-                                </li>
+                                {categories}
                             </ul>
                         </div>
                         <div className="col categoryView">

@@ -43,3 +43,7 @@
 .item .rightPart{
     padding-top: 50px;
 }
+.item .chart{
+    display: flex;
+    justify-content: center;
+}

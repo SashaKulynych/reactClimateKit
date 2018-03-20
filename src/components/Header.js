@@ -19,7 +19,7 @@ class Header extends Component {
             openReg:false,
             personType:0,
             login:{
-                name:'',
+                email:'',
                 password:''
             },
             registration:{
@@ -43,9 +43,15 @@ class Header extends Component {
     }
 
     async componentDidMount(){
-        let userInfo = await localStorage.getItem('userInfo');
+        API.getNews();
+        API.getManufact();
+        // Only with token
+        let userInfo = await JSON.parse(localStorage.getItem('userInfo'));
+        API.getProducts()
+        API.getModels();
+
         if(userInfo!==null){
-            await user.userInfo(JSON.parse(userInfo))
+            await user.userInfo(userInfo)
         }
     }
 
@@ -223,8 +229,8 @@ class Header extends Component {
                                 <div className="authInputIcon d-flex align-items-center justify-content-center">
                                     <i className="fas fa-user"/>
                                 </div>
-                                <input type="text" value={this.state.login.name} placeholder="username"
-                                    onChange={(e)=>this.onChangeAuth('name',e.target.value)}
+                                <input type="text" value={this.state.login.email} placeholder="username"
+                                    onChange={(e)=>this.onChangeAuth('email',e.target.value)}
                                 />
                             </div>
                             <div className="authInputGroup row d-flex align-items-center justify-content-center">
