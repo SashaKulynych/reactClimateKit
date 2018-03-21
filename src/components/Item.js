@@ -77,6 +77,20 @@ class Item extends Component {
                                     <span>Характеристики</span>
                                 </div>
                             </div>
+                            <div className="row" style={{marginTop:20}}>
+                                <div className="row saveButtonStyle">
+                                    <div className="circle">
+                                        <i className="far fa-save"/>
+                                    </div>
+                                    <span>зберегти проект</span>
+                                </div>
+                                <div className="row addButtonStyle">
+                                    <div className="circle">
+                                        <i className="fas fa-check"/>
+                                    </div>
+                                    <span>додати в кошик</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="chart">

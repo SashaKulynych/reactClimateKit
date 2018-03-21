@@ -15,6 +15,7 @@ import MainPage from './components/MainPage'
 import Categories from './components/Categories'
 import Item from './components/Item'
 import Dealer from './components/Dealer'
+import Text from './components/Text'
 
 export const history = createHistory()
 const middleware = routerMiddleware(history)
@@ -29,6 +30,7 @@ ReactDOM.render(
                 <Route exact path="/categories" component={Categories} />
                 <Route exact path="/item" component={Item} />
                 <Route exact path="/dealer" component={Dealer} />
+                <Route exact path="/text" component={Text} />
             </Switch>
         </ConnectedRouter>
     </Provider>

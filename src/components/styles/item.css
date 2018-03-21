@@ -47,3 +47,30 @@
     display: flex;
     justify-content: center;
 }
+.item .saveButtonStyle, .item .addButtonStyle{
+    width: 225px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    background-color: #e18c44;
+    margin-left: 0px;
+    margin-right: 15px;
+    border: 4px solid #e18c44;
+    border-radius: 50px;
+}
+.item .saveButtonStyle span, .item .addButtonStyle span{
+    color: white;
+}
+.item .circle{
+    cursor: pointer;
+    border-radius: 50px;
+    background-color: white;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-right:20px;
+    color: #e18c44;
+}

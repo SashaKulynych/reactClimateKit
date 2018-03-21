@@ -78,10 +78,15 @@ class Header extends Component {
     async login(){
         await API.login(this.state.login).then((response)=>{
             console.log(response)
-            if(response.status !== 200) throw new Error('Проблема з авторизацією');
-            let res = response.json();
+            if(response.status !== 200) return console.log('Проблема з авторизацією');
+            return response.json();
+        }).then((res)=>{
+            console.log(res)
             localStorage.setItem('userInfo', JSON.stringify(res.success));
             user.userInfo(res.success)
+
+
+            this.openAuthonCloseModal()
         })
     }
 
@@ -336,8 +341,9 @@ class Header extends Component {
                                         <li onClick={()=>this.props.history.push('/categories')}><span>Категорії</span></li>
                                         <li onClick={()=>this.props.history.push('/item')}><span>Товар</span></li>
                                         <li onClick={()=>this.props.history.push('/dealer')}><span>Диллер</span></li>
+                                        <li onClick={()=>this.props.history.push('/text')}><span>Текст</span></li>
                                     </ul>
-                                    <span data-toggle="collapse" data-target="#2">ОБЛАДНАННЯ   </span>
+                                    <span data-toggle="collapse" data-target="#2">ОБЛАДНАННЯ</span>
                                     <ul id="2" className="collapse">
                                         <li><span>ІСТОРІЯ</span></li>
                                         <li><span>РЕВЕРЕНС</span></li>
@@ -375,6 +381,7 @@ class Header extends Component {
                                                     <li onClick={()=>this.props.history.push('/categories')}><span>Категорії</span></li>
                                                     <li onClick={()=>this.props.history.push('/item')}><span>Товар</span></li>
                                                     <li onClick={()=>this.props.history.push('/dealer')}><span>Диллер</span></li>
+                                                    <li onClick={()=>this.props.history.push('/text')}><span>Текст</span></li>
                                                 </ul>
                                             </li>
                                         </ul>

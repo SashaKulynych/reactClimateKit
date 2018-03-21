@@ -1,0 +1,11 @@
+.text .textContainer{
+    padding:100px 50px 50px 50px;
+}
+.text .textTitle{
+    padding:25px 0px 25px 0px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+}
