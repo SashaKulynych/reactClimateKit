@@ -28,11 +28,16 @@ export async function getNews() {
     }).then((response)=>response.json())
         .then((res)=>console.log('getNews ',res))
 }
-export async function getManufact() {
-    await fetch(host+'api/get-manufact', {
+export async function getNewsPage() {
+    await fetch(host+'api/get-news?all=1', {
         method: 'GET',
     }).then((response)=>response.json())
-        .then((res)=>console.log('getManufact ',res))
+        .then((res)=>console.log('getNewsPage ',res))
+}
+export async function getManufact() {
+    return await fetch(host+'api/get-manufact', {
+        method: 'GET',
+    }).then((response)=>response.json())
 }
 export async function getCategories(id) {
     return await fetch(host+'api/get-category?manufact='+id, {
@@ -40,10 +45,9 @@ export async function getCategories(id) {
     }).then((response)=>response.json())
 }
 export async function getSubCategories(id) {
-    await fetch(host+'api/get-sub-category?category='+id, {
+    return await fetch(host+'api/get-sub-category?category='+id, {
         method: 'GET'
     }).then((response)=>response.json())
-        .then((res)=>console.log('getSubCategories  ',res))
 }
 export async function getModels() {
     return await fetch(host+'api/get-models?product=2', {

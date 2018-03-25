@@ -1,3 +1,10 @@
+.header a{
+    color: #323232;
+    text-decoration: none;
+}
+.header a:hover{
+    color: white;
+}
 .header .mainMenu{
     display: block;
 }
@@ -92,6 +99,7 @@
 
 .header .menu-left-part ul li span:hover
 {
+    cursor: pointer;
     color:#dfa46a
 }
 
@@ -169,6 +177,7 @@
 
 .header .menu-right-part ul>li>span:hover
 {
+    cursor: pointer;
     color:#dfa56a;
 }
 .header .menu-right-part ul ul
@@ -338,6 +347,10 @@
 .header .navbar-nav>ul>li:hover{
     background-color: #fe9228;
     color: #fff;
+}
+.header .manufactName{
+    color:#828282;
+    padding:0px 25px;
 }
 @media (max-width: 992px) {
     .header .mainMenu{

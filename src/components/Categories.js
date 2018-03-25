@@ -56,14 +56,14 @@ class Categories extends Component {
     changeTab(index){
         this.setState({tab:index})
     }
+
     async componentDidMount()
     {
-        await API.getCategories(1).then((value)=>{
-            console.log(value)
+        console.log('params',this.props.match.params.id)
+        await API.getSubCategories(this.props.match.params.id).then((value)=>{
+            console.log('value',value)
             this.setState({categories:value})
         });
-        API.getSubCategories(1);
-
     }
     render() {
         let items=itemsArray.map((item,index)=>{

@@ -27,7 +27,7 @@ ReactDOM.render(
         <ConnectedRouter history={history}>
             <Switch>
                 <Route exact path="/" component={MainPage} />
-                <Route exact path="/categories" component={Categories} />
+                <Route exact path="/category/:id" component={Categories} />
                 <Route exact path="/item" component={Item} />
                 <Route exact path="/dealer" component={Dealer} />
                 <Route exact path="/text" component={Text} />

@@ -5,7 +5,7 @@ import Notifications, {notify} from 'react-notify-toast';
 
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
-
+import {host} from '../actions/const'
 import * as API from '../actions/api'
 import * as user from '../actions/user'
 
@@ -18,6 +18,8 @@ class Header extends Component {
             openAuth: false,
             openReg:false,
             personType:0,
+            manufacts:[],
+            categories:[],
             login:{
                 email:'',
                 password:''
@@ -44,7 +46,15 @@ class Header extends Component {
 
     async componentDidMount(){
         API.getNews();
-        API.getManufact();
+        await API.getCategories(1).then((value)=>{
+            console.log(value)
+            this.setState({categories:value})
+        });
+        await API.getManufact().then((value)=>{
+            console.log(value)
+            this.setState({manufacts:value})
+        });
+        API.getSubCategories(1);
         // Only with token
         let userInfo = await JSON.parse(localStorage.getItem('userInfo'));
         API.getProducts()
@@ -287,6 +297,19 @@ class Header extends Component {
         }
     }
     render() {
+        let manufacts = this.state.manufacts.map((value)=>{
+            let array = [];
+            array.push(<p className="manufactName">{value.name}</p>);
+            let catArray = this.state.categories.filter((val)=>val.manufact_id===value.id);
+            catArray.map((category)=>{
+                console.log('category',category)
+                array.push( <li>
+                    <a href={'/category/'+category.id}><span>{category.name}</span></a>
+                </li>)
+            })
+            return array;
+        })
+
         return (
             <div className="header">
                 <Notifications options={{zIndex: 5000}} />
@@ -335,34 +358,25 @@ class Header extends Component {
                             </div>
                             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                                 <div className="navbar-nav">
-                                    <span data-toggle="collapse" data-target="#1">Всі сторінки</span>
+                                    <span data-toggle="collapse" data-target="#1">ЗАГАЛЬНЕ</span>
                                     <ul id="1" className="collapse">
-                                        <li onClick={()=>this.props.history.push('/')}><span>Головна</span></li>
-                                        <li onClick={()=>this.props.history.push('/categories')}><span>Категорії</span></li>
-                                        <li onClick={()=>this.props.history.push('/item')}><span>Товар</span></li>
-                                        <li onClick={()=>this.props.history.push('/dealer')}><span>Диллер</span></li>
-                                        <li onClick={()=>this.props.history.push('/text')}><span>Текст</span></li>
+                                        <li onClick={()=>this.props.history.push('/text')}><span>Історія</span></li>
+                                        <li onClick={()=>this.props.history.push('/text')}><span>Референс</span></li>
+                                        <li onClick={()=>this.props.history.push('/')}><span>Новини</span></li>
                                     </ul>
-                                    <span data-toggle="collapse" data-target="#2">ОБЛАДНАННЯ</span>
+                                    <span data-toggle="collapse" data-target="#2">КАТЕГОРІЇ</span>
                                     <ul id="2" className="collapse">
-                                        <li><span>ІСТОРІЯ</span></li>
-                                        <li><span>РЕВЕРЕНС</span></li>
-                                        <li><span>СЕРВІС</span></li>
-                                        <li><span>НОВИНИ</span></li>
+                                        {manufacts}
                                     </ul>
-                                    <span data-toggle="collapse" data-target="#3">РЕФЕРЕНС</span>
+                                    <span data-toggle="collapse" data-target="#3">КОНТАКТИ</span>
                                     <ul id="3" className="collapse">
-                                        <li><span>ІСТОРІЯ</span></li>
-                                        <li><span>РЕВЕРЕНС</span></li>
-                                        <li><span>СЕРВІС</span></li>
-                                        <li><span>НОВИНИ</span></li>
+                                        <li onClick={()=>this.props.history.push('/text')}><span>Номера</span></li>
+                                        <li onClick={()=>this.props.history.push('/text')}><span>Адреси</span></li>
                                     </ul>
-                                    <span data-toggle="collapse" data-target="#4">КОНТАКТИ</span>
+                                    <span data-toggle="collapse" data-target="#4">ПІДТРИМКА</span>
                                     <ul  id="4" className="collapse">
-                                        <li><span>ІСТОРІЯ</span></li>
-                                        <li><span>РЕВЕРЕНС</span></li>
-                                        <li><span>СЕРВІС</span></li>
-                                        <li><span>НОВИНИ</span></li>
+                                        <li onClick={()=>this.props.history.push('/text')}><span>Відеокурс</span></li>
+                                        <li onClick={()=>this.props.history.push('/text')}><span>Зв'язок</span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -375,24 +389,19 @@ class Header extends Component {
                                     <div className="menu-left-part">
                                         <ul>
                                             <li>
-                                                <span>Всі сторінки</span>
-                                                <ul>
-                                                    <li onClick={()=>this.props.history.push('/')}><span>Головна</span></li>
-                                                    <li onClick={()=>this.props.history.push('/categories')}><span>Категорії</span></li>
-                                                    <li onClick={()=>this.props.history.push('/item')}><span>Товар</span></li>
-                                                    <li onClick={()=>this.props.history.push('/dealer')}><span>Диллер</span></li>
-                                                    <li onClick={()=>this.props.history.push('/text')}><span>Текст</span></li>
+                                                <span data-toggle="collapse" data-target="#1">ЗАГАЛЬНЕ</span>
+                                                <ul id="1" className="collapse">
+                                                    <li onClick={()=>this.props.history.push('/text')}><span>Історія</span></li>
+                                                    <li onClick={()=>this.props.history.push('/text')}><span>Референс</span></li>
+                                                    <li onClick={()=>this.props.history.push('/')}><span>Новини</span></li>
                                                 </ul>
                                             </li>
                                         </ul>
                                         <ul>
                                             <li>
-                                                <span>ОБЛАДНАННЯ</span>
-                                                <ul>
-                                                    <li><span>ІСТОРІЯ</span></li>
-                                                    <li><span>РЕВЕРЕНС</span></li>
-                                                    <li><span>СЕРВІС</span></li>
-                                                    <li><span>НОВИНИ</span></li>
+                                                <span data-toggle="collapse" data-target="#2">КАТЕГОРІЇ</span>
+                                                <ul id="2" className="collapse">
+                                                    {manufacts}
                                                 </ul>
                                             </li>
                                         </ul>
@@ -411,23 +420,19 @@ class Header extends Component {
                             <div className="col menu-right-part d-flex justify-content-end">
                                 <ul>
                                     <li>
-                                        <span>РЕФЕРЕНС</span>
-                                        <ul>
-                                            <li><span>ІСТОРІЯ</span></li>
-                                            <li><span>РЕВЕРЕНС</span></li>
-                                            <li><span>СЕРВІС</span></li>
-                                            <li><span>НОВИНИ</span></li>
+                                        <span data-toggle="collapse" data-target="#3">КОНТАКТИ</span>
+                                        <ul id="3" className="collapse">
+                                            <li onClick={()=>this.props.history.push('/text')}><span>Номера</span></li>
+                                            <li onClick={()=>this.props.history.push('/text')}><span>Адреси</span></li>
                                         </ul>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li>
-                                        <span>КОНТАКТИ</span>
-                                        <ul>
-                                            <li><span>ІСТОРІЯ</span></li>
-                                            <li><span>РЕВЕРЕНС</span></li>
-                                            <li><span>СЕРВІС</span></li>
-                                            <li><span>НОВИНИ</span></li>
+                                        <span data-toggle="collapse" data-target="#4">ПІДТРИМКА</span>
+                                        <ul  id="4" className="collapse">
+                                            <li onClick={()=>this.props.history.push('/text')}><span>Відеокурс</span></li>
+                                            <li onClick={()=>this.props.history.push('/text')}><span>Зв'язок</span></li>
                                         </ul>
                                     </li>
                                 </ul>
