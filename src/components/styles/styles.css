@@ -94,12 +94,21 @@ ul{
     font-size: 20px;
     font-family: Arial;
     color: #3b3b3b;
+    display:inline-block;
+    width:200px;
+    white-space: nowrap;
+    overflow:hidden !important;
+    text-overflow: ellipsis;
+
 }
 .newsDescription{
     text-align: center;
     font-size: 15px;
     font-family: Arial;
     color: #808080;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    height:90px;
 }
 .allNews{
     margin-bottom:25px;

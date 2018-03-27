@@ -97,7 +97,6 @@ class Header extends Component {
     }
 
     async registration(){
-
         for(let i in this.state.registration){
             if(this.state.registration[i]==='')
                 return notify.show("Не всі поля заповнені!", "custom", 3000, toast);

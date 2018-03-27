@@ -3,13 +3,25 @@ import './styles/styles.css';
 import Slider from 'react-slick';
 import Header from './Header'
 import Footer from './Footer'
-
+import * as API from '../actions/api'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 
 class MainPage extends Component {
+    constructor(){
+        super();
+        this.state={
+            news:[]
+        }
+    }
     componentWillMount(){
         document.title = "Головна сторінка";
+    }
+    componentDidMount(){
+        API.getNews().then((value)=>{
+            console.log('getNews',value)
+            this.setState({news:value})
+        })
     }
     render() {
         let settings = {
@@ -20,6 +32,43 @@ class MainPage extends Component {
             slidesToScroll: 1,
             adaptiveHeight:true
         };
+        let newsFirst=this.state.news.slice(0,2).map((value)=>{
+            let maxLength = 15;
+            let title =value.title.length>15?value.title.substring(0, maxLength) + '...':value.title;
+            let img = value.img===''?{backgroundImage: `url(${require('./images/newsPicture1.png')}`}:
+                {backgroundImage: "url(http://admin.klimatkomplect.com.ua/image/news/"+value.img+")"};
+            return(
+
+                <div className="col newsBlock">
+                    <div className="newsPicture d-flex justify-content-center align-items-center"
+                         style={img}>
+                        <div className="pictureTitle"></div>
+                    </div>
+                    <div className="newsTitle d-flex justify-content-center">{title}</div>
+                    <div className="newsDescription">
+                        {value.text}
+                    </div>
+                </div>
+            )
+        })
+        let newsSecond=this.state.news.slice(2,4).map((value)=>{
+            let maxLength = 15;
+            let title =value.title.length>15?value.title.substring(0, maxLength) + '...':value.title;
+            let img = value.img===''?{backgroundImage: `url(${require('./images/newsPicture1.png')}`}:
+                {backgroundImage: "url(http://admin.klimatkomplect.com.ua/image/news/"+value.img+")"};
+            return(
+                <div className="col newsBlock">
+                    <div className="newsPicture d-flex justify-content-center align-items-center"
+                         style={img}>
+                        <div className="pictureTitle"></div>
+                    </div>
+                    <div className="newsTitle d-flex justify-content-center">{title}</div>
+                    <div className="newsDescription">
+                        {value.text}
+                    </div>
+                </div>
+            )
+        })
         return (
             <div>
                 <Header/>
@@ -148,32 +197,7 @@ class MainPage extends Component {
                     <div className="row">
                         <div className="col mr-3">
                             <div className="row mb-4">
-                                <div className="col newsBlock">
-                                    <div className="newsPicture d-flex justify-content-center align-items-center"
-                                         style={{backgroundImage: `url(${require('./images/newsPicture1.png')}`}}>
-                                        <div className="pictureTitle">Заголовок</div>
-                                    </div>
-                                    <div className="newsTitle d-flex justify-content-center">Заголовок новости</div>
-                                    <div className="newsDescription">
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipisicing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua.
-                                        Ut enim ad
-                                    </div>
-                                </div>
-                                <div className="col newsBlock">
-                                    <div className="newsPicture d-flex justify-content-center align-items-center"
-                                         style={{backgroundImage: `url(${require('./images/newsPicture2.png')}`}}>
-                                        <div className="pictureTitle">Заголовок</div>
-                                    </div>
-                                    <div className="newsTitle d-flex justify-content-center">Заголовок новости</div>
-                                    <div className="newsDescription">
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipisicing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua.
-                                        Ut enim ad
-                                    </div>
-                                </div>
+                                {newsFirst}
                             </div>
                             <div className="d-flex justify-content-center">
                                 <span className="allNews">Всі новини</span>
@@ -181,32 +205,7 @@ class MainPage extends Component {
                         </div>
                         <div className="col ml-3">
                             <div className="row mb-4">
-                                <div className="col newsBlock">
-                                    <div className="newsPicture d-flex justify-content-center align-items-center"
-                                         style={{backgroundImage: `url(${require('./images/newsPicture1.png')}`}}>
-                                        <div className="pictureTitle">Заголовок</div>
-                                    </div>
-                                    <div className="newsTitle d-flex justify-content-center">Заголовок новости </div>
-                                    <div className="newsDescription">
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipisicing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua.
-                                        Ut enim ad
-                                    </div>
-                                </div>
-                                <div className="col newsBlock">
-                                    <div className="newsPicture d-flex justify-content-center align-items-center"
-                                         style={{backgroundImage: `url(${require('./images/newsPicture2.png')}`}}>
-                                        <div className="pictureTitle">Заголовок</div>
-                                    </div>
-                                    <div className="newsTitle d-flex justify-content-center">Заголовок новости</div>
-                                    <div className="newsDescription">
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipisicing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua.
-                                        Ut enim ad
-                                    </div>
-                                </div>
+                                {newsSecond}
                             </div>
                             <div className="d-flex justify-content-center">
                                 <span className="allNews">Всі статті</span>

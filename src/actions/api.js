@@ -22,10 +22,9 @@ export async function register(registration) {
     })
 }
 export async function getNews() {
-    await fetch(host+'api/get-news', {
+    return await fetch(host+'api/get-news', {
         method: 'GET',
     }).then((response)=>response.json())
-        .then((res)=>console.log('getNews ',res))
 }
 export async function getNewsPage() {
     await fetch(host+'api/get-news?all=1', {
