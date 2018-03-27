@@ -49,7 +49,8 @@ class Categories extends Component {
         super(props)
         this.state = {
             tab:0,
-            categories:[]
+            categories:[],
+            products:[]
         };
         this.changeTab = this.changeTab.bind(this);
     }
@@ -59,25 +60,16 @@ class Categories extends Component {
 
     async componentDidMount()
     {
-        console.log('params',this.props.match.params.id)
         await API.getSubCategories(this.props.match.params.id).then((value)=>{
-            console.log('value',value)
             this.setState({categories:value})
+        });
+        await API.getProducts(this.props.match.params.id).then((value)=>{
+            console.log('getProducts',value)
+            this.setState({products:value})
         });
     }
     render() {
-        let items=itemsArray.map((item,index)=>{
-            return(
-                <li key={index}>
-                    <div className="item">
-                        <img className="itemPicture" src={item.image} alt=""/>
-                    </div>
-                    <div className="itemBottom">
-                        {item.name}
-                    </div>
-                </li>
-            )
-        });
+
         let categories=this.state.categories.map((value,index)=>{
             return(
                 <li key={index} onClick={()=>this.changeTab(index)}>
@@ -85,6 +77,18 @@ class Categories extends Component {
                 </li>
             )
         });
+        let items = this.state.products.map((value,index)=>{
+            return(
+                <li key={index}>
+                    <div className="item">
+                        <img className="itemPicture" src={require('./images/cooler.png')} alt=""/>
+                    </div>
+                    <div className="itemBottom">
+                        {value.name}
+                    </div>
+                </li>
+            )
+        })
         return (
             <div>
                 <Header/>

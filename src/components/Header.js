@@ -46,14 +46,8 @@ class Header extends Component {
 
     async componentDidMount(){
         API.getNews();
-        await API.getCategories().then((value)=>{
-            console.log('getCategories',value)
-            this.setState({categories:value})
-        });
-        await API.getManufact().then((value)=>{
-            console.log(value)
-            this.setState({manufacts:value})
-        });
+        await API.getCategories().then((value)=>{this.setState({categories:value})});
+        await API.getManufact().then((value)=>{this.setState({manufacts:value})});
         API.getSubCategories(1);
         // Only with token
         let userInfo = await JSON.parse(localStorage.getItem('userInfo'));
@@ -308,7 +302,6 @@ class Header extends Component {
             array.push(<p className="manufactName">{value.name}</p>);
             let catArray = this.state.categories.filter((val)=>val.manufact_id===value.id);
             catArray.map((category)=>{
-                console.log('category',category)
                 array.push( <li>
                     <a href={'/category/'+category.id}><span>{category.name}</span></a>
                 </li>)

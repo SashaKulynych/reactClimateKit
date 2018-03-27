@@ -3,7 +3,6 @@ import {host} from './const'
 export async function login(login) {
     let formData = new FormData();
     for(let i in login){
-        console.log(i,login[i])
         formData.append(i, login[i]);
     }
 
@@ -14,7 +13,6 @@ export async function login(login) {
 }
 
 export async function register(registration) {
-    console.log(registration)
     let formData = new FormData();
     for(let i in registration)
         formData.append(i, registration[i]);
@@ -56,9 +54,8 @@ export async function getModels() {
     }).then((response)=>response.json())
         .then((res)=>console.log('getModels',res))
 }
-export async function getProducts() {
-    await fetch(host+'api/get-products?sub-category=1', {
+export async function getProducts(id) {
+    return await fetch(host+'api/get-products?sub_category='+id, {
         method: 'GET'
     }).then((response)=>response.json())
-        .then((res)=>console.log('getProducts  ',res))
 }
