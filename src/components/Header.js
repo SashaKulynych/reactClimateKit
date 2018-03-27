@@ -46,8 +46,8 @@ class Header extends Component {
 
     async componentDidMount(){
         API.getNews();
-        await API.getCategories(1).then((value)=>{
-            console.log(value)
+        await API.getCategories().then((value)=>{
+            console.log('getCategories',value)
             this.setState({categories:value})
         });
         await API.getManufact().then((value)=>{
@@ -92,10 +92,12 @@ class Header extends Component {
             return response.json();
         }).then((res)=>{
             console.log(res)
+            if(res===undefined){
+                return alert('Некоректні дані для входу')
+            }
+
             localStorage.setItem('userInfo', JSON.stringify(res.success));
             user.userInfo(res.success)
-
-
             this.openAuthonCloseModal()
         })
     }
@@ -112,14 +114,18 @@ class Header extends Component {
         if(this.state.registration.password!==this.state.registration.c_password){
             return notify.show("Паролі не співпадають!", "custom", 3000,toast);
         }
-        await API.register(this.state.registration).then((response)=>{
-            if(response.status !== 200) throw new Error('Проблема з реєстрацією');
-            return response.json()
-        }).then((res)=>{
-            localStorage.setItem('userInfo', JSON.stringify(res.success));
-            user.userInfo(res.success)
-            this.openRegonCloseModal()
-        });
+        try{
+            await API.register(this.state.registration).then((response)=>{
+                if(response.status !== 200) throw new Error('Проблема з реєстрацією');
+                return response.json()
+            }).then((res)=>{
+                localStorage.setItem('userInfo', JSON.stringify(res.success));
+                user.userInfo(res.success)
+                this.openRegonCloseModal()
+            });
+        }
+        catch (e){alert('Проблема з реєстрацією')}
+
 
     }
 

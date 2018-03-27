@@ -14,6 +14,7 @@ export async function login(login) {
 }
 
 export async function register(registration) {
+    console.log(registration)
     let formData = new FormData();
     for(let i in registration)
         formData.append(i, registration[i]);
@@ -39,8 +40,8 @@ export async function getManufact() {
         method: 'GET',
     }).then((response)=>response.json())
 }
-export async function getCategories(id) {
-    return await fetch(host+'api/get-category?manufact='+id, {
+export async function getCategories() {
+    return await fetch(host+'api/get-category', {
         method: 'GET'
     }).then((response)=>response.json())
 }
