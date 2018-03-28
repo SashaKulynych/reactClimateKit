@@ -359,8 +359,8 @@ class Header extends Component {
                                     <span data-toggle="collapse" data-target="#1">ЗАГАЛЬНЕ</span>
                                     <ul id="1" className="collapse">
                                         <li onClick={()=>this.props.history.push('/text')}><span>Історія</span></li>
-                                        <li onClick={()=>this.props.history.push('/text')}><span>Референс</span></li>
-                                        <li onClick={()=>this.props.history.push('/')}><span>Новини</span></li>
+                                        <li onClick={()=>this.props.history.push('/reference')}><span>Референс</span></li>
+                                        <li onClick={()=>this.props.history.push('/service')}><span>Сервіс</span></li>
                                     </ul>
                                     <span data-toggle="collapse" data-target="#2">КАТЕГОРІЇ</span>
                                     <ul id="2" className="collapse">
@@ -375,6 +375,7 @@ class Header extends Component {
                                     <ul  id="4" className="collapse">
                                         <li onClick={()=>this.props.history.push('/text')}><span>Відеокурс</span></li>
                                         <li onClick={()=>this.props.history.push('/text')}><span>Зв'язок</span></li>
+                                        <li onClick={()=>this.props.history.push('/about')}><span>Про компанію</span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -390,8 +391,8 @@ class Header extends Component {
                                                 <span data-toggle="collapse" data-target="#1">ЗАГАЛЬНЕ</span>
                                                 <ul id="1" className="collapse">
                                                     <li onClick={()=>this.props.history.push('/text')}><span>Історія</span></li>
-                                                    <li onClick={()=>this.props.history.push('/text')}><span>Референс</span></li>
-                                                    <li onClick={()=>this.props.history.push('/')}><span>Новини</span></li>
+                                                    <li onClick={()=>this.props.history.push('/reference')}><span>Референс</span></li>
+                                                    <li onClick={()=>this.props.history.push('/service')}><span>Сервіс</span></li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -431,6 +432,7 @@ class Header extends Component {
                                         <ul  id="4" className="collapse">
                                             <li onClick={()=>this.props.history.push('/text')}><span>Відеокурс</span></li>
                                             <li onClick={()=>this.props.history.push('/text')}><span>Зв'язок</span></li>
+                                            <li onClick={()=>this.props.history.push('/about')}><span>Про компанію</span></li>
                                         </ul>
                                     </li>
                                 </ul>

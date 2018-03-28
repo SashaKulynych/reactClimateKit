@@ -61,6 +61,7 @@ class Categories extends Component {
     async componentDidMount()
     {
         await API.getSubCategories(this.props.match.params.id).then((value)=>{
+            console.log('getSubCategories',value)
             this.setState({categories:value})
         });
         await API.getProducts(this.props.match.params.id).then((value)=>{

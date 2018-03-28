@@ -16,6 +16,9 @@ import Categories from './components/Categories'
 import Item from './components/Item'
 import Dealer from './components/Dealer'
 import Text from './components/Text'
+import Reference from './components/Reference'
+import Service from './components/Service'
+import About from './components/About'
 
 export const history = createHistory()
 const middleware = routerMiddleware(history)
@@ -31,6 +34,9 @@ ReactDOM.render(
                 <Route exact path="/item" component={Item} />
                 <Route exact path="/dealer" component={Dealer} />
                 <Route exact path="/text" component={Text} />
+                <Route exact path="/reference" component={Reference} />
+                <Route exact path="/service" component={Service} />
+                <Route exact path="/about" component={About} />
             </Switch>
         </ConnectedRouter>
     </Provider>
