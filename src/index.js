@@ -19,6 +19,7 @@ import Text from './components/Text'
 import Reference from './components/Reference'
 import Service from './components/Service'
 import About from './components/About'
+import Support from './components/Support'
 
 export const history = createHistory()
 const middleware = routerMiddleware(history)
@@ -37,6 +38,7 @@ ReactDOM.render(
                 <Route exact path="/reference" component={Reference} />
                 <Route exact path="/service" component={Service} />
                 <Route exact path="/about" component={About} />
+                <Route exact path="/support" component={Support} />
             </Switch>
         </ConnectedRouter>
     </Provider>

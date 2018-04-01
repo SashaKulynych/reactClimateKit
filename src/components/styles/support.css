@@ -1,0 +1,72 @@
+.support .afterHeaderPicture{
+    width: 100%;
+    height: auto;
+}
+.support .contactContainer{
+    padding:75px;
+}
+.support .supportContainer{
+    padding:75px;
+}
+.support .contact{
+    font-size: 24px;
+    padding-bottom: 50px;
+}
+.support .phones,.support .emails, .support .location{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 25px;
+}
+.support .numbers{
+    display: flex;
+    flex-direction: column;
+    padding-left: 25px;
+}
+.support .phoneIcon, .support .emailIcon, .support .locationIcon{
+    font-size: 26px;
+}
+.support .supportContainer{
+    background-color: yellow;
+}
+.support .nameInputGroup{
+    padding:10px;
+    border:1px solid black;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+.support .nameInputGroup input{
+    padding-left: 10px;
+    margin-left: 10px;
+    background-color: transparent;
+    border: none;
+    width: 95%;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1; /* Firefox */
+}
+input:focus {
+    border: none;
+}
+.support .nameInputGroup textarea{
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    padding:10px;
+}
+.support .sendMessage{
+    cursor: pointer;
+    padding:20px;
+    border-radius: 35px;
+    border: 1px solid black;
+}
+.support .arrow{
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+    border-right:40px solid yellow;
+    left:-40px;
+}

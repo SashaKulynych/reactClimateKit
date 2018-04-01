@@ -374,7 +374,7 @@ class Header extends Component {
                                     <span data-toggle="collapse" data-target="#4">ПІДТРИМКА</span>
                                     <ul  id="4" className="collapse">
                                         <li onClick={()=>this.props.history.push('/text')}><span>Відеокурс</span></li>
-                                        <li onClick={()=>this.props.history.push('/text')}><span>Зв'язок</span></li>
+                                        <li onClick={()=>this.props.history.push('/support')}><span>Зв'язок</span></li>
                                         <li onClick={()=>this.props.history.push('/about')}><span>Про компанію</span></li>
                                     </ul>
                                 </div>
@@ -431,7 +431,7 @@ class Header extends Component {
                                         <span data-toggle="collapse" data-target="#4">ПІДТРИМКА</span>
                                         <ul  id="4" className="collapse">
                                             <li onClick={()=>this.props.history.push('/text')}><span>Відеокурс</span></li>
-                                            <li onClick={()=>this.props.history.push('/text')}><span>Зв'язок</span></li>
+                                            <li onClick={()=>this.props.history.push('/support')}><span>Зв'язок</span></li>
                                             <li onClick={()=>this.props.history.push('/about')}><span>Про компанію</span></li>
                                         </ul>
                                     </li>
