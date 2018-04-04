@@ -49,13 +49,14 @@ class Categories extends Component {
         super(props)
         this.state = {
             tab:0,
+            showCategory:0,
             categories:[],
             products:[]
         };
         this.changeTab = this.changeTab.bind(this);
     }
-    changeTab(index){
-        this.setState({tab:index})
+    changeTab(index,value){
+        this.setState({tab:index,showCategory:value.id})
     }
 
     async componentDidMount()
@@ -73,12 +74,16 @@ class Categories extends Component {
 
         let categories=this.state.categories.map((value,index)=>{
             return(
-                <li key={index} onClick={()=>this.changeTab(index)}>
+                <li key={index} onClick={()=>this.changeTab(index,value)}>
                     <span className={this.state.tab===index?css(styles.borderYellow):null}>{value.name}</span>
                 </li>
             )
         });
-        let items = this.state.products.map((value,index)=>{
+
+        let filter = this.state.products.filter((value)=>{
+            return(value.sub_category_id===this.state.showCategory)
+        })
+        let items = filter.map((value,index)=>{
             return(
                 <li key={index}>
                     <div className="item">
