@@ -26,6 +26,11 @@ export async function getNews() {
         method: 'GET',
     }).then((response)=>response.json())
 }
+export async function getProduct(id) {
+    return await fetch(host+'api/get-product/'+id, {
+        method: 'GET',
+    }).then((response)=>response.json())
+}
 export async function getNewsPage() {
     await fetch(host+'api/get-news?all=1', {
         method: 'GET',

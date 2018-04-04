@@ -82,9 +82,12 @@ class Categories extends Component {
 
         let filter = this.state.products.filter((value)=>{
             return(value.sub_category_id===this.state.showCategory)
-        })
+        });
+
         let items = filter.map((value,index)=>{
+            let a = '/item/'+value.id;
             return(
+            <a href={a}>
                 <li key={index}>
                     <div className="item">
                         <img className="itemPicture" src={require('./images/cooler.png')} alt=""/>
@@ -93,6 +96,7 @@ class Categories extends Component {
                         {value.name}
                     </div>
                 </li>
+            </a>
             )
         })
         return (
