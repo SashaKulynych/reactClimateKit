@@ -63,7 +63,7 @@ class Categories extends Component {
     {
         await API.getSubCategories(this.props.match.params.id).then((value)=>{
             console.log('getSubCategories',value)
-            this.setState({categories:value})
+            this.setState({categories:value,showCategory:value.length!==0?value[0].id:0})
         });
         await API.getProducts(this.props.match.params.id).then((value)=>{
             console.log('getProducts',value)
