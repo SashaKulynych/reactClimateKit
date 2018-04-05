@@ -59,7 +59,7 @@ export async function getModels() {
         .then((res)=>console.log('getModels',res))
 }
 export async function getProducts(id) {
-    return await fetch(host+'api/get-products?sub_category='+id, {
+    return await fetch(host+"api/get-products?sub_category="+id+"&all=1", {
         method: 'GET'
     }).then((response)=>response.json())
 }

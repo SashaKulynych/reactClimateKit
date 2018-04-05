@@ -46,7 +46,9 @@ class Header extends Component {
 
     async componentDidMount(){
         API.getNews();
-        await API.getCategories().then((value)=>{this.setState({categories:value})});
+        await API.getCategories().then((value)=>{
+            console.log("getCategories",value)
+            this.setState({categories:value})});
         await API.getManufact().then((value)=>{this.setState({manufacts:value})});
         API.getSubCategories(1);
         // Only with token
