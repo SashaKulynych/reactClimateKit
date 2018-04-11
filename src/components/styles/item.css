@@ -1,0 +1,76 @@
+.item .itemContainer{
+    padding:100px 20px 20px 20px;
+    margin: 0;
+}
+.item .itemImage{
+    width:100%;
+    height: auto;
+}
+.item .subTitle{
+    color:#4c4c4c;
+    font-family: Arial;
+    font-size: 20px;
+}
+.item .title{
+    color:#4e4e4e;
+    font-family: Arial;
+    font-size: 60px;
+}
+.item .description{
+    color:#4c4c4c;
+    font-family: Arial;
+    text-align: justify;
+    font-size: 20px;
+}
+.item .rightButtonStyle{
+    margin-top: 30px;
+}
+.item .rightButtonStyle span{
+    font-weight:bold;
+    color: #6ac0f3;
+    cursor: pointer;
+    padding:10px 20px 10px 20px;
+    margin:0px 10px 0px 0px;
+    border: 2px solid #6ac0f3;
+    border-radius: 50px;
+}
+.item .leftPartCircle{
+    width: 80px;
+    height:80px;
+    border-radius: 50px;
+    background-color: #dcdcdc;
+}
+.item .rightPart{
+    padding-top: 50px;
+}
+.item .chart{
+    display: flex;
+    justify-content: center;
+}
+.item .saveButtonStyle, .item .addButtonStyle{
+    width: 225px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    background-color: #e18c44;
+    margin-left: 0px;
+    margin-right: 15px;
+    border: 4px solid #e18c44;
+    border-radius: 50px;
+}
+.item .saveButtonStyle span, .item .addButtonStyle span{
+    color: white;
+}
+.item .circle{
+    cursor: pointer;
+    border-radius: 50px;
+    background-color: white;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-right:20px;
+    color: #e18c44;
+}

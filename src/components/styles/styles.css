@@ -1,0 +1,224 @@
+ul{
+    list-style-type: none;
+    padding:0;
+}
+
+.mainPageSlider{
+
+}
+.slider{
+    width: 100%;
+    padding:100px 70px 70px 70px;
+    background: url(/static/media/background.ce0c0c1f.png);
+    background-position-x: center;
+    background-repeat: no-repeat;
+}
+@media (max-width: 992px) {
+    .slider{
+        padding:20px 70px 70px 70px;
+    }
+    .phone{
+        display: none;
+    }
+    .email{
+        display: none;
+    }
+    .img_us{
+        height: 200px!important;
+    }
+    .aboutUsText {
+        font-size: 14px!important;
+    }
+    .aboutButton{
+        padding: 10px 59px!important;
+        font-size: 20px!important;
+    }
+    .allNews{
+        padding: 10px 120px!important;
+        font-size: 20px!important;
+    }
+    .advantage{
+        padding: 50px 0 50px 0!important;
+        text-align: center;
+        font-size: 20px!important;
+    }
+    .whatYouGetText{
+        font-size: 20px!important;
+    }
+    .sectionTitles{
+        font-size: 30px!important;
+    }
+}
+.textInSlider{
+    color: white;
+    font-size: 22px;
+    text-align: justify;
+    cursor: default;
+}
+.achievement{
+    padding:50px 0px 50px 0px;
+    font-size: 40px;
+    font-family: Arial;
+    cursor: default;
+}
+.achievementBlock{
+    margin: 0!important;
+    padding:10px 25px;
+    text-align: center;
+}
+.achievementBlockTitle{
+    cursor: default;
+}
+.achievementBlockImage{
+    height: 200px;
+}
+.aboutUs{
+    margin-top: 25px;
+    background-color: #f1f1f1;
+}
+.about{
+    cursor: default;
+    padding:10px 0px 10px 0px;
+    font-size: 40px;
+    font-family: Arial;
+}
+.aboutUsText{
+    cursor: default;
+    padding:10px 0px 10px 0px;
+    text-align: center;
+    font-size: 24px;
+    font-family: Arial;
+}
+.aboutButton{
+    cursor: pointer;
+    margin-top: 15px;
+    padding: 10px 80px;
+    background-color: #fddb1d;
+    font-size: 30px;
+    font-family: Arial;
+    margin-bottom: 50px;
+}
+.aboutButton:hover{
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    transition: box-shadow 0.5s ease-in-out;
+}
+.news{
+    padding:50px 0px 50px 0px;
+    font-size: 40px;
+    font-family: Arial;
+}
+.newsPicture{
+    height:150px;
+    background-repeat:no-repeat;
+    background-position: center center;
+}
+.pictureTitle{
+    font-size: 35px;
+    font-family: Arial;
+    color: white;
+}
+.newsTitle{
+    font-size: 20px;
+    font-family: Arial;
+    color: #3b3b3b;
+    display:inline-block;
+    width:200px;
+    white-space: nowrap;
+    overflow:hidden !important;
+    text-overflow: ellipsis;
+
+}
+.newsDescription{
+    text-align: center;
+    font-size: 15px;
+    font-family: Arial;
+    color: #808080;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    height:90px;
+}
+.allNews{
+    width: 368px;
+    margin-bottom:25px;
+    padding:2px 120px;
+    background-color: #fddb1d;
+    font-size: 25px;
+    font-family: Arial;
+    color: #282828;
+    cursor: pointer;
+}
+.allNews:hover{
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    transition: box-shadow 0.5s ease-in-out;
+}
+.newsBlock{
+    cursor: pointer;
+}
+.advantageSection{
+    background-color: #f1f1f1;
+}
+.advantage{
+    padding:50px 0px 50px 25px;
+    color:#2d2d2d;
+    font-size: 30px;
+    font-family: Arial;
+}
+.sectionTitles{
+    padding:50px 0px 50px 0px;
+    font-size: 40px;
+    font-family: Arial;
+}
+.whatYouGetText{
+    text-align: center;
+    color:#3b3b3b;
+    font-size: 30px;
+    margin-bottom:50px;
+    max-width:850px;
+}
+.whatYouGetBlock{
+    min-height:475px;
+    width:250px;
+    text-align: center;
+    border-radius: 150px;
+    background-color: #fddb1d;
+    padding:10px;
+    margin:10px auto;
+}
+.whatYouGetBlockImage{
+    width: 100%;
+}
+.whatYouGetBlockText{
+    margin:25px 0px 55px 0px;
+}
+
+.slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: 0;
+    background: 0 0;
+    margin-top:20px;
+}
+.slick-dots li button:before {
+    font-size: 20px;
+    line-height: 20px;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: '•';
+    text-align: center;
+    opacity: .25;
+    color: #fff;
+}
+.slick-dots li.slick-active button:before {
+    opacity: .75;
+    color: #fff;
+}

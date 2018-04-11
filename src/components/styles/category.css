@@ -1,0 +1,70 @@
+.categories a:hover{
+    text-decoration: none;
+}
+
+.categories .categoryMenu>ul{
+    margin: 0;
+    width: 100%;
+}
+.categories .categoryMenu{
+    display: flex;
+    width: 300px;
+    background-color: #4f4f4f;
+    padding: 25px 0px 0px 0px;
+    height:auto;
+}
+.categories .afterHeaderPicture{
+    width: 100%;
+    height: auto;
+}
+.categories .categoryMenu ul>li{
+    width: auto;
+    padding: 10px 0px 10px 20px;
+}
+
+.categories .categoryMenu ul>li>span{
+    color: #ffffff;
+    padding:5px 10px;
+    font-size: 24px;
+}
+.categories .categoryMenu ul>li:hover{
+    cursor: pointer;
+    background-color: #454545;
+}
+.categories .categoryView{
+    padding-top:40px;
+    display: flex;
+    justify-content: center;
+}
+.categories .categoryView ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    Width: 90%;
+}
+.categories .item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:200px;
+    height: 220px;
+    border: 1px solid #acacac;
+    margin-right: 20px;
+}
+.categories .itemBottom{
+    height: 50px;
+    width: 200px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    padding:0px 20px;
+    align-items: center;
+    background-color: #ffea00;
+}
+.categories .itemPicture{
+    width: 200px;
+    height: auto;
+}

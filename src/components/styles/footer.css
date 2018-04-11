@@ -1,0 +1,51 @@
+.footer .footerContainer{
+    padding:50px 0px;
+    background-color: #3a3a3a;
+}
+.footer .footerBlockLeft{
+
+}
+.footer .footerList>li{
+    cursor: pointer;
+    padding:5px 0px 5px 0px;
+    color:#fff;
+}
+.footer .footerCenter{
+    padding: 0px 25px;
+    border-left: 1px solid #7c7c7c;
+    border-right: 1px solid #7c7c7c;
+}
+.footer .footerLogoTextLeft{
+    color: #fff;
+    font-size: 20px;
+    font-family: Arial;
+    font-weight: bold;
+    cursor: default;
+    padding-right: 5px;
+}
+.footer .footerLogoTextRight{
+    color: #fff;
+    font-size: 20px;
+    font-family: Arial;
+    font-weight: bold;
+    cursor: default;
+    padding-left: 5px;
+}
+.footer .delivery{
+    text-align: center;
+}
+.footer .deliveryText{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+.footer .contactIcons{
+    color:#fff;
+    font-size: 20px;
+    padding:10px 10px 10px 0px;
+}
+.footer npm .contacts>li{
+    cursor: pointer;
+    color:#fff;
+    padding:10px 0px 0px 10px;
+}
