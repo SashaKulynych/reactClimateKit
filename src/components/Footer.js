@@ -8,15 +8,15 @@ class Footer extends Component {
     render() {
         return (
             <div className="footer">
-                <div className="container main footerContainer">
+                <div className="container-fluid  footerContainer">
                     <div className="row ml-0 mr-0">
-                        <div className="col-3 footerBlockLeft d-flex justify-content-center align-items-center">
+                        <div className="col-lg-3 col-sm-12 footerBlockLeft d-flex justify-content-center align-items-center">
                             <div className="footerLogoTextLeft">Клімат</div>
                             <img className="footerLogoImage" src={require("./images/logo.png")} alt="Logo"/>
                             <div className="footerLogoTextRight">Комплект</div>
                         </div>
-                        <div className="col-6  d-flex justify-content-center footerCenter">
-                            <div className="col d-flex justify-content-start">
+                        <div style={{margin:"auto"}} className="col-lg-6 col-sm-12  row d-flex justify-content-center footerCenter">
+                            <div className="col-sm-12 col-lg-6 ">
                                 <ul className="footerList">
                                     <li>Про нас</li>
                                     <li>Обладнання</li>
@@ -24,17 +24,17 @@ class Footer extends Component {
                                     <li>Контакти</li>
                                 </ul>
                             </div>
-                            <div className="col">
+                            <div className="col-sm-12 col-lg-6 ">
                                 <ul className="contacts">
-                                    <li>Контакти</li>
+                                    <li style={{fontSize:20}}>Контакти</li>
                                     <li><i className="fas fa-envelope contactIcons"/>email@gmail.com</li>
                                     <li><i className="fas fa-phone-volume contactIcons"/>+38 099 001 00 00</li>
                                 </ul>
                             </div>
                         </div>
-                        <div className="col-3 d-flex align-items-center justify-content-center">
+                        <div style={{margin:0}} className="col-lg-3 col-sm-12 row align-items-center justify-content-center">
                             <div className="delivery">
-                                {/*<img src={require("./images/truck.png")} style={{width:150}} alt=""/>*/}
+                                <img  src={require("./images/truck.png")} style={{width:150}} alt=""/>
                                 <div className="deliveryText">Доставка 24 години</div>
                             </div>
                         </div>

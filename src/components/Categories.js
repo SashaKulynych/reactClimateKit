@@ -90,6 +90,7 @@ class Categories extends Component {
                 </li>
             )
         })
+
         return (
             <div>
                 <Header/>
@@ -97,13 +98,14 @@ class Categories extends Component {
                     <div className="afterHeader">
                         <img className="afterHeaderPicture" src={require('./images/pictureCategory.png')} alt=""/>
                     </div>
-                    <div className="d-flex">
-                        <div className="col-3 categoryMenu">
+
+                    <div className="d-flex row">
+                        <div className="col-sm-12 col-lg-3 categoryMenu">
                             <ul>
                                 {categories}
                             </ul>
                         </div>
-                        <div className="col categoryView">
+                        <div className="col-sm-12 col-lg-9 categoryView">
                             <ul>
                                 {items}
                             </ul>

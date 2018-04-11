@@ -9,7 +9,7 @@ ul{
 .slider{
     width: 100%;
     padding:100px 70px 70px 70px;
-    background: url(/static/media/background.ce0c0c1f.png);
+    background: url("../images/background.png");
     background-position-x: center;
     background-repeat: no-repeat;
 }
@@ -34,6 +34,7 @@ ul{
         font-size: 20px!important;
     }
     .allNews{
+        text-align: center;
         padding: 10px 120px!important;
         font-size: 20px!important;
     }
@@ -48,11 +49,46 @@ ul{
     .sectionTitles{
         font-size: 30px!important;
     }
+    .header .headerCircles{
+        padding: 0 10px!important;
+    }
+    .contacts{
+        text-align: center!important;
+    }
+    .footerList{
+        text-align: center!important;
+    }
+    .footer .footerCenter{
+        border-left: none!important;
+        border-right: none!important;
+    }
+    .textInSlider{
+        margin: 0!important;
+        font-size: 13px!important;
+    }
+
+    .header .authGroup input{
+        width: 75%!important;
+    }
+    .text_img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .img_slid{
+        height: 120px;
+    }
+}
+
+.contacts{
+    text-align: right;
+}
+.footerList{
+    text-align: left;
 }
 .textInSlider{
     color: white;
     font-size: 22px;
-    text-align: justify;
     cursor: default;
 }
 .achievement{

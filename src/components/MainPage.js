@@ -76,58 +76,111 @@ class MainPage extends Component {
                 <Header/>
                 <div className="container-fluid">
                     <div className="row">
-                        <div className="slider">
-                            <Slider className="mainPageSlider col-12" {...settings}>
-                                <div className="d-flex flex-row  ">
-                                    <div className="row d-flex flex-row">
-                                        <div className="col-md-6 d-flex justify-content-end">
-                                            <div className="textInSlider">
-                                                Якщо  Ви на цьому сайті , то Ви шукаєте свіже повітря! Або ж цікавлять певні особливі кліматичні умови?
-                                                <br/><br/>
-                                                Не має значення, Ви прийшли за простим вентилятором, чи цілою кліматизаційною установкою – пошук буде простим і приємним.
-                                                <br/><br/>
-                                                Наш розумний  airob (airbot/smartic)  вже готовий швидко та точно підібрати і запропонувати Вам оптимальний клімат-комплект для будь-якого приміщення та існуючих умов.
-                                            </div>
-                                        </div>
-                                        <div className="col-md-6 d-flex justify-content-center">
-                                            <img style={{height:"320px"}} src={require('./images/graph.png')} alt="Graph"/>
-                                        </div>
+                        <div id="carouselExampleIndicators" class="carousel slide slider container-fluid" data-ride="carousel">
+                            <ol className="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            </ol>
+                            <div className="carousel-inner">
+                                <div className="carousel-item active row">
+                                <div className="textInSlider col-lg-6 col-sm-12 text-center">
+                                    Якщо  Ви на цьому сайті , то Ви шукаєте свіже повітря! Або ж цікавлять певні особливі кліматичні умови?
+                                    <br/><br/>
+                                    Не має значення, Ви прийшли за простим вентилятором, чи цілою кліматизаційною установкою – пошук буде простим і приємним.
+                                    <br/><br/>
+                                    Наш розумний  airob (airbot/smartic)  вже готовий швидко та точно підібрати і запропонувати Вам оптимальний клімат-комплект для будь-якого приміщення та існуючих умов.
+                                </div>
+                                <div className="col-lg-6 col-sm-12 text-center">
+                                    <img className="img_slid"  height="320"  src={require('./images/graph.png')} alt="First slide"/>
+                                </div>
+                            </div>
+                                <div class="carousel-item row">
+                                    <div className="textInSlider col-lg-6 col-sm-12 text-center">
+                                        Якщо  Ви на цьому сайті , то Ви шукаєте свіже повітря! Або ж цікавлять певні особливі кліматичні умови?
+                                        <br/><br/>
+                                        Не має значення, Ви прийшли за простим вентилятором, чи цілою кліматизаційною установкою – пошук буде простим і приємним.
+                                        <br/><br/>
+                                        Наш розумний  airob (airbot/smartic)  вже готовий швидко та точно підібрати і запропонувати Вам оптимальний клімат-комплект для будь-якого приміщення та існуючих умов.
+                                    </div>
+                                    <div className="col-lg-6 col-sm-12 text-center">
+                                        <img className="img_slid"  height="320"  src={require('./images/graph.png')} alt="First slide"/>
                                     </div>
                                 </div>
-                                <div className="d-flex flex-row col-12 ">
-                                    <div className="row d-flex flex-row">
-                                        <div className="col-md-6 d-flex justify-content-end" style={{minHeight:300, minWidth: 600}}>
-                                            <div className="textInSlider">
-                                                Якщо  Ви на цьому сайті , то Ви шукаєте свіже повітря! Або ж цікавлять певні особливі кліматичні умови?
-                                                <br/><br/>
-                                                Не має значення, Ви прийшли за простим вентилятором, чи цілою кліматизаційною установкою – пошук буде простим і приємним.
-                                                <br/><br/>
-                                                Наш розумний  airob (airbot/smartic)  вже готовий швидко та точно підібрати і запропонувати Вам оптимальний клімат-комплект для будь-якого приміщення та існуючих умов.
-                                            </div>
-                                        </div>
-                                        <div className="col-md-6 d-flex justify-content-center" style={{minHeight: 300, minWidth: 600}}>
-                                            <img style={{height:320}} src={require('./images/graph.png')} alt="Graph"/>
-                                        </div>
+                                <div class="carousel-item row">
+                                    <div className="textInSlider col-lg-6 col-sm-12 text-center">
+                                        Якщо  Ви на цьому сайті , то Ви шукаєте свіже повітря! Або ж цікавлять певні особливі кліматичні умови?
+                                        <br/><br/>
+                                        Не має значення, Ви прийшли за простим вентилятором, чи цілою кліматизаційною установкою – пошук буде простим і приємним.
+                                        <br/><br/>
+                                        Наш розумний  airob (airbot/smartic)  вже готовий швидко та точно підібрати і запропонувати Вам оптимальний клімат-комплект для будь-якого приміщення та існуючих умов.
+                                    </div>
+                                    <div className="col-lg-6 col-sm-12 text-center">
+                                        <img className="img_slid"  height="320"  src={require('./images/graph.png')} alt="First slide"/>
                                     </div>
                                 </div>
-                                <div className="d-flex flex-row  col-12">
-                                    <div className="row d-flex flex-row">
-                                        <div className="col-md-6 d-flex justify-content-end" style={{minHeight:300, minWidth: 600}}>
-                                            <div className="textInSlider">
-                                                Якщо  Ви на цьому сайті , то Ви шукаєте свіже повітря! Або ж цікавлять певні особливі кліматичні умови?
-                                                <br/><br/>
-                                                Не має значення, Ви прийшли за простим вентилятором, чи цілою кліматизаційною установкою – пошук буде простим і приємним.
-                                                <br/><br/>
-                                                Наш розумний  airob (airbot/smartic)  вже готовий швидко та точно підібрати і запропонувати Вам оптимальний клімат-комплект для будь-якого приміщення та існуючих умов.
-                                            </div>
-                                        </div>
-                                        <div className="col-md-6 d-flex justify-content-center" style={{minHeight: 300, minWidth: 600}}>
-                                            <img style={{height:320}} src={require('./images/graph.png')} alt="Graph"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </Slider>
+                            </div>
+                            <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                <span className="carousel-control-prev-icon" aria-hidden="true"> </span>
+                                <span className="sr-only">Previous</span>
+                            </a>
+                            <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                <span className="carousel-control-next-icon" aria-hidden="true"> </span>
+                                <span className="sr-only">Next</span>
+                            </a>
                         </div>
+                        {/*<div className="slider">*/}
+                            {/*<Slider className="mainPageSlider col-12" {...settings}>*/}
+                                {/*<div className="d-flex flex-row  ">*/}
+                                    {/*<div className="row d-flex flex-row">*/}
+                                        {/*<div className="col-md-6 d-flex justify-content-end">*/}
+                                            {/*<div className="textInSlider">*/}
+                                                {/*Якщо  Ви на цьому сайті , то Ви шукаєте свіже повітря! Або ж цікавлять певні особливі кліматичні умови?*/}
+                                                {/*<br/><br/>*/}
+                                                {/*Не має значення, Ви прийшли за простим вентилятором, чи цілою кліматизаційною установкою – пошук буде простим і приємним.*/}
+                                                {/*<br/><br/>*/}
+                                                {/*Наш розумний  airob (airbot/smartic)  вже готовий швидко та точно підібрати і запропонувати Вам оптимальний клімат-комплект для будь-якого приміщення та існуючих умов.*/}
+                                            {/*</div>*/}
+                                        {/*</div>*/}
+                                        {/*<div className="col-md-6 d-flex justify-content-center">*/}
+                                            {/*<img style={{height:"320px"}} src={require('./images/graph.png')} alt="Graph"/>*/}
+                                        {/*</div>*/}
+                                    {/*</div>*/}
+                                {/*</div>*/}
+                                {/*<div className="d-flex flex-row col-12 ">*/}
+                                    {/*<div className="row d-flex flex-row">*/}
+                                        {/*<div className="col-md-6 d-flex justify-content-end" style={{minHeight:300, minWidth: 600}}>*/}
+                                            {/*<div className="textInSlider">*/}
+                                                {/*Якщо  Ви на цьому сайті , то Ви шукаєте свіже повітря! Або ж цікавлять певні особливі кліматичні умови?*/}
+                                                {/*<br/><br/>*/}
+                                                {/*Не має значення, Ви прийшли за простим вентилятором, чи цілою кліматизаційною установкою – пошук буде простим і приємним.*/}
+                                                {/*<br/><br/>*/}
+                                                {/*Наш розумний  airob (airbot/smartic)  вже готовий швидко та точно підібрати і запропонувати Вам оптимальний клімат-комплект для будь-якого приміщення та існуючих умов.*/}
+                                            {/*</div>*/}
+                                        {/*</div>*/}
+                                        {/*<div className="col-md-6 d-flex justify-content-center" style={{minHeight: 300, minWidth: 600}}>*/}
+                                            {/*<img style={{height:320}} src={require('./images/graph.png')} alt="Graph"/>*/}
+                                        {/*</div>*/}
+                                    {/*</div>*/}
+                                {/*</div>*/}
+                                {/*<div className="d-flex flex-row  col-12">*/}
+                                    {/*<div className="row d-flex flex-row">*/}
+                                        {/*<div className="col-md-6 d-flex justify-content-end" style={{minHeight:300, minWidth: 600}}>*/}
+                                            {/*<div className="textInSlider">*/}
+                                                {/*Якщо  Ви на цьому сайті , то Ви шукаєте свіже повітря! Або ж цікавлять певні особливі кліматичні умови?*/}
+                                                {/*<br/><br/>*/}
+                                                {/*Не має значення, Ви прийшли за простим вентилятором, чи цілою кліматизаційною установкою – пошук буде простим і приємним.*/}
+                                                {/*<br/><br/>*/}
+                                                {/*Наш розумний  airob (airbot/smartic)  вже готовий швидко та точно підібрати і запропонувати Вам оптимальний клімат-комплект для будь-якого приміщення та існуючих умов.*/}
+                                            {/*</div>*/}
+                                        {/*</div>*/}
+                                        {/*<div className="col-md-6 d-flex justify-content-center" style={{minHeight: 300, minWidth: 600}}>*/}
+                                            {/*<img style={{height:320}} src={require('./images/graph.png')} alt="Graph"/>*/}
+                                        {/*</div>*/}
+                                    {/*</div>*/}
+                                {/*</div>*/}
+                            {/*</Slider>*/}
+                        {/*</div>*/}
                     </div>
                 </div>
                 <div className="container">
@@ -305,7 +358,7 @@ class MainPage extends Component {
                         </div>
                     </div>
                     <div className="row d-flex justify-content-center mb-5">
-                <span className="whatYouGetText">
+                <span className="whatYouGetText col-12">
                     Головне правило нашої компанії: для успішного ведення бізнесу
                     необхідно передбачати тенденції та завжди бути на крок
                     попереду інших.

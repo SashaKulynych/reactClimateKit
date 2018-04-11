@@ -258,8 +258,8 @@ class Header extends Component {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col">
-                                <div className="buttonEnter" onClick={()=>this.login()}>Увійти</div>
+                            <div className="col text-center">
+                                <div className="buttonEnter " onClick={()=>this.login()}>Увійти</div>
                             </div>
                             <div className="col">
                                 <div className="d-flex align-items-center justify-content-end">
@@ -362,6 +362,7 @@ class Header extends Component {
                                         <li onClick={()=>this.props.history.push('/reference')}><span>Референс</span></li>
                                         <li onClick={()=>this.props.history.push('/service')}><span>Сервіс</span></li>
                                     </ul>
+
                                     <span data-toggle="collapse" data-target="#2">КАТЕГОРІЇ</span>
                                     <ul id="2" className="collapse">
                                         {manufacts}
