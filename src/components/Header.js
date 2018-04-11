@@ -351,6 +351,7 @@ class Header extends Component {
                             </button>
                             <div className="row" data-toggle="collapse" data-target="#navbarNavAltMarkup">
                                 <img className="hideMenuLogo"
+                                     onClick={()=>this.props.history.push('/')}
                                      src={require('./images/logo.png')} alt="Logo"/>
                                 <span className="navbar-brand " >Клімат комплект</span>
                             </div>
