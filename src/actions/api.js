@@ -11,7 +11,11 @@ export async function login(login) {
         body: formData
     })
 }
-
+export async function getProduct(id) {
+    return await fetch(host+'api/get-product/'+id, {
+        method: 'GET',
+    }).then((response)=>response.json())
+}
 export async function register(registration) {
     let formData = new FormData();
     for(let i in registration)

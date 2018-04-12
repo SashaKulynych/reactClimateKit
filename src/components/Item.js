@@ -23,10 +23,18 @@ class Item extends Component {
                 {name: '18.02.18', total: 10, paid: 8},
                 {name: '19.02.18', total: 10, paid: 10},
                 {name: '20.02.18', total: 9, paid: 3}
-            ]
+            ],
+            product:{
+                name:'',
+                desc:''
+            }
         }
     }
     async componentDidMount(){
+        await API.getProduct(this.props.match.params.id).then((value)=>{
+            console.log('getProduct',value)
+            this.setState({product:value})
+        });
         // let resurs = await API.getProducts();
         // let res = resurs[0]
         // let data = [];
@@ -57,14 +65,14 @@ class Item extends Component {
                             </div>
                         </div>
                         <div className="col d-flex flex-column justify-content-center rightPart">
-                            <div className="subTitle">
-                                Lorem ipsum dolor
-                            </div>
+                            {/*<div className="subTitle">*/}
+                            {/*Lorem ipsum dolor*/}
+                            {/*</div>*/}
                             <div className="title">
-                                ML PRO EC
+                                {this.state.product.name}
                             </div>
                             <div className="description">
-                                Lorem  ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                {this.state.product.desc}
                             </div>
                             <div className="row">
                                 <div className="rightButtonStyle">
