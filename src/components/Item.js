@@ -6,7 +6,6 @@ import { css, StyleSheet } from 'aphrodite'
 
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
-import {AreaChart, Area, XAxis, YAxis, Tooltip, CartesianGrid} from 'recharts';
 
 import * as API from '../actions/api'
 
@@ -101,28 +100,11 @@ class Item extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="chart">
-                        <AreaChart width={750} height={350} data={this.state.data}>
-                            <defs>
-                                <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="5%" stopColor="rgb(2, 74, 229)" stopOpacity={0.8}/>
-                                    <stop offset="95%" stopColor="rgb(2, 74, 229)" stopOpacity={0.1}/>
-                                </linearGradient>
-                                <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="5%" stopColor="rgb(214, 221, 6)" stopOpacity={0.8}/>
-                                    <stop offset="95%" stopColor="rgb(214, 221, 6)" stopOpacity={0.1}/>
-                                </linearGradient>
-                            </defs>
-                            <XAxis dataKey="name" stroke="#212121"/>
-                            <YAxis stroke="#212121"/>
-                            <Tooltip/>
-                            <Area type="monotone" dataKey="total" stroke="#8884d8" fill="url(#colorUv)"/>
-                            <Area type="monotone" dataKey="paid" stroke="#82ca9d" fill="url(#colorPv)"/>
-                        </AreaChart>
-                    </div>
+
                 </div>
                 <Footer/>
             </div>
         )
     }}
+
 export default connect(state => ({state:state}))(withRouter(Item))
