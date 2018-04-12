@@ -78,6 +78,22 @@ ul{
     .img_slid{
         height: 120px;
     }
+    .graf_2{
+        display: block!important;
+    }
+    .graf_1{
+        display: none!important;
+    }
+    .item .saveButtonStyle, .item .addButtonStyle{
+        margin: 5px auto!important;
+    }
+
+}
+
+
+
+.graf_2{
+    display: none;
 }
 
 .contacts{
