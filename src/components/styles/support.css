@@ -30,12 +30,14 @@
     background-color: yellow;
 }
 .support .nameInputGroup{
+
     padding:10px;
     border:1px solid black;
     border-radius: 15px;
     margin-bottom: 15px;
 }
 .support .nameInputGroup input{
+    outline:none;
     padding-left: 10px;
     margin-left: 10px;
     background-color: transparent;
