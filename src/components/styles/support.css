@@ -52,6 +52,7 @@ input:focus {
     border: none;
 }
 .support .nameInputGroup textarea{
+    outline:none;
     background-color: transparent;
     border: none;
     width: 100%;
