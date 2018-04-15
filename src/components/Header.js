@@ -386,7 +386,7 @@ class Header extends Component {
                                     <div className="menu-left-part">
                                         <ul>
                                             <li>
-                                                <span data-toggle="collapse" data-target="#1">ЗАГАЛЬНЕ</span>
+                                                <span data-toggle="collapse" data-target="#1">ГОЛОВНА</span>
                                                 <ul id="1" className="collapse">
                                                     <li onClick={()=>this.props.history.push('/text')}><span>Історія</span></li>
                                                     <li onClick={()=>this.props.history.push('/reference')}><span>Референс</span></li>

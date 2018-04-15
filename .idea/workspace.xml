@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d728af1d-484c-4553-a560-c32773fe8830" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/components/Newsall.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer.js" afterPath="$PROJECT_DIR$/src/components/Footer.js" />
       <change beforePath="$PROJECT_DIR$/src/components/Header.js" afterPath="$PROJECT_DIR$/src/components/Header.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/MainPage.js" afterPath="$PROJECT_DIR$/src/components/MainPage.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/Support.js" afterPath="$PROJECT_DIR$/src/components/Support.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/styles/styles.css" afterPath="$PROJECT_DIR$/src/components/styles/styles.css" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -67,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Support.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Support.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Support.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="63" column="62" lean-forward="false" selection-start-line="63" selection-start-column="62" selection-end-line="63" selection-end-column="62" />
+            <state relative-caret-position="187">
+              <caret line="26" column="65" lean-forward="true" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -91,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Header.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Header.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Header.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="359" column="89" lean-forward="false" selection-start-line="359" selection-start-column="89" selection-end-line="359" selection-end-column="89" />
+            <state relative-caret-position="43">
+              <caret line="388" column="101" lean-forward="false" selection-start-line="388" selection-start-column="101" selection-end-line="388" selection-end-column="101" />
               <folding />
             </state>
           </provider>
@@ -219,8 +213,8 @@
         <option value="$PROJECT_DIR$/src/components/Newsall.js" />
         <option value="$PROJECT_DIR$/src/components/styles/styles.css" />
         <option value="$PROJECT_DIR$/src/components/MainPage.js" />
-        <option value="$PROJECT_DIR$/src/components/Header.js" />
         <option value="$PROJECT_DIR$/src/components/Support.js" />
+        <option value="$PROJECT_DIR$/src/components/Header.js" />
       </list>
     </option>
   </component>
@@ -773,12 +767,12 @@
       <workItem from="1523539345597" duration="5157000" />
       <workItem from="1523609219571" duration="44000" />
       <workItem from="1523705251629" duration="8411000" />
-      <workItem from="1523786902809" duration="10139000" />
+      <workItem from="1523786902809" duration="10330000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="194438000" />
+    <option name="totallyTimeSpent" value="194629000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1374" y="303" width="1382" height="744" extended-state="6" />
@@ -1146,21 +1140,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="359" column="89" lean-forward="false" selection-start-line="359" selection-start-column="89" selection-end-line="359" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Support.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="63" column="62" lean-forward="false" selection-start-line="63" selection-start-column="62" selection-end-line="63" selection-end-column="62" />
+        <state relative-caret-position="187">
+          <caret line="26" column="65" lean-forward="true" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="388" column="101" lean-forward="false" selection-start-line="388" selection-start-column="101" selection-end-line="388" selection-end-column="101" />
+          <folding />
         </state>
       </provider>
     </entry>
