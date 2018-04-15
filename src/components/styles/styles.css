@@ -7,16 +7,24 @@ ul{
 
 }
 .slider{
+    padding: 0;
     width: 100%;
-    padding:100px 70px 70px 70px;
     background: url("../images/background.png");
-    background-position-x: center;
+    background-size: 100%;
     background-repeat: no-repeat;
 }
 @media (max-width: 992px) {
+
     .slider{
-        padding:20px 70px 70px 70px;
+        background-size: auto;
+        background-position-x: center;
     }
+    .newsBlock_1{
+        margin: 10px 0!important;
+    }
+    /*.slider{*/
+        /*padding:20px 70px 70px 70px;*/
+    /*}*/
     .phone{
         display: none;
     }
@@ -24,6 +32,9 @@ ul{
         display: none;
     }
     .img_us{
+        display: flex;
+        justify-items: center;
+        float: none!important;
         height: 200px!important;
     }
     .aboutUsText {
@@ -32,6 +43,10 @@ ul{
     .aboutButton{
         padding: 10px 59px!important;
         font-size: 20px!important;
+    }
+
+    .title{
+        margin-top: 10px!important;
     }
     .allNews{
         text-align: center;
@@ -63,6 +78,8 @@ ul{
         border-right: none!important;
     }
     .textInSlider{
+        background: none!important;
+        padding-left: 50px!important;
         margin: 0!important;
         font-size: 13px!important;
     }
@@ -76,7 +93,8 @@ ul{
     }
 
     .img_slid{
-        height: 120px;
+        padding-top: 0!important;
+        height: 200px!important;
     }
     .graf_2{
         display: block!important;
@@ -90,7 +108,21 @@ ul{
 
 }
 
+.img_us{
+    float: right;
+}
 
+.img_slid{
+    height: 420px;
+    padding-top: 80px;
+}
+
+.achievementBlockImage:hover{
+    -webkit-transform: rotateZ(360deg);
+    -ms-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+
+}
 
 .graf_2{
     display: none;
@@ -103,6 +135,11 @@ ul{
     text-align: left;
 }
 .textInSlider{
+    background-image:url("../images/background1.png");
+    background-size: 100%;
+    background-position: right;
+    background-repeat: no-repeat;
+    padding: 30px 30px 50px 80px;
     color: white;
     font-size: 22px;
     cursor: default;
@@ -119,9 +156,14 @@ ul{
     text-align: center;
 }
 .achievementBlockTitle{
+    font-family: Arial;
+    position: relative;
+    z-index: 100;
     cursor: default;
 }
 .achievementBlockImage{
+    z-index: 1;
+    transition:all 0.9s ease;
     height: 200px;
 }
 .aboutUs{
@@ -170,6 +212,7 @@ ul{
     color: white;
 }
 .newsTitle{
+    margin: auto;
     font-size: 20px;
     font-family: Arial;
     color: #3b3b3b;
@@ -180,6 +223,13 @@ ul{
     text-overflow: ellipsis;
 
 }
+.newsBlock_1{
+box-shadow: 0 0 10px black;
+padding: 10px;
+margin: 47px;
+cursor: pointer;
+}
+
 .newsDescription{
     text-align: center;
     font-size: 15px;
@@ -198,6 +248,19 @@ ul{
     font-family: Arial;
     color: #282828;
     cursor: pointer;
+}
+.allNews_1{
+        background-color: #fddb1d;
+        font-size: 25px;
+        font-family: Arial;
+        color: #282828;
+        border: none;
+        cursor: pointer;
+}
+.title{
+    margin-top: 100px;
+    font-size: 32px;
+    font-family: Arial;
 }
 .allNews:hover{
     box-shadow: 0 0 15px rgba(0,0,0,0.5);
@@ -237,7 +300,15 @@ ul{
     margin:10px auto;
 }
 .whatYouGetBlockImage{
+    transition:all 0.9s ease;
     width: 100%;
+}
+
+.whatYouGetBlockImage:hover{
+    -webkit-transform: rotateY(360deg);
+    -ms-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+
 }
 .whatYouGetBlockText{
     margin:25px 0px 55px 0px;

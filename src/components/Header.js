@@ -328,7 +328,7 @@ class Header extends Component {
                         </div>
                         <div className="row headerRightPart">
                             <div className="text phone">+38 099 001 01 01</div>
-                            <div className="text email">email_adress@gmail.com</div>
+                            <div className="text email">info@ klimatkomplect.com.ua</div>
                             {this.props.userInfo===null?
                                 <div className="row">
                                     <div className="circle" onClick={this.openAuthonOpenModal}>
@@ -357,23 +357,19 @@ class Header extends Component {
                             </div>
                             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                                 <div className="navbar-nav">
-                                    <span data-toggle="collapse" data-target="#1">ЗАГАЛЬНЕ</span>
+                                    <span data-toggle="collapse" data-target="#1">ГОЛОВНА &#8595;</span>
                                     <ul id="1" className="collapse">
                                         <li onClick={()=>this.props.history.push('/text')}><span>Історія</span></li>
                                         <li onClick={()=>this.props.history.push('/reference')}><span>Референс</span></li>
                                         <li onClick={()=>this.props.history.push('/service')}><span>Сервіс</span></li>
                                     </ul>
 
-                                    <span data-toggle="collapse" data-target="#2">КАТЕГОРІЇ</span>
+                                    <span data-toggle="collapse" data-target="#2">КАТЕГОРІЇ &#8595;</span>
                                     <ul id="2" className="collapse">
                                         {manufacts}
                                     </ul>
-                                    <span data-toggle="collapse" data-target="#3">КОНТАКТИ</span>
-                                    <ul id="3" className="collapse">
-                                        <li onClick={()=>this.props.history.push('/text')}><span>Номера</span></li>
-                                        <li onClick={()=>this.props.history.push('/text')}><span>Адреси</span></li>
-                                    </ul>
-                                    <span data-toggle="collapse" data-target="#4">ПІДТРИМКА</span>
+                                    <span onClick={()=>this.props.history.push('/text')}>КОНТАКТИ &#8595;</span>
+                                    <span data-toggle="collapse" data-target="#4">ПІДТРИМКА &#8595;</span>
                                     <ul  id="4" className="collapse">
                                         <li onClick={()=>this.props.history.push('/text')}><span>Відеокурс</span></li>
                                         <li onClick={()=>this.props.history.push('/support')}><span>Зв'язок</span></li>
@@ -421,11 +417,8 @@ class Header extends Component {
                             <div className="col menu-right-part d-flex justify-content-end">
                                 <ul>
                                     <li>
-                                        <span data-toggle="collapse" data-target="#3">КОНТАКТИ</span>
-                                        <ul id="3" className="collapse">
-                                            <li onClick={()=>this.props.history.push('/text')}><span>Номера</span></li>
-                                            <li onClick={()=>this.props.history.push('/text')}><span>Адреси</span></li>
-                                        </ul>
+                                        <span onClick={()=>this.props.history.push('/text')} >КОНТАКТИ</span>
+
                                     </li>
                                 </ul>
                                 <ul>

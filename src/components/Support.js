@@ -61,6 +61,7 @@ class Support extends Component {
                             <div className="nameInputGroup row d-flex">
                                <textarea placeholder="ТЕКСТ СООБЩЕНИЯ" rows={5}/>
                             </div>
+                            <input type="file" className="mb-3"/>
                             <div className=" row d-flex sendMessage align-items-center justify-content-between">
                                 <span>ОТПРАВИТЬ СООБЩЕНИЕ</span>
                                 <i className="fas fa-arrow-right"/>

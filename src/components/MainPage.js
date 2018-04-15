@@ -6,14 +6,24 @@ import Footer from './Footer'
 import * as API from '../actions/api'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
+import {AreaChart, Area, XAxis, YAxis, Tooltip, CartesianGrid} from 'recharts';
 
 class MainPage extends Component {
     constructor(){
         super();
-        this.state={
-            news:[]
+        this.state= {
+            news: [],
+            data: [
+                {name: '14.02.18', total: 8, paid: 7},
+                {name: '15.02.18', total: 9, paid: 9},
+                {name: '16.02.18', total: 8, paid: 5},
+                {name: '17.02.18', total: 9, paid: 6},
+                {name: '18.02.18', total: 10, paid: 8},
+                {name: '19.02.18', total: 10, paid: 10},
+                {name: '20.02.18', total: 9, paid: 3}
+            ]
         }
-    }
+    };
     componentWillMount(){
         document.title = "Головна сторінка";
     }
@@ -53,7 +63,7 @@ class MainPage extends Component {
             )
         });
 
-        let newsSecond=this.state.news.slice(0,1).map((value)=>{
+        let newsSecond=this.state.news.slice(2,4).map((value)=>{
             let maxLength = 15;
             let title =value.title.length>15?value.title.substring(0, maxLength) + '...':value.title;
             let img = value.img===''?{backgroundImage: `url(${require('./images/newsPicture1.png')}`}:
@@ -76,7 +86,7 @@ class MainPage extends Component {
                 <Header/>
                 <div className="container-fluid">
                     <div className="row">
-                        <div id="carouselExampleIndicators" class="carousel slide slider container-fluid" data-ride="carousel">
+                        <div id="carouselExampleIndicators" class="carousel slide slider container-fluid" >
                             <ol className="carousel-indicators">
                                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -91,9 +101,48 @@ class MainPage extends Component {
                                     <br/><br/>
                                     Наш розумний  airob (airbot/smartic)  вже готовий швидко та точно підібрати і запропонувати Вам оптимальний клімат-комплект для будь-якого приміщення та існуючих умов.
                                 </div>
-                                <div className="col-lg-6 col-sm-12 text-center">
-                                    <img className="img_slid"  height="320"  src={require('./images/graph.png')} alt="First slide"/>
-                                </div>
+                                    <div className="graf_1">
+                                        <div className="text-center">
+                                            <AreaChart  className="col-12 row"  width={525} height={350} data={this.state.data}>
+                                                <defs >
+                                                    <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                                                        <stop offset="5%" stopColor="rgb(2, 74, 229)" stopOpacity={0.8}/>
+                                                        <stop offset="95%" stopColor="rgb(2, 74, 229)" stopOpacity={0.1}/>
+                                                    </linearGradient>
+                                                    <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
+                                                        <stop offset="5%" stopColor="rgb(214, 221, 6)" stopOpacity={0.8}/>
+                                                        <stop offset="95%" stopColor="rgb(214, 221, 6)" stopOpacity={0.1}/>
+                                                    </linearGradient>
+                                                </defs>
+                                                <XAxis dataKey="name" stroke="#212121"/>
+                                                <YAxis stroke="#212121"/>
+                                                <Tooltip/>
+                                                <Area type="monotone" dataKey="total" stroke="#8884d8" fill="red"/>
+                                                <Area type="monotone" dataKey="paid" stroke="#82ca9d" fill="yellow"/>
+                                            </AreaChart>
+                                        </div>
+                                    </div>
+                                    <div className="graf_2 text-center mt-5 col-lg-6 col-sm-12">
+                                        <div>
+                                            <AreaChart style={{margin:"auto"}} className="row"  width={300} height={350} data={this.state.data}>
+                                                <defs >
+                                                    <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                                                        <stop offset="5%" stopColor="rgb(2, 74, 229)" stopOpacity={0.8}/>
+                                                        <stop offset="95%" stopColor="rgb(2, 74, 229)" stopOpacity={0.1}/>
+                                                    </linearGradient>
+                                                    <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
+                                                        <stop offset="5%" stopColor="rgb(214, 221, 6)" stopOpacity={0.8}/>
+                                                        <stop offset="95%" stopColor="rgb(214, 221, 6)" stopOpacity={0.1}/>
+                                                    </linearGradient>
+                                                </defs>
+                                                <XAxis dataKey="name" stroke="#212121"/>
+                                                <YAxis stroke="#212121"/>
+                                                <Tooltip/>
+                                                <Area type="monotone" dataKey="total" stroke="#8884d8" fill="red"/>
+                                                <Area type="monotone" dataKey="paid" stroke="#82ca9d" fill="yellow"/>
+                                            </AreaChart>
+                                        </div>
+                                    </div>
                             </div>
                                 <div class="carousel-item row">
                                     <div className="textInSlider col-lg-6 col-sm-12 text-center">
@@ -103,8 +152,47 @@ class MainPage extends Component {
                                         <br/><br/>
                                         Наш розумний  airob (airbot/smartic)  вже готовий швидко та точно підібрати і запропонувати Вам оптимальний клімат-комплект для будь-якого приміщення та існуючих умов.
                                     </div>
-                                    <div className="col-lg-6 col-sm-12 text-center">
-                                        <img className="img_slid"  height="320"  src={require('./images/graph.png')} alt="First slide"/>
+                                    <div className="graf_1">
+                                        <div className="text-center">
+                                            <AreaChart  className="col-12 row"  width={525} height={350} data={this.state.data}>
+                                                <defs >
+                                                    <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                                                        <stop offset="5%" stopColor="rgb(2, 74, 229)" stopOpacity={0.8}/>
+                                                        <stop offset="95%" stopColor="rgb(2, 74, 229)" stopOpacity={0.1}/>
+                                                    </linearGradient>
+                                                    <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
+                                                        <stop offset="5%" stopColor="rgb(214, 221, 6)" stopOpacity={0.8}/>
+                                                        <stop offset="95%" stopColor="rgb(214, 221, 6)" stopOpacity={0.1}/>
+                                                    </linearGradient>
+                                                </defs>
+                                                <XAxis dataKey="name" stroke="#212121"/>
+                                                <YAxis stroke="#212121"/>
+                                                <Tooltip/>
+                                                <Area type="monotone" dataKey="total" stroke="#8884d8" fill="red"/>
+                                                <Area type="monotone" dataKey="paid" stroke="#82ca9d" fill="yellow"/>
+                                            </AreaChart>
+                                        </div>
+                                    </div>
+                                    <div className="graf_2 text-center mt-5 col-lg-6 col-sm-12">
+                                        <div>
+                                            <AreaChart style={{margin:"auto"}} className="row"  width={300} height={350} data={this.state.data}>
+                                                <defs >
+                                                    <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                                                        <stop offset="5%" stopColor="rgb(2, 74, 229)" stopOpacity={0.8}/>
+                                                        <stop offset="95%" stopColor="rgb(2, 74, 229)" stopOpacity={0.1}/>
+                                                    </linearGradient>
+                                                    <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
+                                                        <stop offset="5%" stopColor="rgb(214, 221, 6)" stopOpacity={0.8}/>
+                                                        <stop offset="95%" stopColor="rgb(214, 221, 6)" stopOpacity={0.1}/>
+                                                    </linearGradient>
+                                                </defs>
+                                                <XAxis dataKey="name" stroke="#212121"/>
+                                                <YAxis stroke="#212121"/>
+                                                <Tooltip/>
+                                                <Area type="monotone" dataKey="total" stroke="#8884d8" fill="red"/>
+                                                <Area type="monotone" dataKey="paid" stroke="#82ca9d" fill="yellow"/>
+                                            </AreaChart>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="carousel-item row">
@@ -115,8 +203,47 @@ class MainPage extends Component {
                                         <br/><br/>
                                         Наш розумний  airob (airbot/smartic)  вже готовий швидко та точно підібрати і запропонувати Вам оптимальний клімат-комплект для будь-якого приміщення та існуючих умов.
                                     </div>
-                                    <div className="col-lg-6 col-sm-12 text-center">
-                                        <img className="img_slid"  height="320"  src={require('./images/graph.png')} alt="First slide"/>
+                                    <div className="graf_1">
+                                        <div className="text-center">
+                                            <AreaChart  className="col-12 row"  width={525} height={350} data={this.state.data}>
+                                                <defs >
+                                                    <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                                                        <stop offset="5%" stopColor="rgb(2, 74, 229)" stopOpacity={0.8}/>
+                                                        <stop offset="95%" stopColor="rgb(2, 74, 229)" stopOpacity={0.1}/>
+                                                    </linearGradient>
+                                                    <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
+                                                        <stop offset="5%" stopColor="rgb(214, 221, 6)" stopOpacity={0.8}/>
+                                                        <stop offset="95%" stopColor="rgb(214, 221, 6)" stopOpacity={0.1}/>
+                                                    </linearGradient>
+                                                </defs>
+                                                <XAxis dataKey="name" stroke="#212121"/>
+                                                <YAxis stroke="#212121"/>
+                                                <Tooltip/>
+                                                <Area type="monotone" dataKey="total" stroke="#8884d8" fill="red"/>
+                                                <Area type="monotone" dataKey="paid" stroke="#82ca9d" fill="yellow"/>
+                                            </AreaChart>
+                                        </div>
+                                    </div>
+                                    <div className="graf_2 text-center mt-5 col-lg-6 col-sm-12">
+                                        <div>
+                                            <AreaChart style={{margin:"auto"}} className="row"  width={300} height={350} data={this.state.data}>
+                                                <defs >
+                                                    <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                                                        <stop offset="5%" stopColor="rgb(2, 74, 229)" stopOpacity={0.8}/>
+                                                        <stop offset="95%" stopColor="rgb(2, 74, 229)" stopOpacity={0.1}/>
+                                                    </linearGradient>
+                                                    <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
+                                                        <stop offset="5%" stopColor="rgb(214, 221, 6)" stopOpacity={0.8}/>
+                                                        <stop offset="95%" stopColor="rgb(214, 221, 6)" stopOpacity={0.1}/>
+                                                    </linearGradient>
+                                                </defs>
+                                                <XAxis dataKey="name" stroke="#212121"/>
+                                                <YAxis stroke="#212121"/>
+                                                <Tooltip/>
+                                                <Area type="monotone" dataKey="total" stroke="#8884d8" fill="red"/>
+                                                <Area type="monotone" dataKey="paid" stroke="#82ca9d" fill="yellow"/>
+                                            </AreaChart>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -185,7 +312,7 @@ class MainPage extends Component {
                 </div>
                 <div className="container">
                     <div className="row d-flex justify-content-center">
-                        <div className="achievement">Наші досяглення</div>
+                        <div className="achievement">Наші досягнення</div>
                     </div>
                 </div>
                 <div className="container">
@@ -254,7 +381,7 @@ class MainPage extends Component {
                                 {newsFirst}
                             </div>
                             <div className="d-flex justify-content-center">
-                                <span className="allNews">Всі новини</span>
+                                <span  onClick={()=>this.props.history.push('/News')} className="allNews">Всі новини</span>
                             </div>
                         </div>
                         <div className="col">
@@ -275,7 +402,7 @@ class MainPage extends Component {
                                 - саме енергоефективність, що
                                 досягається завдяки передовим
                                 технологіям та стандартам якості.
-
+                                <br/>
                                 Сучасні енергозберігаючі та екологічні
                                 технології виробництва, досвід,
                                 злагодженість та професійний підхід –
@@ -284,8 +411,8 @@ class MainPage extends Component {
                                 нового рівня якості.
                             </div>
                         </div>
-                        <div className="col-sm-12 col-lg-6 d-flex justify-content-center">
-                            <img src={require("./images/advantage.png")} style={{height:400}} className="img_us" alt=""/>
+                        <div className="col-sm-12 col-lg-6" style={{padding:0}}>
+                            <img src={require("./images/advantage.png")} style={{height:"100%", margin:"auto"}} className="img_us" alt=""/>
                         </div>
                     </div>
                 </div>
@@ -293,7 +420,7 @@ class MainPage extends Component {
                     <div className="row d-flex justify-content-center">
                         <span className="sectionTitles">Що ви отримаєте?</span>
                     </div>
-                    <div className="row d-flex justify-content-center">
+                    <div className="text-center mb-5">
                 <span className="whatYouGetText">
                     Великий досвід на ринку України та інших країн дозволив нам
                     створити професійну команду, що складається з провідних
@@ -357,7 +484,7 @@ class MainPage extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="row d-flex justify-content-center mb-5">
+                    <div className="text-center mb-5">
                 <span className="whatYouGetText col-12">
                     Головне правило нашої компанії: для успішного ведення бізнесу
                     необхідно передбачати тенденції та завжди бути на крок

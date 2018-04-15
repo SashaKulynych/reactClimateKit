@@ -27,7 +27,7 @@ class Footer extends Component {
                             <div className="col-sm-12 col-lg-6 ">
                                 <ul className="contacts">
                                     <li style={{fontSize:20}}>Контакти</li>
-                                    <li><i className="fas fa-envelope contactIcons"/>email@gmail.com</li>
+                                    <li><i className="fas fa-envelope contactIcons"/>info@ klimatkomplect.com.ua</li>
                                     <li><i className="fas fa-phone-volume contactIcons"/>+38 099 001 00 00</li>
                                 </ul>
                             </div>
