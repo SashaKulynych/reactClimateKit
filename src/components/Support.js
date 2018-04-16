@@ -17,7 +17,7 @@ class Support extends Component {
                     <div className="afterHeader">
                         <img className="afterHeaderPicture" src={require('./images/pictureCategory.png')} alt=""/>
                     </div>
-                    <div className="d-flex row">
+                    <div className="d-flex row" style={{margin:"0"}}>
                         <div className="col contactContainer">
                             <div className="contact">КОНТАКТЫ</div>
                             <div className="phones">
