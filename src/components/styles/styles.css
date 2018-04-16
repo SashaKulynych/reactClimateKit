@@ -38,11 +38,27 @@ ul{
         height: 200px!important;
     }
     .aboutUsText {
+        float: none!important;
         font-size: 14px!important;
     }
+
+    .reg_text_1 div{
+        float: none!important;
+    }
+
+    .reg_text_2{
+        padding-left: 30px!important;
+    }
+    .reg_text_2 div{
+        float: none!important;
+    }
+
     .aboutButton{
         padding: 10px 59px!important;
         font-size: 20px!important;
+    }
+    .headerRightPart{
+        right: 65px!important;
     }
 
     .title{
@@ -181,6 +197,7 @@ ul{
     padding:10px 0px 10px 0px;
     text-align: center;
     font-size: 24px;
+    float: left;
     font-family: Arial;
 }
 .aboutButton{

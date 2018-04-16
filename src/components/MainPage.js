@@ -50,7 +50,7 @@ class MainPage extends Component {
                 {backgroundImage: "url(http://admin.klimatkomplect.com.ua/image/news/"+value.img+")"};
             return(
 
-                <div className="col newsBlock">
+                <div className="col newsBlock" onClick={()=>this.props.history.push('/text')}>
                     <div className="newsPicture d-flex justify-content-center align-items-center"
                          style={img}>
                         <div className="pictureTitle"></div>
@@ -94,7 +94,7 @@ class MainPage extends Component {
                             </ol>
                             <div className="carousel-inner">
                                 <div className="carousel-item active row">
-                                <div className="textInSlider col-lg-6 col-sm-12 text-center">
+                                <div className="textInSlider col-lg-6 col-sm-12 text-justify">
                                     Якщо  Ви на цьому сайті , то Ви шукаєте свіже повітря! Або ж цікавлять певні особливі кліматичні умови?
                                     <br/><br/>
                                     Не має значення, Ви прийшли за простим вентилятором, чи цілою кліматизаційною установкою – пошук буде простим і приємним.
@@ -145,7 +145,7 @@ class MainPage extends Component {
                                     </div>
                             </div>
                                 <div class="carousel-item row">
-                                    <div className="textInSlider col-lg-6 col-sm-12 text-center">
+                                    <div className="textInSlider col-lg-6 col-sm-12 text-justify">
                                         Якщо  Ви на цьому сайті , то Ви шукаєте свіже повітря! Або ж цікавлять певні особливі кліматичні умови?
                                         <br/><br/>
                                         Не має значення, Ви прийшли за простим вентилятором, чи цілою кліматизаційною установкою – пошук буде простим і приємним.
@@ -196,7 +196,7 @@ class MainPage extends Component {
                                     </div>
                                 </div>
                                 <div class="carousel-item row">
-                                    <div className="textInSlider col-lg-6 col-sm-12 text-center">
+                                    <div className="textInSlider col-lg-6 col-sm-12 text-justify">
                                         Якщо  Ви на цьому сайті , то Ви шукаєте свіже повітря! Або ж цікавлять певні особливі кліматичні умови?
                                         <br/><br/>
                                         Не має значення, Ви прийшли за простим вентилятором, чи цілою кліматизаційною установкою – пошук буде простим і приємним.
@@ -376,7 +376,7 @@ class MainPage extends Component {
                         <div className="achievement">Новини та статті</div>
                     </div>
                     <div className="row">
-                        <div className="col">
+                        <div className="col mr-5">
                             <div className="row mb-4">
                                 {newsFirst}
                             </div>

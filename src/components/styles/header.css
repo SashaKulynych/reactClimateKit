@@ -33,7 +33,7 @@
 }
 .header .headerRightPart{
     position: absolute;
-    right: 40px;
+    right: 87px;
 }
 .header .circle{
     cursor: pointer;
@@ -252,10 +252,26 @@
 .header .buttonEnter{
     margin: auto;
     cursor: pointer;
-    padding:5px 20px;
+    padding:5px 30px;
     background-color: #fed328;
     width:fit-content;
 }
+
+.reg_text_1{
+    padding: 0!important;
+}
+
+.reg_text_1 div{
+    float: left;
+}
+
+.reg_text_2{
+    padding: 0;
+}
+.reg_text_2 div{
+    float: right;
+}
+
 .header .reg_forgetPassword{
     margin-top: 20px;
     color: white;

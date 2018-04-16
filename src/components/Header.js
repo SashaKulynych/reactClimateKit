@@ -258,10 +258,10 @@ class Header extends Component {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col text-center">
+                            <div className="col-lg-3" style={{padding:"0"}}>
                                 <div className="buttonEnter " onClick={()=>this.login()}>Увійти</div>
                             </div>
-                            <div className="col">
+                            <div className="col-lg-9" style={{padding:"0"}}>
                                 <div className="d-flex align-items-center justify-content-end">
                                     <input type="checkbox"/>
                                     <label className="rememberMe">Запам'ятати мене</label>
@@ -269,7 +269,7 @@ class Header extends Component {
                             </div>
                         </div>
                         <div className="row reg_forgetPassword">
-                            <div className="col">
+                            <div className="col reg_text_1">
                                 <div className="d-flex justify-content-start">
                                     <span className="registrationView" onClick={()=>{
                                         this.openAuthonCloseModal()
@@ -277,7 +277,7 @@ class Header extends Component {
                                     }}>Зареєструватися</span>
                                 </div>
                             </div>
-                            <div className="col">
+                            <div className="col reg_text_2">
                                 <div className="d-flex justify-content-end">
                                     <span className="forgerPassword">Забув пароль</span>
                                 </div>
