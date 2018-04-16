@@ -368,7 +368,7 @@ class Header extends Component {
                                     <ul id="2" className="collapse">
                                         {manufacts}
                                     </ul>
-                                    <span onClick={()=>this.props.history.push('/text')}>КОНТАКТИ &#8595;</span>
+                                    <span onClick={()=>this.props.history.push('/text')}>КОНТАКТИ</span>
                                     <span data-toggle="collapse" data-target="#4">ПІДТРИМКА &#8595;</span>
                                     <ul  id="4" className="collapse">
                                         <li onClick={()=>this.props.history.push('/text')}><span>Відеокурс</span></li>

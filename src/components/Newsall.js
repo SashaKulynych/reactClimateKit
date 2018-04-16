@@ -24,6 +24,8 @@ class AllNews extends Component {
     }
 
     render() {
+        let revers = this.state.news.reverse();
+        console.log("revers", revers);
         let newsFirst=this.state.news.map((value)=>{
             let maxLength = 15;
             let title =value.title.length>15?value.title.substring(0, maxLength) + '...':value.title;
