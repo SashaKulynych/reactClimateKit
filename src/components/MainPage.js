@@ -92,7 +92,7 @@ class MainPage extends Component {
                                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                             </ol>
-                            <div className="carousel-inner">
+                            <div className="carousel-inner container_wrap">
                                 <div className="carousel-item active row">
                                 <div className="textInSlider col-lg-6 col-sm-12 text-justify">
                                     Якщо  Ви на цьому сайті , то Ви шукаєте свіже повітря! Або ж цікавлять певні особливі кліматичні умови?
@@ -344,6 +344,7 @@ class MainPage extends Component {
                     </div>
                 </div>
                 <div className="container-fluid aboutUs">
+                    <div className="container_wrap">
                     <div className="row d-flex justify-content-center">
                         <div className="about">Про нас</div>
                     </div>
@@ -370,13 +371,14 @@ class MainPage extends Component {
                             Підібрати вентилятор
                         </div>
                     </div>
+                    </div>
                 </div>
                 <div className="container mb-5">
                     <div className="row d-flex justify-content-center">
                         <div className="achievement">Новини та статті</div>
                     </div>
                     <div className="row">
-                        <div className="col mr-5">
+                        <div className="col mr-lg-5">
                             <div className="row mb-4">
                                 {newsFirst}
                             </div>
@@ -395,6 +397,7 @@ class MainPage extends Component {
                     </div>
                 </div>
                 <div className="container-fluid advantageSection">
+                    <div className="container_wrap">
                     <div className="row">
                         <div className="col">
                             <div className="advantage">
@@ -414,6 +417,7 @@ class MainPage extends Component {
                         <div className="col-sm-12 col-lg-6" style={{padding:0}}>
                             <img src={require("./images/advantage.png")} style={{height:"100%", margin:"auto"}} className="img_us" alt=""/>
                         </div>
+                    </div>
                     </div>
                 </div>
                 <div className="container whatYouGet">

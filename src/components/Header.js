@@ -311,11 +311,13 @@ class Header extends Component {
         return (
             <div className="header">
                 <Notifications options={{zIndex: 5000}} />
-                <div className="container-fluid">
+                <div className="container_wrap" style={{padding:"0"}}>
                     {this.registrationView()}
                     {this.authorizationView()}
-                    <div className="row headerCircles">
-                        <div className="row">
+                    <div className='bg_header'>
+                    <div className="row col headerCircles">
+                        <div className="row col-lg-3 col-sm-11
+                        ">
                             <div className="circle">
                                 <i className="fab fa-facebook-f"/>
                             </div>
@@ -326,8 +328,8 @@ class Header extends Component {
                                 <i className="fab fa-instagram"/>
                             </div>
                         </div>
-                        <div className="row headerRightPart">
-                            <div className="text phone">+38 099 001 01 01</div>
+                        <div className="row col headerRightPart">
+                            <div className="text phone">+380443791090 +380662791090<br/> +380682791090 +380932791090</div>
                             <div className="text email">info@ klimatkomplect.com.ua</div>
                             {this.props.userInfo===null?
                                 <div className="row">
@@ -343,6 +345,7 @@ class Header extends Component {
                                     <div className="text enter" >{this.props.userInfo.name}</div>
                                 </div>}
                         </div>
+                    </div>
                     </div>
                     <div className="hideMenu">
                         <nav className="navbar navbar-toggleable-md navbar-light bg-faded hideMainMenu">
@@ -380,7 +383,7 @@ class Header extends Component {
                         </nav>
                     </div>
                     <div className="mainMenu">
-                        <div className="row menu d-flex align-items-center">
+                        <div className="row menu d-flex align-items-center" style={{margin:"0"}}>
                             <div className="col d-flex justify-content-start">
                                 <div className="row">
                                     <div className="menu-left-part">

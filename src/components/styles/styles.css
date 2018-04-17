@@ -3,8 +3,9 @@ ul{
     padding:0;
 }
 
-.mainPageSlider{
-
+.container_wrap{
+    max-width: 1366px;
+    margin: auto;
 }
 .slider{
     padding: 0;
@@ -14,7 +15,9 @@ ul{
     background-repeat: no-repeat;
 }
 @media (max-width: 992px) {
-
+    .container_wrap{
+        max-width: 100%!important;
+    }
     .slider{
         background-size: auto;
         background-position-x: center;
@@ -58,6 +61,7 @@ ul{
         font-size: 20px!important;
     }
     .headerRightPart{
+        position: absolute;
         right: 65px!important;
     }
 

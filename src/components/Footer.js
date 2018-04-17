@@ -9,6 +9,7 @@ class Footer extends Component {
         return (
             <div className="footer">
                 <div className="container-fluid  footerContainer">
+                    <div className=" container_wrap">
                     <div className="row ml-0 mr-0">
                         <div className="col-lg-3 col-sm-12 footerBlockLeft d-flex justify-content-center align-items-center">
                             <div className="footerLogoTextLeft">Клімат</div>
@@ -38,6 +39,7 @@ class Footer extends Component {
                                 <div className="deliveryText">Доставка 24 години</div>
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>
