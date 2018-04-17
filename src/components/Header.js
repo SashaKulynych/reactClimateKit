@@ -311,10 +311,10 @@ class Header extends Component {
         return (
             <div className="header">
                 <Notifications options={{zIndex: 5000}} />
+                <div className='bg_header'>
                 <div className="container_wrap" style={{padding:"0"}}>
                     {this.registrationView()}
                     {this.authorizationView()}
-                    <div className='bg_header'>
                     <div className="row col headerCircles">
                         <div className="row col-lg-3 col-sm-11
                         ">
@@ -345,6 +345,7 @@ class Header extends Component {
                                     <div className="text enter" >{this.props.userInfo.name}</div>
                                 </div>}
                         </div>
+                    </div>
                     </div>
                     </div>
                     <div className="hideMenu">
@@ -382,7 +383,7 @@ class Header extends Component {
                             </div>
                         </nav>
                     </div>
-                    <div className="mainMenu">
+                    <div className="mainMenu container_wrap">
                         <div className="row menu d-flex align-items-center" style={{margin:"0"}}>
                             <div className="col d-flex justify-content-start">
                                 <div className="row">
@@ -438,7 +439,6 @@ class Header extends Component {
                         </div>
                     </div>
                 </div>
-            </div>
         )
     }
 }
