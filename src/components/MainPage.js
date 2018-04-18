@@ -350,6 +350,7 @@ class MainPage extends Component {
                     </div>
                     <div className="row">
                         <div className="col d-flex justify-content-center">
+                            <span className="play"><i class="far fa-play-circle"></i></span>
                             <img className="img_us" src={require("./images/vent.png")} alt=""/>
                         </div>
                         <div className="col">

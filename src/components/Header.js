@@ -124,7 +124,14 @@ class Header extends Component {
 
     registrationView(){
         return(
-            <Modal showCloseIcon={false} open={this.state.openReg} onClose={this.openRegonCloseModal} little>
+            <Modal showCloseIcon={true}
+                   styles={{
+                       closeIcon:{
+                           background:"white",
+                           margin:10,
+                           borderRadius:20
+                       }
+                   }} open={this.state.openReg} onClose={this.openRegonCloseModal} little>
                 <div className="header">
                     <div className="authorizationHeader d-flex align-items-center justify-content-center">
                         <span>РЕЄСТРАЦІЯ</span>
@@ -206,12 +213,12 @@ class Header extends Component {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col">
+                            <div className="col" style={{padding:0}}>
                                 <div className="buttonEnter"
                                      onClick={()=>this.registration()}
                                 >Зареєструватися</div>
                             </div>
-                            <div className="col">
+                            <div className="col" style={{padding:0}}>
                                 <div className="d-flex justify-content-end d-flex align-items-center"
                                      onClick={()=>{
                                          this.openRegonCloseModal()
@@ -232,7 +239,15 @@ class Header extends Component {
     }
     authorizationView(){
         return(
-            <Modal showCloseIcon={false} open={this.state.openAuth} onClose={this.openAuthonCloseModal} little>
+            <Modal showCloseIcon={true}
+                   styles={{
+                       closeIcon:{
+                           background:"white",
+                           margin:10,
+                           borderRadius:20
+                        }
+                   }}
+                   open={this.state.openAuth} onClose={this.openAuthonCloseModal} little>
                 <div className="header">
                     <div className="authorizationHeader d-flex align-items-center justify-content-center">
                         <span>ВХІД</span>
@@ -243,7 +258,7 @@ class Header extends Component {
                                 <div className="authInputIcon d-flex align-items-center justify-content-center">
                                     <i className="fas fa-user"/>
                                 </div>
-                                <input type="text" value={this.state.login.email} placeholder="username"
+                                <input type="text" value={this.state.login.email} placeholder="Логін"
                                     onChange={(e)=>this.onChangeAuth('email',e.target.value)}
                                 />
                             </div>
@@ -251,7 +266,7 @@ class Header extends Component {
                                 <div className="authInputIcon d-flex align-items-center justify-content-center">
                                     <i className="fas fa-unlock-alt"/>
                                 </div>
-                                <input type="password" placeholder="password"
+                                <input type="password" placeholder="Пароль"
                                        value={this.state.login.password}
                                        onChange={(e)=>this.onChangeAuth('password',e.target.value)}
                                 />
@@ -318,19 +333,21 @@ class Header extends Component {
                     <div className="row col headerCircles">
                         <div className="row col-lg-3 col-sm-11
                         ">
-                            <div className="circle">
+                            <div className="fb">
                                 <i className="fab fa-facebook-f"/>
                             </div>
-                            <div className="circle">
+                            <div className="tw">
                                 <i className="fab fa-twitter"/>
                             </div>
-                            <div className="circle">
+                            <div className="ig">
                                 <i className="fab fa-instagram"/>
                             </div>
                         </div>
                         <div className="row col headerRightPart">
-                            <div className="text phone">+380443791090 +380662791090<br/> +380682791090 +380932791090</div>
-                            <div className="text email">info@ klimatkomplect.com.ua</div>
+                            {/*<div className="text phone">+380443791090 </div>*/}
+                            {/*<span className="phone_1">+380662791090 +380682791090 +380932791090</span>*/}
+                            <span data-toggle="collapse" className="text phone" data-target="#6">+380443791090  &#8595;</span>
+                            <div className="text email">info@klimatkomplect.com.ua</div>
                             {this.props.userInfo===null?
                                 <div className="row">
                                     <div className="circle" onClick={this.openAuthonOpenModal}>
@@ -348,6 +365,11 @@ class Header extends Component {
                     </div>
                     </div>
                     </div>
+                <ul id="6" className="collapse hide_phone">
+                    <li><span>+380662791090</span></li>
+                    <li><span>+380682791090</span></li>
+                    <li><span>+380932791090</span></li>
+                </ul>
                     <div className="hideMenu">
                         <nav className="navbar navbar-toggleable-md navbar-light bg-faded hideMainMenu">
                             <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -390,7 +412,7 @@ class Header extends Component {
                                     <div className="menu-left-part">
                                         <ul>
                                             <li>
-                                                <span data-toggle="collapse" data-target="#1">ГОЛОВНА</span>
+                                                <span onClick={()=>this.props.history.push('/')}  data-toggle="collapse" data-target="#1">ГОЛОВНА</span>
                                                 <ul id="1" className="collapse">
                                                     <li onClick={()=>this.props.history.push('/text')}><span>Історія</span></li>
                                                     <li onClick={()=>this.props.history.push('/reference')}><span>Референс</span></li>
@@ -400,7 +422,7 @@ class Header extends Component {
                                         </ul>
                                         <ul>
                                             <li>
-                                                <span data-toggle="collapse" data-target="#2">КАТЕГОРІЇ</span>
+                                                <span  style={{paddingLeft:"40px"}} data-toggle="collapse" data-target="#2">КАТЕГОРІЇ</span>
                                                 <ul id="2" className="collapse">
                                                     {manufacts}
                                                 </ul>
@@ -421,7 +443,7 @@ class Header extends Component {
                             <div className="col menu-right-part d-flex justify-content-end">
                                 <ul>
                                     <li>
-                                        <span onClick={()=>this.props.history.push('/text')} >КОНТАКТИ</span>
+                                        <span  style={{paddingRight:"40px"}} onClick={()=>this.props.history.push('/text')} >КОНТАКТИ</span>
 
                                     </li>
                                 </ul>

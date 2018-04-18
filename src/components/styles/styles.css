@@ -31,8 +31,11 @@ ul{
     .phone{
         display: none;
     }
+    .hide_phone{
+        display: none!important;
+    }
     .email{
-        display: none;
+        display: none!important;
     }
     .img_us{
         display: flex;
@@ -125,7 +128,18 @@ ul{
     .item .saveButtonStyle, .item .addButtonStyle{
         margin: 5px auto!important;
     }
+    .play{
+        padding-top: 45px!important;
+    }
+    .footer_icon{justify-content: center!important;}
 
+}
+
+.footer_icon{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .img_us{
@@ -186,6 +200,15 @@ ul{
     transition:all 0.9s ease;
     height: 200px;
 }
+
+.play{
+    cursor: pointer;
+    color: white;
+    font-size: 80px;
+    padding-top: 130px;
+    position: absolute;
+}
+
 .aboutUs{
     margin-top: 25px;
     background-color: #f1f1f1;
@@ -196,10 +219,16 @@ ul{
     font-size: 40px;
     font-family: Arial;
 }
+
+::-webkit-input-placeholder {color:gray!important;}
+::-moz-placeholder          {color:gray!important;}/* Firefox 19+ */
+:-moz-placeholder           {color:gray!important;}/* Firefox 18- */
+:-ms-input-placeholder      {color:gray!important;}
+
 .aboutUsText{
     cursor: default;
     padding:10px 0px 10px 0px;
-    text-align: center;
+    text-align: left;
     font-size: 24px;
     float: left;
     font-family: Arial;

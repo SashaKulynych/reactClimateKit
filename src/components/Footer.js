@@ -31,6 +31,18 @@ class Footer extends Component {
                                     <li><i className="fas fa-envelope contactIcons"/>info@ klimatkomplect.com.ua</li>
                                     <li><i className="fas fa-phone-volume contactIcons"/>+38 099 001 00 00</li>
                                 </ul>
+                                <div className="row footer_icon col-lg-12 col-sm-11
+                        ">
+                                    <div className="fb">
+                                        <i className="fab fa-facebook-f"/>
+                                    </div>
+                                    <div className="tw">
+                                        <i className="fab fa-twitter"/>
+                                    </div>
+                                    <div className="ig">
+                                        <i className="fab fa-instagram"/>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div style={{margin:0}} className="col-lg-3 col-sm-12 row align-items-center justify-content-center">
