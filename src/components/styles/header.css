@@ -37,6 +37,10 @@
     padding: 0px 55px;
 }
 
+.fb{
+    margin-left: 0!important;
+}
+
 .fb:hover{
     background-color: #ffdc00!important;
     transition: 0.9s;

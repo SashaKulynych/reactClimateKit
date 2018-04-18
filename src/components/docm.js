@@ -33,7 +33,7 @@ class Docm extends Component {
             return(
                 <a href={a}>
                     <li key={index}>
-                        <div className="item">
+                        <div className="item" style={{background:"#fff"}}>
                             <img className="itemPicture" src={require('./images/cooler.png')} alt=""/>
                         </div>
                         <div className="itemBottom">

@@ -73,3 +73,18 @@ input:focus {
     border-right:40px solid yellow;
     left:-40px;
 }
+
+.doct{
+
+}
+
+.img_doct{
+    text-align: center;
+}
+
+.doct p{
+    text-align: center;
+    font-size: 40px;
+    font-family: Arial;
+    padding: 30px 0;
+}
