@@ -346,7 +346,12 @@ class Header extends Component {
                         <div className="row col headerRightPart">
                             {/*<div className="text phone">+380443791090 </div>*/}
                             {/*<span className="phone_1">+380662791090 +380682791090 +380932791090</span>*/}
-                            <span data-toggle="collapse" className="text phone" data-target="#6">+380443791090  &#8595;</span>
+                            <span data-toggle="collapse" className="text phone" data-target="#6"><i class="fas fa-arrow-down"></i>   +380443791090</span>
+                            <ul id="6" className="collapse hide_phone">
+                                <li><span>  &nbsp;+380662791090</span></li>
+                                <li><span>  &nbsp;+380682791090</span></li>
+                                <li><span>  &nbsp;+380932791090</span></li>
+                            </ul>
                             <div className="text email">info@klimatkomplect.com.ua</div>
                             {this.props.userInfo===null?
                                 <div className="row">
@@ -365,11 +370,7 @@ class Header extends Component {
                     </div>
                     </div>
                     </div>
-                <ul id="6" className="collapse hide_phone">
-                    <li><span>+380662791090</span></li>
-                    <li><span>+380682791090</span></li>
-                    <li><span>+380932791090</span></li>
-                </ul>
+
                     <div className="hideMenu">
                         <nav className="navbar navbar-toggleable-md navbar-light bg-faded hideMainMenu">
                             <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -422,9 +423,10 @@ class Header extends Component {
                                         </ul>
                                         <ul>
                                             <li>
-                                                <span  style={{paddingLeft:"40px"}} data-toggle="collapse" data-target="#2">КАТЕГОРІЇ</span>
-                                                <ul id="2" className="collapse">
+                                                <span style={{paddingLeft:"40px"}}   data-toggle="collapse" data-target="#2">КАТЕГОРІЇ</span>
+                                                <ul style={{marginLeft:"30px"}} id="2" className="collapse">
                                                     {manufacts}
+                                                    <li onClick={()=>this.props.history.push('/Docm')}><span>Технічна документація</span></li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -451,9 +453,9 @@ class Header extends Component {
                                     <li>
                                         <span data-toggle="collapse" data-target="#4">ПІДТРИМКА</span>
                                         <ul  id="4" className="collapse">
-                                            <li onClick={()=>this.props.history.push('/text')}><span>Відеокурс</span></li>
-                                            <li onClick={()=>this.props.history.push('/support')}><span>Зв'язок</span></li>
-                                            <li onClick={()=>this.props.history.push('/about')}><span>Про компанію</span></li>
+                                            <li onClick={()=>this.props.history.push('/text')}><span className="potd">Відеокурс</span></li>
+                                            <li onClick={()=>this.props.history.push('/support')}><span className="potd">Зв'язок</span></li>
+                                            <li onClick={()=>this.props.history.push('/about')}><span className="potd">Про компанію</span></li>
                                         </ul>
                                     </li>
                                 </ul>

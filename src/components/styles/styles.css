@@ -192,9 +192,53 @@ ul{
 .achievementBlockTitle{
     font-family: Arial;
     position: relative;
-    z-index: 100;
+    z-index: 10;
     cursor: default;
 }
+
+.title_docm{
+    font-size: 40px;
+    font-family: Arial;
+    height: 150px;
+    text-align: center;
+    padding-top: 45px;
+    background: #e8e8e8;
+}
+
+.docm_div_1{
+    background: #4b9bff;
+}
+
+.categoryView_1{
+    position: absolute;
+    padding-top:40px;
+    display: flex;
+    justify-content: center;
+}
+
+.potd{
+    display: flex!important;
+    justify-content: flex-end;
+}
+
+.categoryView_1 ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    Width: 90%;
+}
+
+.docm_div_1 p{
+    text-align: center;
+    margin: 0;
+    font-size: 40px;
+    padding: 50px 0 150px 0;
+    color: white;
+}
+
 .achievementBlockImage{
     z-index: 1;
     transition:all 0.9s ease;
@@ -323,7 +367,7 @@ cursor: pointer;
     background-color: #f1f1f1;
 }
 .advantage{
-    padding:50px 0px 50px 25px;
+    padding:90px 0px 50px 25px;
     color:#2d2d2d;
     font-size: 30px;
     font-family: Arial;

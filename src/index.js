@@ -21,6 +21,7 @@ import Service from './components/Service'
 import About from './components/About'
 import Support from './components/Support'
 import AllNews from './components/Newsall'
+import Docm from './components/docm'
 
 export const history = createHistory()
 const middleware = routerMiddleware(history)
@@ -41,6 +42,7 @@ ReactDOM.render(
                 <Route exact path="/about" component={About} />
                 <Route exact path="/support" component={Support} />
                 <Route exact path="/News" component={AllNews} />
+                <Route exact path="/Docm" component={Docm} />
             </Switch>
         </ConnectedRouter>
     </Provider>
