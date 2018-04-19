@@ -89,7 +89,7 @@ class Categories extends Component {
             return(
                 <a href={a}>
                     <li key={index}>
-                        <div className="item">
+                        <div className="item_1">
                             <img className="itemPicture" src={require('./images/cooler.png')} alt=""/>
                         </div>
                         <div className="itemBottom">
@@ -102,11 +102,11 @@ class Categories extends Component {
         return (
             <div>
                 <Header/>
-                <div className="categories">
+                <div className="categories ">
                     <div className="afterHeader">
                         <img className="afterHeaderPicture" src={require('./images/pictureCategory.png')} alt=""/>
                     </div>
-                    <div className="row">
+                    <div className="row col container_wrap" style={{padding:0}}>
                         <div className="col-sm-12 col-lg-3 categoryMenu">
                             <ul>
                                 {categories}

@@ -367,7 +367,7 @@ class MainPage extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="row d-flex justify-content-center">
+                    <div className="row d-flex justify-content-center" style={{paddingTop:20}}>
                         <div className="aboutButton">
                             Підібрати вентилятор
                         </div>
@@ -416,7 +416,7 @@ class MainPage extends Component {
                             </div>
                         </div>
                         <div className="col-sm-12 col-lg-6" style={{padding:0}}>
-                            <img src={require("./images/advantage.png")} style={{height:"100%", margin:"auto"}} className="img_us" alt=""/>
+                            <img src={require("./images/advantage.png")} style={{height:"80%", margin:"auto"}} className="img_us" alt=""/>
                         </div>
                     </div>
                     </div>

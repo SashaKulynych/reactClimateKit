@@ -348,9 +348,9 @@ class Header extends Component {
                             {/*<span className="phone_1">+380662791090 +380682791090 +380932791090</span>*/}
                             <span data-toggle="collapse" className="text phone" data-target="#6"><i class="fas fa-arrow-down"></i>   +380443791090</span>
                             <ul id="6" className="collapse hide_phone">
-                                <li><span>  &nbsp;+380662791090</span></li>
-                                <li><span>  &nbsp;+380682791090</span></li>
-                                <li><span>  &nbsp;+380932791090</span></li>
+                                <li><span>  +380662791090</span></li>
+                                <li><span>  +380682791090</span></li>
+                                <li><span>  +380932791090</span></li>
                             </ul>
                             <div className="text email">info@klimatkomplect.com.ua</div>
                             {this.props.userInfo===null?

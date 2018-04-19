@@ -6,6 +6,7 @@
 
 }
 .footer .footerList>li{
+    font-family: "Open Sans";
     cursor: pointer;
     padding:5px 0px 5px 0px;
     color:#fff;
@@ -17,13 +18,14 @@
 }
 
 .contacts{
+    font-family: "Open Sans";
     color:white;
 }
 
 .footer .footerLogoTextLeft{
     color: #fff;
     font-size: 20px;
-    font-family: Arial;
+    font-family: "Open Sans";
     font-weight: bold;
     cursor: default;
     padding-right: 5px;
@@ -31,7 +33,7 @@
 .footer .footerLogoTextRight{
     color: #fff;
     font-size: 20px;
-    font-family: Arial;
+    font-family: "Open Sans";
     font-weight: bold;
     cursor: default;
     padding-left: 5px;
@@ -40,6 +42,7 @@
     text-align: center;
 }
 .footer .deliveryText{
+    font-family: "Open Sans";
     color: #fff;
     font-size: 20px;
     font-weight: bold;
@@ -50,6 +53,7 @@
     padding:10px 10px 10px 0px;
 }
 .footer npm .contacts>li{
+    font-family: "Open Sans";
     cursor: pointer;
     color:#fff;
     padding:10px 0px 0px 10px;

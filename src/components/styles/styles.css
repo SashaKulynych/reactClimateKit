@@ -41,13 +41,15 @@ ul{
         display: flex;
         justify-items: center;
         float: none!important;
-        height: 200px!important;
+        height: 160px!important;
     }
     .aboutUsText {
         float: none!important;
         font-size: 14px!important;
     }
-
+    .advantageSection{
+        height: 100% !important;
+    }
     .reg_text_1 div{
         float: none!important;
     }
@@ -143,6 +145,8 @@ ul{
 }
 
 .img_us{
+    height: 300px;
+    margin-top: 30px;
     float: right;
 }
 
@@ -181,7 +185,7 @@ ul{
 .achievement{
     padding:50px 0px 50px 0px;
     font-size: 40px;
-    font-family: Arial;
+    font-family: Roboto;
     cursor: default;
 }
 .achievementBlock{
@@ -190,7 +194,8 @@ ul{
     text-align: center;
 }
 .achievementBlockTitle{
-    font-family: Arial;
+    font-family: "Open Sans";
+    font-weight: 300;
     position: relative;
     z-index: 10;
     cursor: default;
@@ -238,6 +243,7 @@ ul{
 .docm_div_1 p{
     text-align: center;
     margin: 0;
+    font-family: Roboto;
     font-size: 40px;
     padding: 50px 0 150px 0;
     color: white;
@@ -265,7 +271,7 @@ ul{
     cursor: default;
     padding:10px 0px 10px 0px;
     font-size: 40px;
-    font-family: Arial;
+    font-family: Roboto;
 }
 
 ::-webkit-input-placeholder {color:gray!important;}
@@ -275,20 +281,20 @@ ul{
 
 .aboutUsText{
     cursor: default;
-    padding:10px 0px 10px 0px;
+    padding:40px 0px 10px 0px;
     text-align: left;
-    font-size: 24px;
+    font-size: 20px;
     float: left;
-    font-family: Arial;
+    font-family: "Open Sans";
 }
 .aboutButton{
     cursor: pointer;
     margin-top: 15px;
-    padding: 10px 80px;
+    padding: 10px 25px;
     background-color: #fddb1d;
     font-size: 30px;
-    font-family: Arial;
-    margin-bottom: 50px;
+    font-family: "Open Sans";
+    margin-bottom: 20px;
 }
 .aboutButton:hover{
     box-shadow: 0 0 15px rgba(0,0,0,0.5);
@@ -297,7 +303,7 @@ ul{
 .news{
     padding:50px 0px 50px 0px;
     font-size: 40px;
-    font-family: Arial;
+    font-family: "Open Sans";
 }
 .newsPicture{
     height:150px;
@@ -306,13 +312,13 @@ ul{
 }
 .pictureTitle{
     font-size: 35px;
-    font-family: Arial;
+    font-family: "Open Sans";
     color: white;
 }
 .newsTitle{
     margin: auto;
     font-size: 20px;
-    font-family: Arial;
+    font-family: "Open Sans";
     color: #3b3b3b;
     display:inline-block;
     width:200px;
@@ -331,7 +337,7 @@ cursor: pointer;
 .newsDescription{
     text-align: center;
     font-size: 15px;
-    font-family: Arial;
+    font-family: "Open Sans";
     color: #808080;
     overflow: hidden;
     text-overflow:ellipsis;
@@ -342,15 +348,15 @@ cursor: pointer;
     margin-bottom:25px;
     padding:2px 120px;
     background-color: #fddb1d;
-    font-size: 25px;
-    font-family: Arial;
+    font-size: 23px;
+    font-family: "Open Sans";
     color: #282828;
     cursor: pointer;
 }
 .allNews_1{
         background-color: #fddb1d;
         font-size: 25px;
-        font-family: Arial;
+        font-family: "Open Sans";
         color: #282828;
         border: none;
         cursor: pointer;
@@ -358,7 +364,7 @@ cursor: pointer;
 .title{
     margin-top: 100px;
     font-size: 32px;
-    font-family: Arial;
+    font-family: "Open Sans";
 }
 .allNews:hover{
     box-shadow: 0 0 15px rgba(0,0,0,0.5);
@@ -368,22 +374,24 @@ cursor: pointer;
     cursor: pointer;
 }
 .advantageSection{
+    height: 461px;
     background-color: #f1f1f1;
 }
 .advantage{
-    padding:90px 0px 50px 25px;
+    padding:58px 0px 50px 25px;
     color:#2d2d2d;
-    font-size: 30px;
-    font-family: Arial;
+    font-size: 26px;
+    font-family: "Open Sans";
 }
 .sectionTitles{
     padding:50px 0px 50px 0px;
     font-size: 40px;
-    font-family: Arial;
+    font-family: Roboto;
 }
 .whatYouGetText{
     text-align: center;
     color:#3b3b3b;
+    font-family: "Open Sans";
     font-size: 30px;
     margin-bottom:50px;
     max-width:850px;
@@ -409,6 +417,7 @@ cursor: pointer;
 
 }
 .whatYouGetBlockText{
+    /*font-family: "Open Sans";*/
     margin:25px 0px 55px 0px;
 }
 

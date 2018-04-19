@@ -74,6 +74,7 @@ class Item extends Component {
                             <div className="description">
                                 {this.state.product.desc}
                             </div>
+                            {console.log("", this.state.product)}
                             <div className="row">
                                 <div className="rightButtonStyle col-sm-12">
                                     <span>Опис</span>

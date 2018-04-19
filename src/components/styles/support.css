@@ -3,6 +3,7 @@
     height: auto;
 }
 .support .contactContainer{
+    background: url("../images/maps.png");
     padding:75px;
 }
 .support .supportContainer{
@@ -27,7 +28,7 @@
     font-size: 26px;
 }
 .support .supportContainer{
-    background-color: yellow;
+    background-color: #ffea00;
 }
 .support .nameInputGroup{
 
@@ -70,7 +71,7 @@ input:focus {
     height: 0;
     border-top: 40px solid transparent;
     border-bottom: 40px solid transparent;
-    border-right:40px solid yellow;
+    border-right:40px solid #ffea00;
     left:-40px;
 }
 

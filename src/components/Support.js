@@ -20,7 +20,7 @@ class Support extends Component {
                     </div>
                     <div className="d-flex row container_wrap" style={{margin:"0"}}>
                         <div className="col contactContainer">
-                            <div className="contact">КОНТАКТЫ</div>
+                            <div className="contact">КОНТАКТИ</div>
                             <div className="phones">
                                 <i className="fas fa-phone-volume phoneIcon"/>
                                 <div className="numbers">
@@ -38,33 +38,33 @@ class Support extends Component {
                             <div className="location">
                                 <i className="fas fa-map-marker-alt locationIcon"/>
                                 <div className="numbers">
-                                    <span>улица дом 20</span>
-                                    <span>город</span>
-                                    <span>Страна</span>
+                                    <span>Вулиця будинок 20</span>
+                                    <span>Місто</span>
+                                    <span>Країна</span>
                                 </div>
                             </div>
                         </div>
                         <div className="col supportContainer">
                             <div className="arrow"></div>
-                            <div className="contact">ОБРАТНАЯ СВЯЗЬ</div>
+                            <div className="contact">ЗВОРОТНІЙ ЗВ'ЯЗОК</div>
                             <div className="nameInputGroup row d-flex">
                                 <div className="nameInputIcon d-flex align-items-center">
                                     <i className="fas fa-user"/>
                                 </div>
-                                <input type="text" placeholder="ИМЯ"/>
+                                <input type="text" placeholder="Ім'я"/>
                             </div>
                             <div className="nameInputGroup row d-flex">
                                 <div className="nameInputIcon d-flex align-items-center">
                                     <i className="fas fa-at"/>
                                 </div>
-                                <input type="text" placeholder="EMAIL"/>
+                                <input type="text" placeholder="Email"/>
                             </div>
                             <div className="nameInputGroup row d-flex">
-                               <textarea placeholder="ТЕКСТ СООБЩЕНИЯ" rows={5}/>
+                               <textarea placeholder="ТЕКСТ ПОВІДОЛЕННЯ" rows={5}/>
                             </div>
                             <input type="file" style={{width:"100%"}} className="mb-3"/>
                             <div className=" row d-flex sendMessage align-items-center justify-content-between">
-                                <span>ОТПРАВИТЬ СООБЩЕНИЕ</span>
+                                <span style={{margin:"auto"}}>ВІДПРАВИТИ ПОВІДОЛЕННЯ</span>
                                 <i className="fas fa-arrow-right"/>
                             </div>
                         </div>
@@ -82,7 +82,7 @@ class Support extends Component {
                 </div>
                 <div style={{width:"100%",height:550, paddingTop:"40px"}}>
                     <MyGoogleMapComponent
-                        containerElement={<div style={{ height: `550px` }} />}
+                        containerElement={<div style={{ height: `510px` }} />}
                         mapElement={<div style={{ height: `100%` }} />}
                         isMarkerShown={false}/>
                 </div>
