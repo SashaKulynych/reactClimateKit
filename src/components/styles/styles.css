@@ -202,22 +202,37 @@ ul{
 }
 
 .title_docm{
-    font-size: 40px;
-    font-family: Arial;
-    height: 150px;
+    font-size: 30px;
+    font-family: Roboto;
+    height: 82px;
     text-align: center;
-    padding-top: 45px;
+    padding-top: 20px;
     background: #e8e8e8;
 }
 
 .docm_div_1{
+    position: absolute;
+    width: 100%;
     background: #4b9bff;
 }
 
+.docm_div_2{
+    position: absolute;
+    width: 100%;
+    background: #ffb54b;
+}
+
 .categoryView_1{
-    padding-top: 200px;
+    padding-top: 88px;
     display: flex;
     justify-content: center;
+}
+
+.itemTop{
+    float: right;
+    text-align: right;
+    width: 100px;
+    background:#ffd75f ;
 }
 
 .potd{
@@ -235,17 +250,13 @@ ul{
 
 }
 
-.docm_div_1{
-    position: absolute;
-    width: 100%;
-}
 
-.docm_div_1 p{
+.docm_div_1, .docm_div_2 p{
     text-align: center;
     margin: 0;
-    font-family: Roboto;
-    font-size: 40px;
-    padding: 50px 0 150px 0;
+    font-family: "Open Sans";
+    font-size: 30px;
+    padding: 24px 0 74px 0;
     color: white;
 }
 

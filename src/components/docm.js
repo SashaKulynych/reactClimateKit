@@ -31,14 +31,17 @@ class Docm extends Component {
         let products = this.state.products.map((value, index)=>{
             let a = '/item/'+value.id;
             return(
-                <a href={a}>
-                    <li key={index}>
+                <a href={a} style={{paddingRight:10}}>
+                    <li key={index} style={{width:200,height:200,border:"1px solid black", background:"#fff"}}>
+                        <div className="itemTop">
+                            {value.name}
+                        </div>
                         <div className="item_1" style={{background:"#fff"}}>
                             <img className="itemPicture" src={require('./images/cooler.png')} alt=""/>
                         </div>
-                        <div className="itemBottom">
-                            {value.name}
-                        </div>
+                        {/*<div className="itemBottom">*/}
+                            {/*{value.name}*/}
+                        {/*</div>*/}
                     </li>
                 </a>
             )
@@ -53,21 +56,31 @@ class Docm extends Component {
                 <div className="title_docm">
                     ТЕХНІЧНА ДОКУМЕНТАЦІЯ
                 </div>
-                <div className="row col-12">
+                <div className="row col-12 container_wrap">
                         <div onClick={() => this.setState({tab:0})}    className={`col-4 ${this.state.tab===0?css(styles.li_docm_1):css(styles.li_docm)}`}><p>RUCK</p></div>
                         <div onClick={() => this.setState({tab:1})}   className={`col-4 ${this.state.tab===1?css(styles.li_docm_1):css(styles.li_docm)}`}><p>SODECA</p></div>
                     <div onClick={() => this.setState({tab:2})}   className={`col-4 ${this.state.tab===2?css(styles.li_docm_1):css(styles.li_docm)}`}><p>ЩЕ ЩОСЬ</p></div>
                 </div>
                 <div className="docm_div_1">
                     <p>
-                    ВЕНТИЛЯТОРИ КУХОННІ
+                    ВЕНТИЛЯТОРИ КАНАЛЬНІ
                     </p>
                 </div>
-                <div className="col-sm-12 col-lg-12 categoryView_1">
+                <div className="col-sm-12 col-lg-12 categoryView_1 container_wrap">
                     <ul>
                         {products}
                     </ul>
                 </div>
+                    <div className="docm_div_2">
+                        <p>
+                            ВЕНТИЛЯТОРИ КУХОННІ
+                        </p>
+                    </div>
+                    <div className="col-sm-12 col-lg-12 categoryView_1 container_wrap">
+                        <ul>
+                            {products}
+                        </ul>
+                    </div>
                 </div>
                 <Footer/>
             </div>

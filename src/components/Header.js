@@ -360,8 +360,14 @@ class Header extends Component {
                                     </div>
                                     <div className="text enter" onClick={this.openAuthonOpenModal}>Вхід</div>
                                 </div>:
-                                <div className="row" onClick={()=>this.logOut()}>
-                                    <div className="circle" style={{backgroundColor:"#fe9228"}}>
+                                <div className="row" >
+                                    <div onClick={()=>this.props.history.push('/dealer')} className="circle">
+                                        <div className="shop_numb">
+                                            2
+                                        </div>
+                                        <i  class="fas fa-shopping-cart"/>
+                                    </div>
+                                    <div onClick={()=>this.logOut()} className="circle"  style={{backgroundColor:"#fe9228"}}>
                                         <i className="fas fa-user"/>
                                     </div>
                                     <div className="text enter" >{this.props.userInfo.name}</div>
@@ -426,7 +432,6 @@ class Header extends Component {
                                                 <span style={{paddingLeft:"40px"}}   data-toggle="collapse" data-target="#2">КАТЕГОРІЇ</span>
                                                 <ul style={{marginLeft:"30px"}} id="2" className="collapse">
                                                     {manufacts}
-                                                    <li onClick={()=>this.props.history.push('/Docm')}><span>Технічна документація</span></li>
                                                 </ul>
                                             </li>
                                         </ul>

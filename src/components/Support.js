@@ -16,7 +16,7 @@ class Support extends Component {
                 <Header/>
                 <div className="support">
                     <div className="afterHeader">
-                        <img className="afterHeaderPicture" src={require('./images/pictureCategory.png')} alt=""/>
+                        <img className="afterHeaderPicture" src={require('./images/pictureSupp.png')} alt=""/>
                     </div>
                     <div className="d-flex row container_wrap" style={{margin:"0"}}>
                         <div className="col contactContainer">
@@ -74,7 +74,7 @@ class Support extends Component {
                             ДОСТАВКА
                         </p>
                         <div  className="img_doct">
-                        <img style={{width:"100%"}} src={require("./images/delivery.png")} />
+                        <img style={{width:"100%",padding:"0 100px"}} src={require("./images/delivery.png")} />
                         </div>
 
 

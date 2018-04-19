@@ -80,10 +80,10 @@ class Item extends Component {
                                     <span>Опис</span>
                                 </div>
                                 <div className="rightButtonStyle col-sm-12">
-                                    <span>Технічні дані</span>
+                                    <span onClick={()=>this.props.history.push('/Docm')}>Технічні дані</span>
                                 </div>
-                                <div className="rightButtonStyle col-sm-12">
-                                    <span>Характеристики</span>
+                                <div  className="rightButtonStyle col-sm-12">
+                                    <span >Характеристики</span>
                                 </div>
                             </div>
                             <div className="row" style={{marginTop:20}}>

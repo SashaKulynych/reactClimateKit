@@ -10,6 +10,7 @@
     padding:75px;
 }
 .support .contact{
+    font-family: Roboto;
     font-size: 24px;
     padding-bottom: 50px;
 }
@@ -23,6 +24,7 @@
     display: flex;
     flex-direction: column;
     padding-left: 25px;
+    font-size: 25px;
 }
 .support .phoneIcon, .support .emailIcon, .support .locationIcon{
     font-size: 26px;
@@ -35,7 +37,7 @@
     padding:10px;
     border:1px solid black;
     border-radius: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 .support .nameInputGroup input{
     outline:none;
