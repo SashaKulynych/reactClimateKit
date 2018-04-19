@@ -56,9 +56,9 @@ class Docm extends Component {
                     ТЕХНІЧНА ДОКУМЕНТАЦІЯ
                 </div>
                 <div className="row col-12 container_wrap">
-                        <div onClick={() => this.setState({tab:0})}    className={`col-4 ${this.state.tab===0?css(styles.li_docm_1):css(styles.li_docm)}`}><p>RUCK</p></div>
-                        <div onClick={() => this.setState({tab:1})}   className={`col-4 ${this.state.tab===1?css(styles.li_docm_1):css(styles.li_docm)}`}><p>SODECA</p></div>
-                    <div onClick={() => this.setState({tab:2})}   className={`col-4 ${this.state.tab===2?css(styles.li_docm_1):css(styles.li_docm)}`}><p>ЩЕ ЩОСЬ</p></div>
+                        <div onClick={() => this.setState({tab:0})}    className={`col-lg-4 col-sm-12 ${this.state.tab===0?css(styles.li_docm_1):css(styles.li_docm)}`}><p>RUCK</p></div>
+                        <div onClick={() => this.setState({tab:1})}   className={`col-lg-4 col-sm-12 ${this.state.tab===1?css(styles.li_docm_1):css(styles.li_docm)}`}><p>SODECA</p></div>
+                    <div onClick={() => this.setState({tab:2})}   className={`col-lg-4 col-sm-12 ${this.state.tab===2?css(styles.li_docm_1):css(styles.li_docm)}`}><p>ЩЕ ЩОСЬ</p></div>
                 </div>
                 <div className="docm_div_1">
                     <p>

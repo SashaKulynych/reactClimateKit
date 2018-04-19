@@ -73,6 +73,16 @@ ul{
     .title{
         margin-top: 10px!important;
     }
+
+    .docm_div_1, .docm_div_2 p{
+        font-size: 24px!important;
+    }
+
+    .title_docm{
+        font-size: 24px!important;
+    }
+
+
     .allNews{
         text-align: center;
         padding: 10px 120px!important;
