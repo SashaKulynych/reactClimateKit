@@ -53,6 +53,16 @@
     border: 1px solid #acacac;
     margin-right: 20px;
 }
+
+
+.item_2{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width:200px;
+    border-right: 1px solid #acacac;
+    margin-right: 20px;
+}
 .itemBottom{
     height: 50px;
     width: 200px;

@@ -27,8 +27,8 @@ class Dealer extends Component {
                     <div className="afterHeader">
                         <img className="afterHeaderPicture" src={require('./images/dealer.png')} alt=""/>
                     </div>
-                    <div className="d-flex">
-                        <div className="col-3 categoryMenu">
+                    <div className="d-flex row container_wrap">
+                        <div className="col-lg-3 col-sm-12 categoryMenu">
                             <ul>
                                 <li onClick={()=>this.changeTab(0)}>
                                     <span className={this.state.tab===0?css(styles.borderYellow):null}>Меню 1</span>
@@ -47,9 +47,9 @@ class Dealer extends Component {
                                 </li>
                             </ul>
                         </div>
-                        <div className="col categoryView">
-                            <table style={{width:'100%'}}>
-                                <tr>
+                        <div className="col-sm-12 col-lg-9 categoryView">
+                            <table className="col-12 ">
+                                <tr className="col-1">
                                     <th>№</th>
                                     <th>Дата замовлення</th>
                                     <th>Обладняння</th>

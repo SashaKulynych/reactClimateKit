@@ -332,7 +332,7 @@ class Header extends Component {
                     {this.authorizationView()}
                     <div className="row col headerCircles">
                         <div className="row col-lg-3 col-sm-11
-                        ">
+                        " style={{paddingLeft:21}}>
                             <div className="fb">
                                 <i className="fab fa-facebook-f"/>
                             </div>

@@ -29,19 +29,18 @@ class Docm extends Component {
     }
     render() {
         let products = this.state.products.map((value, index)=>{
-            let a = '/item/'+value.id;
             return(
-                <a href={a} style={{paddingRight:10}}>
-                    <li key={index} style={{width:200,height:200,border:"1px solid black", background:"#fff"}}>
+                <a style={{paddingRight:10}}>
+                    <li key={index} style={{width:200,height:200,border:"1px solid #acacac", background:"#fff"}}>
                         <div className="itemTop">
                             {value.name}
                         </div>
-                        <div className="item_1" style={{background:"#fff"}}>
-                            <img className="itemPicture" src={require('./images/cooler.png')} alt=""/>
+                        <div className="item_2" style={{background:"#fff"}}>
+                            <img className="DocmPicture" src={require('./images/cooler.png')} alt=""/>
                         </div>
-                        {/*<div className="itemBottom">*/}
-                            {/*{value.name}*/}
-                        {/*</div>*/}
+                        <div className="docmBottom">
+                            {value.name}
+                        </div>
                     </li>
                 </a>
             )

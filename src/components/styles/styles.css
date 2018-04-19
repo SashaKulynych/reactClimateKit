@@ -95,6 +95,9 @@ ul{
     .contacts{
         text-align: center!important;
     }
+    .aboutUsText{
+        text-align: center!important;
+    }
     .footerList{
         text-align: center!important;
     }
@@ -184,7 +187,7 @@ ul{
 }
 .achievement{
     padding:50px 0px 50px 0px;
-    font-size: 40px;
+    font-size: 39px;
     font-family: Roboto;
     cursor: default;
 }
@@ -222,16 +225,27 @@ ul{
     background: #ffb54b;
 }
 
+.DocmPicture{
+    width: 86px;
+}
+
 .categoryView_1{
     padding-top: 88px;
     display: flex;
     justify-content: center;
 }
 
+.docmBottom{
+    color: black;
+}
+
 .itemTop{
     float: right;
-    text-align: right;
-    width: 100px;
+    text-align: center;
+    width: 120px;
+    font-size:24px;
+    margin:10px;
+    color:#000;
     background:#ffd75f ;
 }
 
