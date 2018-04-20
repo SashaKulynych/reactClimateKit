@@ -52,14 +52,46 @@ export async function getSubCategories(id) {
         method: 'GET'
     }).then((response)=>response.json())
 }
-export async function getModels() {
-    return await fetch(host+'api/get-models?product=2', {
+export async function getModels(id) {
+    return await fetch(host+'api/get-models?product='+id, {
         method: 'GET'
     }).then((response)=>response.json())
-        .then((res)=>console.log('getModels',res))
 }
 export async function getProducts(id) {
     return await fetch(host+"api/get-products?sub_category="+id+"&all=1", {
         method: 'GET'
     }).then((response)=>response.json())
+}
+
+export async function getOneNews(id) {
+    return await fetch(host+"api/get-one-news?id="+id, {
+        method: 'GET'
+    }).then((response)=>response.json())
+}
+
+export async function getShop(id) {
+    return await fetch(host+'api/get-cart?id='+id, {
+        method: 'GET'
+    }).then((response)=>response.json())
+}
+
+export async function shopAdd(shopAdd) {
+    let formData = new FormData();
+    for(let i in shopAdd)
+        formData.append(i, shopAdd[i]);
+    return await fetch(host+'api/post-cart', {
+        method: 'POST',
+        body:formData
+    })
+}
+
+
+export async function feedback(form) {
+    let formData = new FormData();
+    for(let i in form)
+        formData.append(i, form[i]);
+    return await fetch(host+'api/post-feedback', {
+        method: 'POST',
+        body:formData
+    })
 }

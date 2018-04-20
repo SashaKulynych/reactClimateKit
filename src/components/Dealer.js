@@ -53,17 +53,13 @@ class Dealer extends Component {
                                     <th>№</th>
                                     <th>Дата замовлення</th>
                                     <th>Обладняння</th>
-                                    <th>Кількість</th>
                                     <th>Вартість</th>
-                                    <th>Баланс у.о.</th>
                                     <th>Статус</th>
                                 </tr>
                                 <tr>
                                     <td>1</td>
                                     <td>18.09.2018</td>
                                     <td>Название товара</td>
-                                    <td>4</td>
-                                    <td>000 000</td>
                                     <td>000 000</td>
                                     <td style={{color:'#4ebc45'}}>Готовий до видачі</td>
                                 </tr>

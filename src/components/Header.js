@@ -334,23 +334,23 @@ class Header extends Component {
                         <div className="row col-lg-3 col-sm-11
                         " style={{paddingLeft:21}}>
                             <div className="fb">
-                                <i className="fab fa-facebook-f"/>
+                                <a href="https://www.facebook.com/klimatkomplekt/"><i className="fab fa-facebook-f"/></a>
                             </div>
                             <div className="tw">
-                                <i className="fab fa-twitter"/>
+                                <i className="fab fa-google-plus-g"> </i>
                             </div>
                             <div className="ig">
-                                <i className="fab fa-instagram"/>
+                                <a href="https://www.instagram.com/klimatkomplekt.com.ua/"><i className="fab fa-instagram"/></a>
                             </div>
                         </div>
                         <div className="row col headerRightPart">
                             {/*<div className="text phone">+380443791090 </div>*/}
                             {/*<span className="phone_1">+380662791090 +380682791090 +380932791090</span>*/}
-                            <span data-toggle="collapse" className="text phone" data-target="#6"><i class="fas fa-arrow-down"></i>   +380443791090</span>
+                            <span data-toggle="collapse" className="text phone" data-target="#6"><i class="fas fa-arrow-down"></i>   +38 (066) 279 10 90</span>
                             <ul id="6" className="collapse hide_phone">
-                                <li><span>  +380662791090</span></li>
-                                <li><span>  +380682791090</span></li>
-                                <li><span>  +380932791090</span></li>
+                                <li><span>  +38 (066) 279 10 90</span></li>
+                                <li><span>  +38 (066) 279 10 90</span></li>
+                                <li><span>  +38 (066) 279 10 90</span></li>
                             </ul>
                             <div className="text email">info@klimatkomplect.com.ua</div>
                             {this.props.userInfo===null?
@@ -392,7 +392,7 @@ class Header extends Component {
                                 <div className="navbar-nav">
                                     <span data-toggle="collapse" data-target="#1">ГОЛОВНА &#8595;</span>
                                     <ul id="1" className="collapse">
-                                        <li onClick={()=>this.props.history.push('/text')}><span>Історія</span></li>
+                                        <li onClick={()=>this.props.history.push('/about')}><span>Про компанію</span></li>
                                         <li onClick={()=>this.props.history.push('/reference')}><span>Референс</span></li>
                                         <li onClick={()=>this.props.history.push('/service')}><span>Сервіс</span></li>
                                     </ul>
@@ -401,12 +401,11 @@ class Header extends Component {
                                     <ul id="2" className="collapse">
                                         {manufacts}
                                     </ul>
-                                    <span onClick={()=>this.props.history.push('/text')}>КОНТАКТИ</span>
+                                    <span onClick={()=>this.props.history.push('/contacts')}>КОНТАКТИ</span>
                                     <span data-toggle="collapse" data-target="#4">ПІДТРИМКА &#8595;</span>
                                     <ul  id="4" className="collapse">
                                         <li onClick={()=>this.props.history.push('/text')}><span>Відеокурс</span></li>
                                         <li onClick={()=>this.props.history.push('/support')}><span>Зв'язок</span></li>
-                                        <li onClick={()=>this.props.history.push('/about')}><span>Про компанію</span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -421,7 +420,7 @@ class Header extends Component {
                                             <li>
                                                 <span onClick={()=>this.props.history.push('/')}  data-toggle="collapse" data-target="#1">ГОЛОВНА</span>
                                                 <ul id="1" className="collapse">
-                                                    <li onClick={()=>this.props.history.push('/text')}><span>Історія</span></li>
+                                                    <li onClick={()=>this.props.history.push('/about')}><span>Про компанію</span></li>
                                                     <li onClick={()=>this.props.history.push('/reference')}><span>Референс</span></li>
                                                     <li onClick={()=>this.props.history.push('/service')}><span>Сервіс</span></li>
                                                 </ul>
@@ -450,7 +449,7 @@ class Header extends Component {
                             <div className="col menu-right-part d-flex justify-content-end">
                                 <ul>
                                     <li>
-                                        <span  style={{paddingRight:"40px"}} onClick={()=>this.props.history.push('/text')} >КОНТАКТИ</span>
+                                        <span  style={{paddingRight:"40px"}} onClick={()=>this.props.history.push('/contacts')} >КОНТАКТИ</span>
 
                                     </li>
                                 </ul>
@@ -460,7 +459,6 @@ class Header extends Component {
                                         <ul  id="4" className="collapse">
                                             <li onClick={()=>this.props.history.push('/text')}><span className="potd">Відеокурс</span></li>
                                             <li onClick={()=>this.props.history.push('/support')}><span className="potd">Зв'язок</span></li>
-                                            <li onClick={()=>this.props.history.push('/about')}><span className="potd">Про компанію</span></li>
                                         </ul>
                                     </li>
                                 </ul>

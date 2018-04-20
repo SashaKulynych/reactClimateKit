@@ -31,6 +31,15 @@ ul{
     .phone{
         display: none;
     }
+    .support .contactContainer{
+        padding: 0!important;
+    }
+    .img_supp{
+        padding: 0!important;
+    }
+    .support .contact{
+        text-align: center;
+    }
     .hide_phone{
         display: none!important;
     }
@@ -62,6 +71,7 @@ ul{
     }
 
     .aboutButton{
+        text-align: center;
         padding: 10px 59px!important;
         font-size: 20px!important;
     }
@@ -253,7 +263,7 @@ ul{
     float: right;
     text-align: center;
     width: 120px;
-    font-size:24px;
+    font-size:14px;
     margin:10px;
     color:#000;
     background:#ffd75f ;

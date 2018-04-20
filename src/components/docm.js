@@ -21,8 +21,8 @@ class Docm extends Component {
         }
     }
     async componentDidMount(){
-        await API.getProducts(13).then((value)=>{
-            console.log('getProducts',value)
+        await API.getModels(this.props.match.params.id).then((value)=>{
+            console.log('getModels',value)
             this.setState({products:value})
             console.log("",this.state.products)
         });

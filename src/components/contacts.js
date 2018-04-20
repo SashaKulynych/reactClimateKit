@@ -16,7 +16,7 @@ import * as API from "../actions/api";
 
 let toast = { background: '#fed328', text: "#5f5f5f" };
 
-class Support extends Component {
+class Contacts extends Component {
     constructor(){
         super();
         this.state = {
@@ -47,7 +47,6 @@ class Support extends Component {
             return notify.show("Емейл некоректний!", "custom", 3000, toast);;
         try{
             await API.feedback(this.state.form).then((response)=>{
-                console.log("123",this.state.form)
                 if(response.status !== 200) throw new Error('Проблема з відправкою');
                 return response.json();
             }).then(()=>{
@@ -73,14 +72,14 @@ class Support extends Component {
                             <div className="phones">
                                 <i className="fas fa-phone-volume phoneIcon"/>
                                 <div className="numbers">
-                                    <span>+38 (066) 279 10 90</span>
-                                    <span>+38 (066) 279 10 90</span>
+                                    <span>+38 066 001 01 01</span>
+                                    <span>+38 066 001 01 01</span>
                                 </div>
                             </div>
                             <div className="emails">
                                 <i className="fas fa-at emailIcon"/>
                                 <div className="numbers">
-                                    <span>info@klimatkomplect.com.ua</span>
+                                    <span>email_1@gmail.com</span>
                                     <span>email_2@gmail.com</span>
                                 </div>
                             </div>
@@ -133,33 +132,16 @@ class Support extends Component {
                                 onChange={(e)=>this.onChangeForm('file',e.target.files[0])}
                             />
                             <div className=" row d-flex sendMessage align-items-center justify-content-between">
-                                <span style={{margin:"auto"}} onClick={()=> this.form()}>ВІДПРАВИТИ ПОВІДОЛЕННЯ</span>
+                                <span style={{margin:"auto"}} onClick={()=>{this.form()}}>ВІДПРАВИТИ ПОВІДОЛЕННЯ</span>
                                 <i className="fas fa-arrow-right"/>
                             </div>
                             {console.log(this.state.form)}
                         </div>
                     </div>
-                    <div className="doct container_wrap">
-                        <p>
-                            ДОСТАВКА
-                        </p>
-                        <div  className="img_doct">
-                        <img  className="img_supp" src={require("./images/delivery.png")} />
-                        </div>
-
-
-                    </div>
-                </div>
-                <div style={{width:"100%",height:550, paddingTop:"40px"}}>
-                    <MyGoogleMapComponent
-                        containerElement={<div style={{ height: `510px` }} />}
-                        mapElement={<div style={{ height: `100%` }} />}
-                        isMarkerShown={true}/>
                 </div>
                 <Footer/>
-                <Notifications options={{zIndex: 5000}} />
             </div>
         )
     }}
 
-export default connect(state => ({state:state}))(withRouter(Support))
+export default connect(state => ({state:state}))(withRouter(Contacts))

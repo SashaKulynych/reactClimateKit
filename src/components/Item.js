@@ -3,14 +3,16 @@ import Header from './Header'
 import Footer from './Footer'
 import './styles/item.css'
 import { css, StyleSheet } from 'aphrodite'
+import * as user from '../actions/user'
+import Notifications, {notify} from 'react-notify-toast';
 
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 import {AreaChart, Area, XAxis, YAxis, Tooltip, CartesianGrid} from 'recharts';
-
 import * as API from '../actions/api'
 
 
+let toast = { background: '#fed328', text: "#5f5f5f" };
 class Item extends Component {
     constructor(props){
         super(props)
@@ -27,16 +29,47 @@ class Item extends Component {
             product:{
                 name:'',
                 desc:''
-            }
+            },
+            model:[],
+            shop:{
+                user_id:0,
+                model_id:0
+            },
+            add:[]
         }
     }
     async componentDidMount(){
+        let userInfo = await JSON.parse(localStorage.getItem('userInfo'));
         await API.getProduct(this.props.match.params.id).then((value)=>{
             console.log('getProduct',value)
             this.setState({product:value})
         });
+        await API.getModels(this.props.match.params.id).then((value)=>{
+            console.log('getModels',value)
+            this.setState({model:value})
+            console.log("model",this.state.model)
+        });
+
+        await API.getShop(userInfo.id).then((value)=>{
+            console.log('userInfo',value)
+            this.setState({add:value})
+        });
+
+
+
+
+
+        if(userInfo!==null){
+            let shop = Object.assign({}, this.state.shop);
+            shop.user_id = userInfo.id;
+            this.setState({shop});
+        }
+        console.log(this.state)
+        // if(userInfo!==null){
+        //     await user.userInfo(userInfo)
+        // }
         // let resurs = await API.getProducts();
-        // let res = resurs[0]
+        // let res = resurs[0]s
         // let data = [];
         // for(let i = 0;i<Number(res.Qmax);i=i+0.1){
         //     let total = (Number(res.Nst)*Number(res.Imax)*Number(res.u))/
@@ -47,11 +80,71 @@ class Item extends Component {
         // this.setState({data})
 
     }
+
+
+    // async shop(){
+    //     for(let i in this.state.shop){
+    //      if(!re.test(this.state.form.email))
+    //         return notify.show("Емейл некоректний!", "custom", 3000, toast);;
+    //     try{
+    //         await API.shopAdd(this.state.form).then((response)=>{
+    //             console.log("123",this.state.form)
+    //             if(response.status !== 200) throw new Error('Проблема з відправкою');
+    //             return response.json();
+    //         }).then(()=>{
+    //             return notify.show("Повідомлення відправлено. Дякуємо!", "custom", 3000, toast);
+    //         });
+    //     }
+    //     catch (e){alert('Проблема з відправкою')}
+    //
+    //
+    // }
+
+    async shopId(id){
+        let shop = await Object.assign({}, this.state.shop);
+        shop.model_id = id;
+        await this.setState({shop});
+        try{
+            await API.shopAdd(this.state.shop).then((response)=>{
+                console.log("123",response.status)
+                if(response.status !== 200) throw new Error('Проблема з відправкою');
+                return response.json();
+            }).then(()=>{
+                return notify.show("Товар доданий", "custom", 3000, toast);
+            });
+        }
+        catch (e){alert('Проблема з відправкою')}
+    }
+
     render() {
+        let userInfo = JSON.parse(localStorage.getItem('userInfo'));
+        let model = this.state.model.map((value, index)=>{
+            return(
+                        <tr key={index}>
+                            <td>{index+1}</td>
+                            <td>18.09.2018</td>
+                            <td>{value.name}</td>
+                            <td>000 000</td>
+                            {userInfo !==  null ?(<td>
+                                <div className="row" style={{marginTop:20}}>
+                                    <div className="row addButtonStyle">
+                                        <div className="circle">
+                                            <i className="fas fa-check"/>
+                                        </div>
+                                        <span onClick={()=> this.shopId(value.id)}>додати в кошик</span>
+
+                                    </div>
+                                </div>
+                            </td>): null
+                            }
+                        </tr>
+            )
+        });
         return (
             <div>
                 <Header/>
-                <div className="item">
+                {console.log(this.state.shop)}
+                <div className="item container_wrap">
                     <div className="row itemContainer">
                         <div className="col-sm-12 col-lg-6">
                             <img className="itemImage" src={require('./images/cooler.png')} alt=""/>
@@ -80,26 +173,13 @@ class Item extends Component {
                                     <span>Опис</span>
                                 </div>
                                 <div className="rightButtonStyle col-sm-12">
-                                    <span onClick={()=>this.props.history.push('/Docm')}>Технічні дані</span>
+                                    <span onClick={()=>this.props.history.push('/Docm/'+this.props.match.params.id)}>Технічні дані</span>
                                 </div>
                                 <div  className="rightButtonStyle col-sm-12">
                                     <span >Характеристики</span>
                                 </div>
                             </div>
-                            <div className="row" style={{marginTop:20}}>
-                                <div className="row saveButtonStyle">
-                                    <div className="circle">
-                                        <i className="far fa-save"/>
-                                    </div>
-                                    <span>зберегти проект</span>
-                                </div>
-                                <div className="row addButtonStyle">
-                                    <div className="circle">
-                                        <i className="fas fa-check"/>
-                                    </div>
-                                    <span>додати в кошик</span>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
 
@@ -142,9 +222,22 @@ class Item extends Component {
                             <Area type="monotone" dataKey="paid" stroke="#82ca9d" fill="url(#colorPv)"/>
                         </AreaChart>
                     </div>
+                    <div className="col-sm-12 col-lg-9 categoryView">
+                        <table className="col-12 ">
+                            <tr className="col-1">
+                                <th>№</th>
+                                <th>Дата замовлення</th>
+                                <th>Обладняння</th>
+                                <th>Вартість</th>
+                                {userInfo !==null ?(<th>Замовити</th>):null}
+                            </tr>
+                    {model}
+                        </table>
+                    </div>
                 </div>
                 <Footer/>
+                <Notifications options={{zIndex: 5000}} />
             </div>
         )
     }}
-export default connect(state => ({state:state}))(withRouter(Item))
+export default connect(state => ({state:state,userInfo:state.user}))(withRouter(Item))

@@ -31,7 +31,8 @@ class MainPage extends Component {
         API.getNews().then((value)=>{
             console.log('getNews',value)
             this.setState({news:value})
-        })
+        });
+        API.getNewsPage()
     }
     render() {
         let settings = {
@@ -50,7 +51,7 @@ class MainPage extends Component {
                 {backgroundImage: "url(http://admin.klimatkomplect.com.ua/image/news/"+value.img+")"};
             return(
 
-                <div className="col newsBlock" onClick={()=>this.props.history.push('/text')}>
+                <div className="col newsBlock"  onClick={()=>this.props.history.push('/News/'+ value.id)}>
                     <div className="newsPicture d-flex justify-content-center align-items-center"
                          style={img}>
                         <div className="pictureTitle"></div>
@@ -69,7 +70,7 @@ class MainPage extends Component {
             let img = value.img===''?{backgroundImage: `url(${require('./images/newsPicture1.png')}`}:
                 {backgroundImage: "url(http://admin.klimatkomplect.com.ua/image/news/"+value.img+")"};
             return(
-                <div className="col newsBlock">
+                <div className="col newsBlock"  onClick={()=>this.props.history.push('/News/'+ value.id)}>
                     <div className="newsPicture d-flex justify-content-center align-items-center"
                          style={img}>
                         <div className="pictureTitle"></div>
@@ -384,7 +385,7 @@ class MainPage extends Component {
                                 {newsFirst}
                             </div>
                             <div className="d-flex justify-content-center">
-                                <span  onClick={()=>this.props.history.push('/News')} className="allNews">Всі новини</span>
+                                <span  onClick={()=>this.props.history.push('/AllNews')} className="allNews">Всі новини</span>
                             </div>
                         </div>
                         <div className="col">
@@ -392,7 +393,7 @@ class MainPage extends Component {
                                 {newsSecond}
                             </div>
                             <div className="d-flex justify-content-center">
-                                <span className="allNews">Всі статті</span>
+                                <span className="allNews"  onClick={()=>this.props.history.push('/AllNews')}>Всі статті</span>
                             </div>
                         </div>
                     </div>

@@ -29,18 +29,17 @@ class Footer extends Component {
                                 <ul className="contacts">
                                     <li style={{fontSize:20}}>Контакти</li>
                                     <li><i className="fas fa-envelope contactIcons"/>info@ klimatkomplect.com.ua</li>
-                                    <li><i className="fas fa-phone-volume contactIcons"/>+38 099 001 00 00</li>
+                                    <li><i className="fas fa-phone-volume contactIcons"/>+38 (066) 279 10 90</li>
                                 </ul>
-                                <div className="row footer_icon col-lg-12 col-sm-11
-                        ">
+                                <div className="row footer_icon col-lg-12 col-sm-11 " >
                                     <div className="fb">
-                                        <i className="fab fa-facebook-f"/>
+                                        <a href="https://www.facebook.com/klimatkomplekt/"><i className="fab fa-facebook-f"/></a>
                                     </div>
                                     <div className="tw">
-                                        <i className="fab fa-twitter"/>
+                                        <i className="fab fa-google-plus-g"> </i>
                                     </div>
                                     <div className="ig">
-                                        <i className="fab fa-instagram"/>
+                                        <a href="https://www.instagram.com/klimatkomplekt.com.ua/"><i className="fab fa-instagram"/></a>
                                     </div>
                                 </div>
                             </div>

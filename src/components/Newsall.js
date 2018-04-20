@@ -32,18 +32,17 @@ class AllNews extends Component {
             let img = value.img===''?{backgroundImage: `url(${require('./images/newsPicture1.png')}`}:
                 {backgroundImage: "url(http://admin.klimatkomplect.com.ua/image/news/"+value.img+")"};
             return(
-
                 <div className="col-lg-5 col-sm-12 mt-5 newsBlock_1" >
-                    <div onClick={()=>this.props.history.push('/text')}  className="newsPicture d-flex justify-content-center align-items-center"
+                    <div onClick={()=>this.props.history.push('/News/'+ value.id)}  className="newsPicture d-flex justify-content-center align-items-center"
                          style={img}>
                         <div className="pictureTitle"></div>
                     </div>
-                    <div onClick={()=>this.props.history.push('/text')} className="newsTitle d-flex justify-content-center">{title}</div>
+                    <div onClick={()=>this.props.history.push('/News/'+ value.id)} className="newsTitle d-flex justify-content-center">{title}</div>
                     <div   className="newsDescription">
                         {value.text}
                     </div>
                     <div className="text-center">
-                        <button onClick={()=>this.props.history.push('/text')} className="allNews_1 col-12" >Відкрити новину</button>
+                        <button  onClick={()=>this.props.history.push('/News/'+ value.id)} className="allNews_1 col-12" >Відкрити новину</button>
                     </div>
                 </div>
             )
