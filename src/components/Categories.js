@@ -10,40 +10,7 @@ import { withRouter } from 'react-router'
 
 import * as API from '../actions/api'
 
-const itemsArray=[
-    {
-        image:require('./images/cooler.png'),
-        title:''
-    },
-    {
-        image:require('./images/cooler.png'),
-        title:''
-    },
-    {
-        image:require('./images/cooler.png'),
-        title:''
-    },
-    {
-        image:require('./images/cooler.png'),
-        title:''
-    },
-    {
-        image:require('./images/cooler.png'),
-        title:''
-    },
-    {
-        image:require('./images/cooler.png'),
-        title:''
-    },
-    {
-        image:require('./images/cooler.png'),
-        title:''
-    },
-    {
-        image:require('./images/cooler.png'),
-        title:''
-    }
-]
+
 class Categories extends Component {
     constructor(props){
         super(props)
@@ -51,7 +18,8 @@ class Categories extends Component {
             tab:0,
             showCategory:0,
             categories:[],
-            products:[]
+            products:[],
+            id:0
         };
         this.changeTab = this.changeTab.bind(this);
     }
@@ -61,11 +29,15 @@ class Categories extends Component {
 
     async componentDidMount()
     {
+        console.log("12334",this.props.match.params.id)
         await API.getSubCategories(this.props.match.params.id).then((value)=>{
             console.log('getSubCategories',value)
             this.setState({categories:value,showCategory:value.length!==0?value[0].id:0})
         });
-        await API.getProducts(this.props.match.params.id).then((value)=>{
+        localStorage.setItem("categories_id", this.state.showCategory)
+        let categories_id = localStorage.getItem('categories_id');
+        console.log("",categories_id)
+        await API.getProducts(this.state.showCategory).then((value)=>{
             console.log('getProducts',value)
             this.setState({products:value})
         });
@@ -81,7 +53,8 @@ class Categories extends Component {
         });
 
         let filter = this.state.products.filter((value)=>{
-            return(value.sub_category_id===this.state.showCategory)
+            return(value.sub_category_id===this.state.showCategory);
+
         });
 
         let items = filter.map((value,index)=>{

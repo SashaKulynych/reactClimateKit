@@ -7,19 +7,59 @@ import {styles} from './styles/styles'
 
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
+import * as API from "../actions/api";
 
 class Dealer extends Component {
     constructor(props){
         super(props)
         this.state = {
-            tab:0
+            tab:0,
+            add:[]
         };
         this.changeTab = this.changeTab.bind(this);
+        this.Status =this.Status.bind(this)
     }
     changeTab(index){
         this.setState({tab:index})
     }
+
+    async componentDidMount(){
+        let userInfo = await JSON.parse(localStorage.getItem('userInfo'));
+        await API.getShop(userInfo.id).then((value)=>{
+            console.log('userInfo',value)
+            this.setState({add:value})
+        });
+    }
+
+    Status(value){
+        if(value.status == 1 ){
+            return(
+            <tb style={{padding:15, color:"red"}}>Обробка</tb>
+            )
+        } else if (value.status == 2){
+            return(
+                <tb style={{padding:15, color:"yellow"}}>Готовий до видачі</tb>
+            )
+        }else if (value.status == 3){
+            return(
+                <tb style={{padding:15, color:"green"}}>Відправлено</tb>
+            )
+    }
+    }
+
     render() {
+        let model = this.state.add.map((value, index)=>{
+
+            return(
+                <tr key={index}>
+                    <td>{index+1}</td>
+                    <td>{value.model_name}</td>
+                    <td>{value.count}</td>
+                    <td>{value.model_price}</td>
+                    {this.Status(value)}
+                </tr>
+            )
+        });
         return (
             <div>
                 <Header/>
@@ -28,41 +68,16 @@ class Dealer extends Component {
                         <img className="afterHeaderPicture" src={require('./images/dealer.png')} alt=""/>
                     </div>
                     <div className="d-flex row container_wrap">
-                        <div className="col-lg-3 col-sm-12 categoryMenu">
-                            <ul>
-                                <li onClick={()=>this.changeTab(0)}>
-                                    <span className={this.state.tab===0?css(styles.borderYellow):null}>Меню 1</span>
-                                </li>
-                                <li onClick={()=>this.changeTab(1)}>
-                                    <span className={this.state.tab===1?css(styles.borderYellow):null}>Меню 2</span>
-                                </li>
-                                <li onClick={()=>this.changeTab(2)}>
-                                    <span className={this.state.tab===2?css(styles.borderYellow):null}>Меню 3</span>
-                                </li>
-                                <li onClick={()=>this.changeTab(3)}>
-                                    <span className={this.state.tab===3?css(styles.borderYellow):null}>Меню 4</span>
-                                </li>
-                                <li onClick={()=>this.changeTab(4)}>
-                                    <span className={this.state.tab===4?css(styles.borderYellow):null} >Меню 5</span>
-                                </li>
-                            </ul>
-                        </div>
                         <div className="col-sm-12 col-lg-9 categoryView">
                             <table className="col-12 ">
                                 <tr className="col-1">
                                     <th>№</th>
-                                    <th>Дата замовлення</th>
-                                    <th>Обладняння</th>
+                                    <th>Назва</th>
+                                    <th>Кількість</th>
                                     <th>Вартість</th>
                                     <th>Статус</th>
                                 </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>18.09.2018</td>
-                                    <td>Название товара</td>
-                                    <td>000 000</td>
-                                    <td style={{color:'#4ebc45'}}>Готовий до видачі</td>
-                                </tr>
+                                {model}
                             </table>
 
                         </div>

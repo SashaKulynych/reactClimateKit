@@ -32,7 +32,8 @@ class Header extends Component {
                 c_password:'',
                 org_address:'',
                 phone:''
-            }
+            },
+            count:[]
         };
         this.personType=this.personType.bind(this);
         this.openRegonOpenModal=this.openRegonOpenModal.bind(this);
@@ -57,6 +58,10 @@ class Header extends Component {
         if(userInfo!==null){
             await user.userInfo(userInfo)
         }
+        await API.getShop(userInfo.id).then((value)=>{
+            console.log('userInfo',value)
+            this.setState({count:value})
+        });
     }
 
     personType(index){this.setState({personType:index})}
@@ -363,7 +368,7 @@ class Header extends Component {
                                 <div className="row" >
                                     <div onClick={()=>this.props.history.push('/dealer')} className="circle">
                                         <div className="shop_numb">
-                                            2
+                                            {this.state.count.map(value => value.count)}
                                         </div>
                                         <i  class="fas fa-shopping-cart"/>
                                     </div>

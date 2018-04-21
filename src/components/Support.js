@@ -27,7 +27,8 @@ class Support extends Component {
                 file:{}
 
             }
-        }
+
+        };
         this.onChangeForm = this.onChangeForm.bind(this)
     };
 

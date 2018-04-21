@@ -32,7 +32,6 @@ class MainPage extends Component {
             console.log('getNews',value)
             this.setState({news:value})
         });
-        API.getNewsPage()
     }
     render() {
         let settings = {

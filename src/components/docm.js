@@ -20,17 +20,22 @@ class Docm extends Component {
             products:[]
         }
     }
-    async componentDidMount(){
-        await API.getModels(this.props.match.params.id).then((value)=>{
-            console.log('getModels',value)
-            this.setState({products:value})
-            console.log("",this.state.products)
+    async componentDidMount() {
+        let categories_id = localStorage.getItem('categories_id');
+        await API.getProducts(categories_id).then((value) => {
+            console.log('getModels', value)
+            this.setState({products: value})
+            console.log("", this.state.products)
         });
+    }
+
+    Data(name){
+        API.getData(name)
     }
     render() {
         let products = this.state.products.map((value, index)=>{
             return(
-                <a style={{paddingRight:10}}>
+                <a style={{paddingRight:10}} onClick={this.Data.bind(this,value.name)}>
                     <li key={index} style={{width:200,height:200,border:"1px solid #acacac", background:"#fff"}}>
                         <div className="itemTop">
                             {value.name}
@@ -45,6 +50,10 @@ class Docm extends Component {
                 </a>
             )
         })
+
+
+
+
         return (
             <div>
                 <Header/>
@@ -66,7 +75,7 @@ class Docm extends Component {
                     </p>
                 </div>
                 <div className="col-sm-12 col-lg-12 categoryView_1 container_wrap">
-                    <ul>
+                    <ul >
                         {products}
                     </ul>
                 </div>

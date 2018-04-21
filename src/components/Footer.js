@@ -52,8 +52,10 @@ class Footer extends Component {
                         </div>
                     </div>
                     </div>
+                    <a href="https://www.patprofi.com/" className='col-12 text-center' style={{color:"#fff", position:"absolute", bottom:1 }}>Розробка сайту компанія P.A.T.Profi</a>
+
                 </div>
-            </div>
+                </div>
         )
     }}
 export default connect(state => ({state:state}))(withRouter(Footer))

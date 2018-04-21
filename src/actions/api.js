@@ -26,17 +26,18 @@ export async function getNews() {
         method: 'GET',
     }).then((response)=>response.json())
 }
+export async function getNewsPage() {
+    return await fetch(host+'api/get-news?all=1', {
+        method: 'GET',
+    }).then((response)=>response.json())
+}
+
 export async function getProduct(id) {
     return await fetch(host+'api/get-product/'+id, {
         method: 'GET',
     }).then((response)=>response.json())
 }
-export async function getNewsPage() {
-    await fetch(host+'api/get-news?all=1', {
-        method: 'GET',
-    }).then((response)=>response.json())
-        .then((res)=>console.log('getNewsPage ',res))
-}
+
 export async function getManufact() {
     return await fetch(host+'api/get-manufact', {
         method: 'GET',
@@ -70,10 +71,21 @@ export async function getOneNews(id) {
 }
 
 export async function getShop(id) {
-    return await fetch(host+'api/get-cart?id='+id, {
+    return await fetch(host+'api/get-cart?user_id='+id, {
         method: 'GET'
     }).then((response)=>response.json())
 }
+
+export async function getData(name) {
+    return await fetch(host+'api/get-techdata?name='+name, {
+        method: 'GET'
+    }).then((response)=>response.json())
+}
+// export async function getProductsCategory(id) {
+//     return await fetch(host+'api/get-products?category='+id, {
+//         method: 'GET'
+//     }).then((response)=>response.json())
+// }
 
 export async function shopAdd(shopAdd) {
     let formData = new FormData();
@@ -93,5 +105,6 @@ export async function feedback(form) {
     return await fetch(host+'api/post-feedback', {
         method: 'POST',
         body:formData
-    })
+    });
+
 }

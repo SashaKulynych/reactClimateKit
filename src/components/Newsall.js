@@ -16,16 +16,14 @@ class AllNews extends Component {
         }
     }
 
-    componentDidMount(){
-        API.getNews().then((value)=>{
+    async componentDidMount(){
+        await API.getNewsPage().then((value)=>{
             console.log('getNews',value)
-            this.setState({news:value})
+            this.setState({news:value.reverse()})
         })
     }
 
     render() {
-        let revers = this.state.news.reverse();
-        console.log("revers", revers);
         let newsFirst=this.state.news.map((value)=>{
             let maxLength = 15;
             let title =value.title.length>15?value.title.substring(0, maxLength) + '...':value.title;

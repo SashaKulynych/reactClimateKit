@@ -38,67 +38,25 @@ class Item extends Component {
             add:[]
         }
     }
-    async componentDidMount(){
+    async componentDidMount() {
         let userInfo = await JSON.parse(localStorage.getItem('userInfo'));
-        await API.getProduct(this.props.match.params.id).then((value)=>{
-            console.log('getProduct',value)
-            this.setState({product:value})
+        await API.getProduct(this.props.match.params.id).then((value) => {
+            console.log('getProduct', value)
+            this.setState({product: value})
         });
-        await API.getModels(this.props.match.params.id).then((value)=>{
-            console.log('getModels',value)
-            this.setState({model:value})
-            console.log("model",this.state.model)
-        });
-
-        await API.getShop(userInfo.id).then((value)=>{
-            console.log('userInfo',value)
-            this.setState({add:value})
+        await API.getModels(this.props.match.params.id).then((value) => {
+            console.log('getModels', value)
+            this.setState({model: value})
+            console.log("model", this.state.model)
         });
 
-
-
-
-
-        if(userInfo!==null){
+        if (userInfo !== null) {
             let shop = Object.assign({}, this.state.shop);
             shop.user_id = userInfo.id;
             this.setState({shop});
         }
         console.log(this.state)
-        // if(userInfo!==null){
-        //     await user.userInfo(userInfo)
-        // }
-        // let resurs = await API.getProducts();
-        // let res = resurs[0]s
-        // let data = [];
-        // for(let i = 0;i<Number(res.Qmax);i=i+0.1){
-        //     let total = (Number(res.Nst)*Number(res.Imax)*Number(res.u))/
-        //         (i*3.14*3.14*(Number(res.d)*Number(res.d)*Number(res.d)*Number(res.d))*8.31*Number(res.Tmax)+8*i*i*i*0.029)
-        //     console.log(total)
-        //     data.push({name:i,total:total,paid:i})
-        // }
-        // this.setState({data})
-
     }
-
-
-    // async shop(){
-    //     for(let i in this.state.shop){
-    //      if(!re.test(this.state.form.email))
-    //         return notify.show("Емейл некоректний!", "custom", 3000, toast);;
-    //     try{
-    //         await API.shopAdd(this.state.form).then((response)=>{
-    //             console.log("123",this.state.form)
-    //             if(response.status !== 200) throw new Error('Проблема з відправкою');
-    //             return response.json();
-    //         }).then(()=>{
-    //             return notify.show("Повідомлення відправлено. Дякуємо!", "custom", 3000, toast);
-    //         });
-    //     }
-    //     catch (e){alert('Проблема з відправкою')}
-    //
-    //
-    // }
 
     async shopId(id){
         let shop = await Object.assign({}, this.state.shop);
@@ -106,14 +64,18 @@ class Item extends Component {
         await this.setState({shop});
         try{
             await API.shopAdd(this.state.shop).then((response)=>{
-                console.log("123",response.status)
-                if(response.status !== 200) throw new Error('Проблема з відправкою');
+                console.log("status",response.status);
+                console.log("state", this.state.shop);
+                if(response.status === 204) throw new Error('Товару немає в наявності');
+                if(response.status !== 200 && response.status !==204) throw new Error('Проблема з відправкою');
+                else API.getShop();
                 return response.json();
+
             }).then(()=>{
                 return notify.show("Товар доданий", "custom", 3000, toast);
             });
         }
-        catch (e){alert('Проблема з відправкою')}
+        catch (e){notify.show(e.message, "error", 3000);}
     }
 
     render() {
@@ -122,12 +84,23 @@ class Item extends Component {
             return(
                         <tr key={index}>
                             <td>{index+1}</td>
-                            <td>18.09.2018</td>
                             <td>{value.name}</td>
-                            <td>000 000</td>
-                            {userInfo !==  null ?(<td>
-                                <div className="row" style={{marginTop:20}}>
-                                    <div className="row addButtonStyle">
+                            <td>{value.Qmax}</td>
+                            <td>{value.p}</td>
+                            <td>{value.u}</td>
+                            <td>{value.w}</td>
+                            <td>{value.w}</td>
+                            <td>{value.Nt}</td>
+                            <td>{value.Nst}</td>
+                            <td>{value.Lwa}</td>
+                            <td>{value.Lpa}</td>
+                            <td>{value.Tmax}</td>
+                            <td>{value.m}</td>
+                            <td>{value.balance}</td>
+                            <td>{value.price}</td>
+                            {userInfo !==  null ?(<td style={{padding:0}}>
+                                <div>
+                                    <div style={{width:195, marginRight:3}} className="row addButtonStyle">
                                         <div className="circle">
                                             <i className="fas fa-check"/>
                                         </div>
@@ -226,8 +199,19 @@ class Item extends Component {
                         <table className="col-12 ">
                             <tr className="col-1">
                                 <th>№</th>
-                                <th>Дата замовлення</th>
-                                <th>Обладняння</th>
+                                <th>Назва</th>
+                                <th>Qmax<br/>[m3/h]</th>
+                                <th>Pmax<br/>[m3/h]</th>
+                                <th>U<br/>[V]</th>
+                                <th>P<br/>[W]</th>
+                                <th>I<br/>[A]</th>
+                                <th>Nt<br/>[%]</th>
+                                <th>Nst<br/>[%]</th>
+                                <th>Lwa<br/>[dB(A)]</th>
+                                <th>Lpa<br/>[dB(A)]</th>
+                                <th>Tmax[<br/>[°С]</th>
+                                <th>m[<br/>[kg]</th>
+                                <th>Кількість</th>
                                 <th>Вартість</th>
                                 {userInfo !==null ?(<th>Замовити</th>):null}
                             </tr>
