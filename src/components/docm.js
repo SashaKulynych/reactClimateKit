@@ -16,7 +16,6 @@ class Docm extends Component {
     constructor(props){
         super(props)
         this.state={
-            tab:0,
             products:[]
         }
     }
@@ -64,11 +63,6 @@ class Docm extends Component {
                 <div className="title_docm">
                     ТЕХНІЧНА ДОКУМЕНТАЦІЯ
                 </div>
-                <div className="row col-12 container_wrap">
-                        <div onClick={() => this.setState({tab:0})}    className={`col-lg-4 col-sm-12 ${this.state.tab===0?css(styles.li_docm_1):css(styles.li_docm)}`}><p>RUCK</p></div>
-                        <div onClick={() => this.setState({tab:1})}   className={`col-lg-4 col-sm-12 ${this.state.tab===1?css(styles.li_docm_1):css(styles.li_docm)}`}><p>SODECA</p></div>
-                    <div onClick={() => this.setState({tab:2})}   className={`col-lg-4 col-sm-12 ${this.state.tab===2?css(styles.li_docm_1):css(styles.li_docm)}`}><p>ЩЕ ЩОСЬ</p></div>
-                </div>
                 <div className="docm_div_1">
                     <p>
                     ВЕНТИЛЯТОРИ КАНАЛЬНІ
@@ -79,16 +73,6 @@ class Docm extends Component {
                         {products}
                     </ul>
                 </div>
-                    <div className="docm_div_2">
-                        <p>
-                            ВЕНТИЛЯТОРИ КУХОННІ
-                        </p>
-                    </div>
-                    <div className="col-sm-12 col-lg-12 categoryView_1 container_wrap">
-                        <ul>
-                            {products}
-                        </ul>
-                    </div>
                 </div>
                 <Footer/>
             </div>

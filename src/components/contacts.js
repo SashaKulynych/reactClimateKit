@@ -72,14 +72,14 @@ class Contacts extends Component {
                             <div className="phones">
                                 <i className="fas fa-phone-volume phoneIcon"/>
                                 <div className="numbers">
-                                    <span>+38 066 001 01 01</span>
-                                    <span>+38 066 001 01 01</span>
+                                    <span>+38 (066) 279 10 90</span>
+                                    <span>+38 (066) 279 10 90</span>
                                 </div>
                             </div>
                             <div className="emails">
                                 <i className="fas fa-at emailIcon"/>
                                 <div className="numbers">
-                                    <span>email_1@gmail.com</span>
+                                    <span>info@klimatkomplect.com.ua</span>
                                     <span>email_2@gmail.com</span>
                                 </div>
                             </div>
